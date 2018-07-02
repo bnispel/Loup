@@ -91,6 +91,7 @@ nav {
 	}
 }
 .main_section_text { 
+	opacity: 1;
 	h1 {
 		font-size: px_to_em(60px);
 		line-height: px_to_decimal(36px, 60px);
@@ -219,6 +220,9 @@ nav {
 	.gradient_icon {
 		width: 70px;
 		height: 70px;
+		&:before {
+			opacity: 1;
+		}
 		img, svg {
 			width: 70px;
 			height: 70px;

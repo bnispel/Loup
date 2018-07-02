@@ -3,10 +3,9 @@
 }
 .main_section {
 	position: relative;
+	overflow: hidden;
 	height: calc(85vh - 115px);
 	max-height: 600px;
-	background: url(../images/placeholder_homeheader.jpg) no-repeat center center;
-	background-size: cover;
 	text-align: center;
 	@include displaygrid();
 	@include centergrid();
@@ -37,11 +36,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		position: absolute;
 		z-index: 2;
 		top: 0;
-		left: 0;
+		left: -400px;
 		width: 100%;
 		background: url(../images/logooverlay.png) no-repeat left center;
 		background-size: contain;
+		-webkit-animation: slideinleft .7s ease 1;
+		-moz-animation: slideinleft .7s ease 1;
+		animation: slideinleft .7s ease 1;
+		animation-delay: .25s;
+		animation-fill-mode: forwards;
 	}
+}
+.main_section_img {
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/placeholder_homeheader.jpg) no-repeat center center;
+	background-size: cover;
+	-webkit-animation: zoom 1s ease 1;
+	-moz-animation: zoom 1s ease 1;
+	animation: zoom 1s ease 1;
 }
 .main_section_text {
 	z-index: 3;
@@ -50,6 +66,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	color: $white;
 	padding-top: 100px;
 	width: 100%;
+	opacity: 0;
+	-webkit-animation: fadeinup .5s ease 1;
+	-moz-animation: fadeinup .5s ease 1;
+	animation: fadeinup .5s ease 1;
+	animation-fill-mode: forwards;
+	animation-delay: .5s;
 	h1 {
 		color: $white;
 		font-size: px_to_rem(38px);
