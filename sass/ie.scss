@@ -1,0 +1,326 @@
+@import 'partials/_variables.scss';
+@import 'partials/_mixins.scss';
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+h2 {
+	font-size: px_to_em(46px);
+	line-height: px_to_decimal(45px, 46px);
+}
+button {
+	border: 1px solid #757B7F;
+}
+.menubtn {
+	display: none;
+}
+.quicklinks_mobile {
+	display: none;
+}
+.quicklinks_desktop {
+	display: block;
+}
+.quicklinks {
+	display: block;
+	text-align: right;
+	padding: 0 60px;
+	a {
+		display: inline-block;
+		margin-left: 30px;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+.mainnav_wrapper {
+	border-top: 0;
+	overflow: hidden;
+	padding: 0 60px;
+}
+.mainnav_inside {
+	float: left;
+	padding: 18px 15px 18px 0;
+}
+nav {
+	display: block;
+	width: auto;
+	position: static;
+	clear: none;
+	float: right;
+	padding-top: 14px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	ul {
+		margin-bottom: 0;
+		display: block;
+		justify-content: space-between;
+		ul {
+			display: none;
+		}
+	}
+	li {
+		display: inline-block;
+		border-bottom: 0;
+		a {
+			border-left: 0;
+			padding: 28px 10px 37px 10px;
+			&:hover {
+				border-left: 0;
+			}
+		}
+		&:last-child {
+			a {
+				padding-right: 0;
+			}
+		}
+	}
+}
+.no-flexbox nav ul.dropdown {
+	display: none;
+}
+.main_section {
+	min-height: 500px;
+	padding-top: 250px;
+	&:before {
+		background: #354f5f;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter: alpha(opacity=80);
+		opacity: .8;
+	}
+}
+.main_section_text { 
+	h1 {
+		font-size: px_to_em(60px);
+		line-height: px_to_decimal(36px, 60px);
+		letter-spacing: XDunits_to_ems(30);
+		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: px_to_em(28px);
+		line-height: px_to_decimal(36px, 28px);
+		letter-spacing: XDunits_to_ems(100);
+	}
+}
+.challenges_wrappers {
+	margin: 0 -5px;
+}
+.challenge {
+	flex-basis: calc(30% - 30px);
+	margin: 0 50px 70px;
+	&:first-child {
+		margin-left: 0;
+	}
+	&:nth-child(3n) {
+		margin-right:0;
+	}
+}
+.section_imgoverlap {
+	position: relative;
+	padding-top: 75px;
+	.section_contentbox {
+		padding: 45px 0 45px 45px;
+		position: absolute;
+		margin: 0;
+		left: 55%;
+		top: 50%;
+		margin-top: -140px;
+	}
+}
+.home .section_imgoverlap {
+	margin-bottom: 40px;
+	.section_image {
+		max-width: 975px;
+		width: 75%;
+	}
+	.section_contentbox {
+		max-width: 486px;
+	}
+}
+.challenges_wrappers {
+		margin: 0 -5px;
+	}
+	.challenge {
+		padding: 2px;
+		border-width: 0;
+		border-color: transparent;
+		border-bottom: 10px solid $yellow;
+		@include transition(.2s);
+		position: relative;
+		text-transform: uppercase;
+		font-weight: $font_bold;
+		overflow: hidden;
+		height: 390px;
+		width: 25%;
+		float: left;
+		margin: 0 50px 70px;
+		&:hover {
+			padding: 0;
+			border-width: 2px 2px 2px 2px;
+		}
+		.challenge_inside {
+			padding: 40px 25px 53px;
+		}
+		h3 {
+			font-size: px_to_rem(16px);
+			line-height: px_to_decimal(22px, 16px);
+		}
+		.popupcta {
+			display: block;
+			position: absolute;
+			z-index: 5;
+			bottom: -100px;
+			left: 0;
+			width: 100%;
+			background: $yellow;
+			@include transition(.2s);
+			font-size: px_to_rem(15px);
+			line-height: px_to_decimal(19px, 15px);
+			letter-spacing: XDunits_to_ems(120);
+			color: $white;
+			padding: 22px 20px;
+			background: rgb(247,179,82);
+			background: -moz-linear-gradient(-45deg, rgba(247,179,82,1) 20%, rgba(242,221,196,1) 44%, rgba(178,119,37,1) 100%);
+			background: -webkit-linear-gradient(-45deg, rgba(247,179,82,1) 20%,rgba(242,221,196,1) 44%,rgba(178,119,37,1) 100%);
+			background: linear-gradient(135deg, rgba(247,179,82,1) 20%,rgba(242,221,196,1) 44%,rgba(178,119,37,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', endColorstr='#b27725',GradientType=1 );			background-size: 600% 600%;
+			-webkit-animation: Gradient 8s ease infinite;
+			-moz-animation: Gradient 8s ease infinite;
+			animation: Gradient 8s ease infinite;
+			&:after {
+				content: '';
+				display: inline-block;
+				margin-left: 10px;
+				width: 7.5px;
+				height: 11.5px;
+				@include transition(.2s);
+				background: url(../images/icon-rightarrow.svg) no-repeat top left;
+			}
+		}
+		&:hover {
+			.popupcta {
+				bottom: 0;
+			}
+		}
+	}
+	.challenge_description, .popupcta {
+		display: block;
+	}
+	.section_challenges .mobilebtn {
+		display: none;
+	}
+	.challenge_description p {
+		text-transform: none;
+		float: none;
+		font-size: px_to_rem(14px);
+		line-height: px_to_decimal(26px, 14px);
+	}
+	.gradient_icon {
+		width: 70px;
+		height: 70px;
+		img, svg {
+			width: 70px;
+			height: 70px;
+		}
+	}
+/* :::::::::::::::::::::::::::::::::::::: Full width image CTA */
+.image_cta {
+	position: relative;
+	padding: 20px 60px 0 60px;
+	max-width: 1400px;
+	margin: 0 auto 70px;
+	.image_cta_msg {
+		position: absolute;
+		bottom: 0;
+		right:60px;
+		max-width: 486px;
+		padding: 40px;
+	}
+	img {
+		display: block;
+	}
+	p {
+		font-size: px_to_rem(15px);
+		line-height: px_to_decimal(25px, 15px);
+	}
+}
+/* :::::::::::::::::::::::::::::::::::::: Collapsible section */
+.collapsible_section {
+	overflow: hidden;
+	max-width: 1400px;
+	margin: 0 auto 70px;
+	.section_col1 {
+		width: 40%;
+		float: left;
+		padding-right: 40px;
+	}
+	.section_col2 {
+		width: 60%;
+		float: right;
+	}
+}
+.collapsible_wrapper {
+	padding: 35px 45px;
+}
+.collapsible_item {
+	&.open h3 {
+		font-size: px_to_rem(25px);
+		line-height: px_to_decimal(22px, 25px);
+	}
+	h3 {
+		font-size: px_to_rem(16px);
+		line-height: px_to_decimal(22px, 16px);
+	}
+}
+/* :::::::::::::::::::::::::::::::::::::: Endpage CTA */
+.endpage_cta_wrapper { 
+	&:before {
+		background: #354f5f;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter: alpha(opacity=80);
+		opacity: .8;
+	}
+}
+.endpage_cta {
+	h2 {
+		font-size: px_to_rem(40px);
+		line-height: px_to_decimal(25px, 40px);
+	}
+	h3 {
+		font-size: px_to_rem(20px);
+		line-height: px_to_decimal(27px, 20px);
+	}
+}
+/* :::::::::::::::::::::::::::::::::::::: Footer */
+.footer_links {
+	width: auto;
+	padding-right: 6%;
+}
+.btn_quicklinks {
+	width: 280px;
+	float: left;
+}
+.up_logo {
+	float: right;
+	clear: none;
+}
+.social_links {
+	a {
+		padding: 10px 4px;
+	}
+	.facebook, .twitter, .instagram, .linkedin {
+		svg {
+			width: 14px;
+			height: 14px;
+		}
+	}
+}
+.footer_wrapper {
+	.logo {
+		margin-right: 60px;
+	}
+}
+.copyright {
+	clear: both;
+}

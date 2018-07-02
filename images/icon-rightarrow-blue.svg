@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.857 13.382"><defs><style>.arrowblsvg{fill:#276092;}</style></defs>
+	<g transform="translate(0)">
+		<path class="arrowblsvg" d="M4.268,11.3a1.274,1.274,0,0,1,0,1.748L0,17.316l1.131,1.131a1.522,1.522,0,0,0,2.108,0l3.188-3.188a1.274,1.274,0,0,0,0-1.748Z" transform="translate(0 -5.49)"/>
+		<path class="arrowblsvg" d="M1.131.463,0,1.594,6.428,8.022a1.274,1.274,0,0,1,0,1.748L8.433,7.764a1.522,1.522,0,0,0,0-2.108L3.291.463A1.491,1.491,0,0,0,1.131.463Z" transform="translate(0 0)"/>
+	</g>
+</svg>

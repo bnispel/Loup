@@ -1,0 +1,476 @@
+/* :::::::::::::::::: Brand Base Colors */
+/* :::::::::::::::::: Extra colors */
+/* Grays dark to light */
+/* blues dark to light */
+/* Gradients */
+/* Fonts */
+/* Functions */
+/* Mixins */
+/* Animations */
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+/* line 8, ../sass/ie.scss */
+h2 {
+  font-size: 2.875em;
+  line-height: 0.97826;
+}
+
+/* line 12, ../sass/ie.scss */
+button {
+  border: 1px solid #757B7F;
+}
+
+/* line 15, ../sass/ie.scss */
+.menubtn {
+  display: none;
+}
+
+/* line 18, ../sass/ie.scss */
+.quicklinks_mobile {
+  display: none;
+}
+
+/* line 21, ../sass/ie.scss */
+.quicklinks_desktop {
+  display: block;
+}
+
+/* line 24, ../sass/ie.scss */
+.quicklinks {
+  display: block;
+  text-align: right;
+  padding: 0 60px;
+}
+/* line 28, ../sass/ie.scss */
+.quicklinks a {
+  display: inline-block;
+  margin-left: 30px;
+}
+/* line 31, ../sass/ie.scss */
+.quicklinks a:last-child {
+  padding-right: 0;
+}
+
+/* line 36, ../sass/ie.scss */
+.mainnav_wrapper {
+  border-top: 0;
+  overflow: hidden;
+  padding: 0 60px;
+}
+
+/* line 41, ../sass/ie.scss */
+.mainnav_inside {
+  float: left;
+  padding: 18px 15px 18px 0;
+}
+
+/* line 45, ../sass/ie.scss */
+nav {
+  display: block;
+  width: auto;
+  position: static;
+  clear: none;
+  float: right;
+  padding-top: 14px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 55, ../sass/ie.scss */
+nav ul {
+  margin-bottom: 0;
+  display: block;
+  justify-content: space-between;
+}
+/* line 59, ../sass/ie.scss */
+nav ul ul {
+  display: none;
+}
+/* line 63, ../sass/ie.scss */
+nav li {
+  display: inline-block;
+  border-bottom: 0;
+}
+/* line 66, ../sass/ie.scss */
+nav li a {
+  border-left: 0;
+  padding: 28px 10px 37px 10px;
+}
+/* line 69, ../sass/ie.scss */
+nav li a:hover {
+  border-left: 0;
+}
+/* line 74, ../sass/ie.scss */
+nav li:last-child a {
+  padding-right: 0;
+}
+
+/* line 80, ../sass/ie.scss */
+.no-flexbox nav ul.dropdown {
+  display: none;
+}
+
+/* line 83, ../sass/ie.scss */
+.main_section {
+  min-height: 500px;
+  padding-top: 250px;
+}
+/* line 86, ../sass/ie.scss */
+.main_section:before {
+  background: #354f5f;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  opacity: .8;
+}
+
+/* line 94, ../sass/ie.scss */
+.main_section_text h1 {
+  font-size: 3.75em;
+  line-height: 0.6;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+/* line 100, ../sass/ie.scss */
+.main_section_text h2 {
+  font-size: 1.75em;
+  line-height: 1.28571;
+  letter-spacing: 0.1em;
+}
+
+/* line 106, ../sass/ie.scss */
+.challenges_wrappers {
+  margin: 0 -5px;
+}
+
+/* line 109, ../sass/ie.scss */
+.challenge {
+  flex-basis: calc(30% - 30px);
+  margin: 0 50px 70px;
+}
+/* line 112, ../sass/ie.scss */
+.challenge:first-child {
+  margin-left: 0;
+}
+/* line 115, ../sass/ie.scss */
+.challenge:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* line 119, ../sass/ie.scss */
+.section_imgoverlap {
+  position: relative;
+  padding-top: 75px;
+}
+/* line 122, ../sass/ie.scss */
+.section_imgoverlap .section_contentbox {
+  padding: 45px 0 45px 45px;
+  position: absolute;
+  margin: 0;
+  left: 55%;
+  top: 50%;
+  margin-top: -140px;
+}
+
+/* line 131, ../sass/ie.scss */
+.home .section_imgoverlap {
+  margin-bottom: 40px;
+}
+/* line 133, ../sass/ie.scss */
+.home .section_imgoverlap .section_image {
+  max-width: 975px;
+  width: 75%;
+}
+/* line 137, ../sass/ie.scss */
+.home .section_imgoverlap .section_contentbox {
+  max-width: 486px;
+}
+
+/* line 141, ../sass/ie.scss */
+.challenges_wrappers {
+  margin: 0 -5px;
+}
+
+/* line 144, ../sass/ie.scss */
+.challenge {
+  padding: 2px;
+  border-width: 0;
+  border-color: transparent;
+  border-bottom: 10px solid #F7B352;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  height: 390px;
+  width: 25%;
+  float: left;
+  margin: 0 50px 70px;
+}
+/* line 158, ../sass/ie.scss */
+.challenge:hover {
+  padding: 0;
+  border-width: 2px 2px 2px 2px;
+}
+/* line 162, ../sass/ie.scss */
+.challenge .challenge_inside {
+  padding: 40px 25px 53px;
+}
+/* line 165, ../sass/ie.scss */
+.challenge h3 {
+  font-size: 1rem;
+  line-height: 1.375;
+}
+/* line 169, ../sass/ie.scss */
+.challenge .popupcta {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  background: #F7B352;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  font-size: 0.9375rem;
+  line-height: 1.26667;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  padding: 22px 20px;
+  background: #f7b352;
+  background: -moz-linear-gradient(-45deg, #f7b352 20%, #f2ddc4 44%, #b27725 100%);
+  background: -webkit-linear-gradient(-45deg, #f7b352 20%, #f2ddc4 44%, #b27725 100%);
+  background: linear-gradient(135deg, #f7b352 20%, #f2ddc4 44%, #b27725 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', endColorstr='#b27725',GradientType=1 );
+  background-size: 600% 600%;
+  -webkit-animation: Gradient 8s ease infinite;
+  -moz-animation: Gradient 8s ease infinite;
+  animation: Gradient 8s ease infinite;
+}
+/* line 191, ../sass/ie.scss */
+.challenge .popupcta:after {
+  content: '';
+  display: inline-block;
+  margin-left: 10px;
+  width: 7.5px;
+  height: 11.5px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background: url(../images/icon-rightarrow.svg) no-repeat top left;
+}
+/* line 202, ../sass/ie.scss */
+.challenge:hover .popupcta {
+  bottom: 0;
+}
+
+/* line 207, ../sass/ie.scss */
+.challenge_description, .popupcta {
+  display: block;
+}
+
+/* line 210, ../sass/ie.scss */
+.section_challenges .mobilebtn {
+  display: none;
+}
+
+/* line 213, ../sass/ie.scss */
+.challenge_description p {
+  text-transform: none;
+  float: none;
+  font-size: 0.875rem;
+  line-height: 1.85714;
+}
+
+/* line 219, ../sass/ie.scss */
+.gradient_icon {
+  width: 70px;
+  height: 70px;
+}
+/* line 222, ../sass/ie.scss */
+.gradient_icon img, .gradient_icon svg {
+  width: 70px;
+  height: 70px;
+}
+
+/* :::::::::::::::::::::::::::::::::::::: Full width image CTA */
+/* line 228, ../sass/ie.scss */
+.image_cta {
+  position: relative;
+  padding: 20px 60px 0 60px;
+  max-width: 1400px;
+  margin: 0 auto 70px;
+}
+/* line 233, ../sass/ie.scss */
+.image_cta .image_cta_msg {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+  max-width: 486px;
+  padding: 40px;
+}
+/* line 240, ../sass/ie.scss */
+.image_cta img {
+  display: block;
+}
+/* line 243, ../sass/ie.scss */
+.image_cta p {
+  font-size: 0.9375rem;
+  line-height: 1.66667;
+}
+
+/* :::::::::::::::::::::::::::::::::::::: Collapsible section */
+/* line 249, ../sass/ie.scss */
+.collapsible_section {
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto 70px;
+}
+/* line 253, ../sass/ie.scss */
+.collapsible_section .section_col1 {
+  width: 40%;
+  float: left;
+  padding-right: 40px;
+}
+/* line 258, ../sass/ie.scss */
+.collapsible_section .section_col2 {
+  width: 60%;
+  float: right;
+}
+
+/* line 263, ../sass/ie.scss */
+.collapsible_wrapper {
+  padding: 35px 45px;
+}
+
+/* line 267, ../sass/ie.scss */
+.collapsible_item.open h3 {
+  font-size: 1.5625rem;
+  line-height: 0.88;
+}
+/* line 271, ../sass/ie.scss */
+.collapsible_item h3 {
+  font-size: 1rem;
+  line-height: 1.375;
+}
+
+/* :::::::::::::::::::::::::::::::::::::: Endpage CTA */
+/* line 278, ../sass/ie.scss */
+.endpage_cta_wrapper:before {
+  background: #354f5f;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  opacity: .8;
+}
+
+/* line 286, ../sass/ie.scss */
+.endpage_cta h2 {
+  font-size: 2.5rem;
+  line-height: 0.625;
+}
+/* line 290, ../sass/ie.scss */
+.endpage_cta h3 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+/* :::::::::::::::::::::::::::::::::::::: Footer */
+/* line 296, ../sass/ie.scss */
+.footer_links {
+  width: auto;
+  padding-right: 6%;
+}
+
+/* line 300, ../sass/ie.scss */
+.btn_quicklinks {
+  width: 280px;
+  float: left;
+}
+
+/* line 304, ../sass/ie.scss */
+.up_logo {
+  float: right;
+  clear: none;
+}
+
+/* line 309, ../sass/ie.scss */
+.social_links a {
+  padding: 10px 4px;
+}
+/* line 313, ../sass/ie.scss */
+.social_links .facebook svg, .social_links .twitter svg, .social_links .instagram svg, .social_links .linkedin svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* line 320, ../sass/ie.scss */
+.footer_wrapper .logo {
+  margin-right: 60px;
+}
+
+/* line 324, ../sass/ie.scss */
+.copyright {
+  clear: both;
+}
