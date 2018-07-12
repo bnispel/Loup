@@ -94,12 +94,12 @@ ul {
 		content: '';
 		display: block;
 		float: right;
-		margin: 3px 0 0 7px;
+		margin: 1px 0 0 7px;
 		width: 7.5px;
 		height: 11.5px;
 		@include transition(.2s);
 		background: url(../images/icon-rightarrow-spruce.svg) no-repeat top left;
-		background-size: contain;
+		background-size: 8px 13px;
 	}
 	&:hover {
 		border: 1px solid $yellow;
@@ -107,7 +107,7 @@ ul {
 		color: $yellow;
 		&:after {
 			background: url(../images/icon-rightarrow-yellow.svg) no-repeat top left;
-			background-size: contain;
+			background-size: 8px 13px;
 		}
 	}
 }
@@ -118,6 +118,7 @@ ul {
 	@include transition(0);
 	&:after {
 		background: url(../images/icon-rightarrow.svg) no-repeat top left;
+		background-size: 8px 13px;
 	}
 	&:hover {
 		background: rgb(3,91,153);
@@ -418,11 +419,13 @@ nav {
 .solutionsnav {
 	overflow: hidden;
 	li {
-		float: left;
-		width: 50%;
+		display: block;
 		.challenge {
 			padding: 15px;
 		}
+	}
+	.challenges_dropdown {
+		display: none;
 	}
 }
 /* ::::::::::::: Sticky nav */
@@ -454,6 +457,27 @@ nav {
 		text-align: center;
 		margin-bottom: 22px;
 		padding: 17px 30px;
+		&:after {
+			display: none;
+		}
+		span {
+			display: inline-block;
+		}
+		span:after {
+			content: '';
+			display: block;
+			float: right;
+			margin: 1px 0 0 7px;
+			width: 8.5px;
+			height: 14.5px;
+			@include transition(.2s);
+			background: url(../images/icon-rightarrow-spruce.svg) no-repeat top left;
+			background-size: 8px 13px;
+		}
+		&:hover span:after {
+			background: url(../images/icon-rightarrow-yellow.svg) no-repeat top left;
+			background-size: 8px 13px;
+		}
 	}
 }
 .footer_links {
@@ -1017,6 +1041,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			&:last-child {
 				a {
 					padding-right: 0;
+					&:after {
+						width: calc(100% - 10px);
+					}
 				}
 			}
 		}
@@ -1060,27 +1087,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			width: 100%;
 			padding: 20px;
 			li {
-				width: calc(20% - 30px);
+				display: none;
+			}
+			li.challenges_dropdown {
 				display: block;
-				float: left;
-				margin: 0 15px 20px;
-				&:nth-child(3n) {
-					margin-right:15px;
-				}
+			}
+		}
+		li.challenges_dropdown:hover {
+			a {
+				border-bottom: 0;
 			}
 		}
 		.challenge {
-			flex-basis: auto;
-			height: 200px;
-			margin: 0;
 			padding: 10px;
-			border-left: 1px solid $white;
+			border-bottom: 0;
 			@include flexbox();
 			@include flexcenter();
+			border-left: 0;
 			&:hover {
-				border-left: 2px solid #F7B352;
-				border-bottom: 2px solid #F7B352;
 				padding-left: 10px;
+				border-left: 0;
 			}
 			.challenge_inside {
 				padding: 30px 10px;
