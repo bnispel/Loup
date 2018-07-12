@@ -9,6 +9,7 @@
 	text-align: center;
 	@include displaygrid();
 	@include centergrid();
+	@include transition(.2s);
 	&:before {
 		content: '';
 		display: block;
@@ -92,6 +93,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		font-family: $main_font;
 	}
 }
+.main_section_overlay {
+	position: absolute;
+	@include transition(.2s);
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $athensgray;
+	z-index: 10;
+	padding: 45px 5px;
+	.button {
+		background: none;
+		padding: 15px 20px;
+		&:after {
+			margin: 3px 0 0 7px;
+		}
+	}
+	h2 {
+		margin-bottom: 5px;
+	}
+	.h2 {
+		font-size: px_to_rem(20px);
+		line-height: px_to_decimal(24px, 20px);
+		letter-spacing: XDunits_to_ems(80);
+		font-weight: $font_medium;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+		font-family: $main_font;
+	}
+}
 .no-cssgrid {
 	.main_section {
 		display: table;
@@ -102,141 +133,59 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		vertical-align: middle;
 	}
 }
-/* :::::::::::::::::::::::::::::::::::::: Challenges Section */
-.desktopbtn, .challenge .popupcta {
-	display: none;
+.main_section_wrapper.is-active {
+	.main_section {
+		max-height: 800px;
+		height: 800px;
+	}
+	.main_section_overlay {
+		top: 0;
+	}
 }
 .section_challenges {
+	.desktopbtn {
+		display: none;
+	}
 	.mobilebtn {
-		width: 290px;
+		width: 280px;
 		margin: 0 auto;
 		display: block;
 	}
 }
-.challenge_description {
-	display: none;
-}
-.gradient_icon {
-	width: 50px;
-	height: 50px;
-	margin: 0 auto 15px;
-	display: block;
-	background: rgb(51,62,72);
-	background: -webkit-linear-gradient(bottom left, rgba(51,62,72,1) 29%, rgba(64,180,229,1) 63%);
-	background: -o-linear-gradient(bottom left, rgba(51,62,72,1) 29%, rgba(64,180,229,1) 63%);
-	background: linear-gradient(to top right, rgba(51,62,72,1) 29%, rgba(64,180,229,1) 63%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', endColorstr='#40b4e5',GradientType=1 );	cursor: pointer;
-	position: relative;
-	background-size: 600% 600%;
-	-webkit-animation: Gradient 4s ease infinite;
-	-moz-animation: Gradient 4s ease infinite;
-	animation: Gradient 4s ease infinite;
-	&:before {
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-		transition: all .3s ease;
-		background: rgb(247,179,82);
-		background: -moz-linear-gradient(-45deg, rgba(247,179,82,1) 20%, rgba(242,221,196,1) 44%, rgba(178,119,37,1) 100%);
-		background: -webkit-linear-gradient(-45deg, rgba(247,179,82,1) 20%,rgba(242,221,196,1) 44%,rgba(178,119,37,1) 100%);
-		background: linear-gradient(135deg, rgba(247,179,82,1) 20%,rgba(242,221,196,1) 44%,rgba(178,119,37,1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', endColorstr='#b27725',GradientType=1 );			background-size: 600% 600%;
-		-webkit-animation: Gradient 4s ease infinite;
-		-moz-animation: Gradient 4s ease infinite;
-		animation: Gradient 4s ease infinite;
-	}
-	svg, img {
-		 display: block;
-		 width: 50px;
-		 height: 50px;
-		 position: relative;
-		 z-index: 3;
-	}
-}
-.challenges_wrappers {
-	padding: 20px 0;
-	margin: 0 -10px;
-	text-align: center;
-	@include flexbox();
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: center;
-}
-.challenge {
-	text-align: center;
-	@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
-	@include flexbox(); 
-	flex-basis: calc(50% - 22px);  
-	height: calc((100vw - 72px) / 2);
-	justify-content: center;
-	flex-direction: column;
-	margin: 0 10px 20px;
-	align-content: center;
-	text-decoration: none;
-	border: 1px solid $white;
-	&:nth-child(2n) .gradient_icon {
-		animation-delay: .3s;
-	}
-	&:nth-child(3n) .gradient_icon {
-		animation-delay: .9s;
-	}
-	&:nth-child(4n) .gradient_icon {
-		animation-delay: .7s;
-	}
-	&:nth-child(5n) .gradient_icon {
-		animation-delay: .5s;
-	}
-	&:hover {
-		border: 1px solid $yellow;
-		@include dropshadow(0px, 6px, 12px, 0px, $black, .16);
-		.gradient_icon {
-			&:before {
-				opacity: 1;
-			}
-		}
-		h3 {
-			color: $yellow;
-		}
-	}
-	h3 {
-		text-transform: uppercase;
-		@include transition(.4s);
-		font-size: px_to_rem(14px);
-		line-height: px_to_decimal(16px, 14px);
-		letter-spacing: XDunits_to_ems(120);
-	}
-	
-}
-.no-flexbox {
-	.challenges_wrappers {
-		display: block;	
-	}
-}
 @media screen and (min-width:550px) {
-	.challenge {
-		flex-basis: calc(33% - 19px);
-		height: calc((100vw - 72px) / 3);
+	.main_section_overlay .challenges_wrappers {
+		max-width: 490px;
 	}
-	.no-flexbox {
-		.challenge {
-			width: 30%;
+	.main_section_wrapper.is-active {
+		.main_section {
+			height: 620px;
 		}
 	}
 }
 @media screen and (min-width:800px) {
 	.home .section_imgoverlap {
 		margin-bottom: 40px;
+		padding-top: 100px;
 		.section_image {
 			max-width: 975px;
 			width: 75%;
+			margin-top: 0;
 		}
 		.section_contentbox {
 			max-width: 486px;
+		}
+	}
+	.main_section_overlay {
+		.challenges_wrappers {
+			max-width: 540px;
+		}
+		.challenge {
+			h3 {
+				font-size: px_to_rem(12px);
+			}
+			.challenge_inside {
+				padding: 30px 10px 30px;
+			}
 		}
 	}
 	.section_challenges {
@@ -254,15 +203,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			display: block;
 			margin-top: 10px;
 		}
-	}
-	.challenges_wrappers {
-		clear: both;
-	}
+		.mobilebtn {
+			display: none;
+		}
+	}	
 }
 @media screen and (min-width:1000px) {
 	.main_section {
 		height: calc(100vh - 107px);
 		max-height: 950px;
+		border-bottom: 60px solid white;
 		&:after {
 			max-width: 410px;
 		}
@@ -285,103 +235,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			margin-bottom: 27px;
 		}
 	}
+	.main_section_overlay {
+		.challenges_wrappers {
+			max-width: 800px;
+		}
+		.challenge {
+			border-bottom: 0;	
+			margin: 0 15px 50px;
+			flex-basis: calc(33% - 30px);	
+			height: 200px;
+			@include flexcenter();
+			h3 {
+				font-size: px_to_rem(16px);
+				line-height: px_to_decimal(22px, 16px);
+			}
+		}
+		.h1 {
+			margin-bottom: 13px;
+		}
+		.h2 {
+			font-size: px_to_rem(23px);
+			line-height: px_to_decimal(30px, 23px);
+			letter-spacing: XDunits_to_ems(80);
+			margin-bottom: 27px;
+		}
+		.gradient_icon {
+			height: 60px;
+			width: 60px;
+			img {
+				height: 60px;
+				width: 60px;
+			}
+		}
+	}
+	.main_section_wrapper.is-active .main_section {
+		height: calc(100vh - 107px);
+	}
 }
 @media screen and (min-width:1100px) {
-	.challenges_wrappers {
-		margin: 0 -22px;
-	}
-	.challenge {
-		padding: 2px;
-		justify-content: flex-start;
-		border-width: 0;
-		border-color: transparent;
-		border-bottom: 10px solid $yellow;
-		@include transition(.2s);
-		position: relative;
-		text-transform: uppercase;
-		font-weight: $font_bold;
-		overflow: hidden;
-		height: 390px;
-		width: 100%;
-		flex-basis: calc(33% - 40px);
-		margin: 0 20px 50px;
-		&:hover {
-			padding: 0;
-			transform: scale(1.05);
-			border-width: 2px 2px 2px 2px;
-		}
-		.challenge_inside {
-			padding: 40px 25px 53px;
-			width: 100%;
-		}
-		h3 {
-			font-size: px_to_rem(16px);
-			line-height: px_to_decimal(22px, 16px);
-		}
-		.popupcta {
-			display: block;
-			position: absolute;
-			z-index: 5;
-			bottom: -100px;
-			left: 0;
-			width: 100%;
-			background: $yellow;
-			@include transition(.2s);
-			font-size: px_to_rem(15px);
-			line-height: px_to_decimal(19px, 15px);
-			letter-spacing: XDunits_to_ems(120);
-			color: $white;
-			padding: 22px 20px;
-			background: rgb(247,179,82);
-			background: -moz-linear-gradient(-45deg, rgba(247,179,82,1) 20%, rgba(242,221,196,1) 44%, rgba(178,119,37,1) 100%);
-			background: -webkit-linear-gradient(-45deg, rgba(247,179,82,1) 20%,rgba(242,221,196,1) 44%,rgba(178,119,37,1) 100%);
-			background: linear-gradient(135deg, rgba(247,179,82,1) 20%,rgba(242,221,196,1) 44%,rgba(178,119,37,1) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', endColorstr='#b27725',GradientType=1 );			background-size: 600% 600%;
-			-webkit-animation: Gradient 8s ease infinite;
-			-moz-animation: Gradient 8s ease infinite;
-			animation: Gradient 8s ease infinite;
-			&:after {
-				content: '';
-				display: inline-block;
-				margin-left: 10px;
-				width: 7.5px;
-				height: 11.5px;
-				@include transition(.2s);
-				background: url(../images/icon-rightarrow.svg) no-repeat top left;
-			}
-		}
-		&:hover {
-			.popupcta {
-				bottom: 0;
-			}
-		}
-	}
-	.challenge_description, .popupcta {
-		display: block;
-	}
-	.section_challenges .mobilebtn {
-		display: none;
-	}
-	.challenge_description p {
-		text-transform: none;
-		float: none;
-		font-size: px_to_rem(14px);
-		line-height: px_to_decimal(26px, 14px);
-	}
-	.gradient_icon {
-		width: 70px;
-		height: 70px;
-		img, svg {
-			width: 70px;
-			height: 70px;
-		}
-	}
-	.no-flexbox {
+	.main_section_overlay {
 		.challenge {
-			width: 27%;
-			float: left;
-			a {
-				display: block;
+			&:hover {
+				border-bottom: 2px solid $yellow;
 			}
 		}
 	}
@@ -403,17 +298,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			letter-spacing: XDunits_to_ems(100);
 		}
 	}
-	.challenges_wrappers {
-		margin: 0 -5px;
+	.main_section_overlay {
+		@include flexbox();
+		width: 100%;
+		@include flexcenter();
+		.main_section_overlay_inside {
+			width: 100%;
+		}
+		.h1 {
+			font-size: px_to_rem(50px);
+			line-height: px_to_decimal(34px, 50px);
+			font-weight: $font_semibold;
+		}
+		.h2 {
+			font-size: px_to_rem(25px);
+			line-height: px_to_decimal(34px, 25px);
+			letter-spacing: XDunits_to_ems(100);
+		}
+		.button {
+			float: right;
+		}
+		.challenges_wrappers {
+			max-width: 1200px;
+		}
+		.challenge:nth-child(3n) {
+			margin-right: 15px;
+		}
 	}
-	.challenge {
-		flex-basis: calc(30% - 30px);
-		margin: 0 50px 70px;
-		&:first-child {
-			margin-left: 0;
-		}
-		&:nth-child(3n) {
-			margin-right:0;
-		}
+	.main_section_wrapper.is-active .main_section {
+		height: calc(100vh - 134px);
+		max-height: 1200px;
 	}
 }

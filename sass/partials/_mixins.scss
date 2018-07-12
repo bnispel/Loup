@@ -291,3 +291,35 @@ $base-font-size: 16px;
 		margin-top: 0px;
 	}
 }
+@-webkit-keyframes fadeinfrombottom {
+	0% {
+		opacity: 0;
+		margin-top: 50px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+@-moz-keyframes fadeinfrombottom {
+	0% {
+		opacity: 0;
+		margin-top: 50px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+@keyframes fadeinfrombottom {
+	0% {
+		opacity: 0;
+		margin-top: 50px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}

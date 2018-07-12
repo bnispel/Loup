@@ -42,6 +42,22 @@ $( document ).ready(function() {
 		    return attr.replace(/\.png$/, ".svg");
 		});   
 	}
+	$(".collapsible_handle").click(function(){
+	    if ( $(this).parent().hasClass("open") ) {
+		    $('.collapsible_item').removeClass("open");
+		} else {
+			$('.collapsible_item').removeClass("open");
+			$(this).parent().addClass("open");
+		}
+	});
+	$(".dropdownbtn").click(function(){
+	    if ( $(this).closest("li").hasClass("active") ) {
+		    $('.nav li').removeClass("active");
+		} else {
+			$('.nav li').removeClass("active");
+			$(this).closest("li").addClass("active");
+		}
+	});
 });
 $(window).scroll(function(){
 	if($(window).scrollTop() >= 150){
