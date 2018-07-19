@@ -8,6 +8,11 @@
 /* Global styles */
 @import 'partials/_global.scss';
 @import 'partials/_challenges.scss';
+@import 'partials/_sections.scss';
 
 /* Page specific styles */
 @import 'pages/_home.scss';
+@import 'pages/_interior.scss';
+
+/* Vendor styles */
+@import 'vendor/_scrollbar.scss';

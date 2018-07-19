@@ -1,16 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 <head>
 	<meta charset="utf-8">
 	<title>Loup Logistics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="icon" type="image/png" sizes="16x16 32x32 48x48"  href="favicon.png" />
 	<link rel="stylesheet" href="stylesheets/styles.css">
 	<!--[if IE]>
     	<link rel="stylesheet" href="stylesheets/ie.css">
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie8.css">
 	<![endif]-->
 </head>
 <body>
@@ -116,7 +119,15 @@
 									</ul>
 								</li>
 								<li><a href="#">Suppliers</a></li>
-								<li><a href="#">News & Events</a></li>
+								<li><a href="#">News & Events <span class="dropdownbtn"></span></a>
+									<ul class="dropdown">
+										<li><a href="#">Announcements</a></li>
+										<li><a href="#">Articles</a></li>
+										<li><a href="#">Events</a></li>
+										<li><a href="#">Solutions in Action</a></li>
+										<li><a href="#">Tips & Tricks</a></li>
+									</ul>
+								</li>
 								<li><a href="#">Connect with us</a></li>
 							</ul>
 						</nav>
@@ -187,7 +198,7 @@
 				</div>
 			</div>
 			<div class="section section_imgoverlap">
-				<div class="section_contentbox">
+				<div class="section_contentbox parallax" data-speed=".4">
 					<h2>Welcome to Loup</h2>
 					<p>Creative solutions, innovative technology, experts who care. Let’s keep your supply chain moving.   </p>
 					<a href="#" class="button">Learn more</a>
@@ -200,7 +211,7 @@
 				<a href="#" class="button desktopbtn">What's your challenge?</a>
 				<h2>Why Work With Loup?</h2>
 				<p>We’re ready to resolve your challenges.</p>
-				<h4 class="backuptitle">What's your challenge?</h4>
+				<h5 class="backuptitle">What's your challenge?</h5>
 				<div class="challenges_wrappers challenge_teasers">
 					<a href="#" class="challenge">
 						<div class="challenge_inside">
@@ -277,7 +288,7 @@
 			</div>
 			<div class="section image_cta">
 				<img src="images/placeholder_fullimgcta.jpg" />
-				<div class="image_cta_msg">
+				<div class="image_cta_msg cta_right">
 					<h4>READY TO TRANSFORM YOUR SUPPLY&nbsp;CHAIN?</h4>
 					<h5>You’ve come to the right place.</h5>
 					<p>Loup is where your needs craft our goals. It’s where solutions replace your challenges. And it’s where your supply chain becomes its very best.</p>
@@ -342,7 +353,7 @@ goal, we’re here to help you achieve it.</p>
 									<li>Warehousing</li>
 									<li>Packaging</li>
 									<li>Equipment</li>
-									<li>Equipment</li>
+									<li>Distribution Centers</li>
 								</ul>
 							</div>
 						</div>
@@ -381,8 +392,7 @@ goal, we’re here to help you achieve it.</p>
 				<li><a href="#">Careers</a></li>
 			</ul>
 			<div class="btn_quicklinks">
-				<a href="#" class="button"><span>Secure site</span></a>
-				<a href="#" class="button"><span>Dashboard</span></a>
+				<a href="#" class="button"><span>Dashboard Login</span></a>
 			</div>
 			<div class="up_logo">
 				<p>A Union Pacific Company</p>

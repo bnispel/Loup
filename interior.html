@@ -1,24 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 <head>
 	<meta charset="utf-8">
 	<title>Loup Logistics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-	<link rel="icon" type="image/png" href="favicon.png" />
-	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="icon" type="image/png" sizes="16x16 32x32 48x48"  href="favicon.png" />
+	<link rel="stylesheet" href="stylesheets/styles.css?v=1.2">
 	<!--[if IE]>
     	<link rel="stylesheet" href="stylesheets/ie.css">
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 	<![endif]-->
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie8.css">
+	<![endif]-->
 </head>
 <body>
-	<div class="page_wrapper home">
+	<div class="page_wrapper">
 		<div class="main_wrapper">
 			<header>
 				<div class="quicklinks_wrapper quicklinks_desktop">
-					<div class="quicklinks"><!-- If more than 4 items - add class longlinks -->
+					<div class="quicklinks">
 						<a href="#">Rates</a>
 						<a href="#">Facilities</a>
 						<a href="#">Tracking</a>
@@ -29,10 +32,10 @@
 					<div class="mainnav">
 						<div class="mainnav_inside">
 							<a href="#" class="logo">
-								<img src="images/logo.png" class="svg" />
+								<img src="images/logo.svg" class="svg" />
 							</a>
-							<div class="menubtn">
-								<button class="hamburger hamburger--spin" type="button" data-active="mainnav" data-toggle="nav">
+							<div class="menubtn" id="openmenu">
+								<button class="hamburger hamburger--spin" type="button">
 								  <span class="hamburger-box">
 								    <span class="hamburger-inner"></span>
 								  </span>
@@ -50,203 +53,461 @@
 							</div>
 							<ul>
 								<li><a href="#">What We Do</a></li>
-								<li>
-									<a href="#">Solutions</a>
+								<li class="solutionsnav">
+									<a href="#">Solutions<span class="dropdownbtn"></span></a>
 									<ul class="dropdown">
-										<li><a href="#">Costs</a></li>
+										<li class="challenges_dropdown">
+											<div class="challenges_wrappers">
+												<a href="#" class="challenge">
+													<div class="challenge_inside">
+														<div class="gradient_icon">
+															<img src="images/iconblock-cost.png" class="svg" />
+														</div>
+														<h3>Cost</h3>
+													</div>
+												</a>
+												<a href="#" class="challenge">
+													<div class="challenge_inside">
+														<div class="gradient_icon">
+															<img src="images/iconblock-time.png" class="svg" />
+														</div>
+														<h3>Time</h3>
+													</div>
+												</a>
+												<a href="#" class="challenge">
+													<div class="challenge_inside">
+														<div class="gradient_icon">
+															<img src="images/iconblock-visibility.png" class="svg" />
+														</div>
+														<h3>Visibility</h3>
+													</div>
+												</a>
+												<a href="#" class="challenge">
+													<div class="challenge_inside">
+														<div class="gradient_icon">
+															<img src="images/iconblock-access.png" class="svg" />
+														</div>
+														<h3>Access & Capacity</h3>
+													</div>
+												</a>
+												<a href="#" class="challenge">
+													<div class="challenge_inside">
+														<div class="gradient_icon">
+															<img src="images/iconblock-supplychain.png" class="svg" />
+														</div>
+														<h3>Supply Chain Management</h3>
+													</div>
+												</a>
+											</div>
+										</li>
+										<li><a href="#">Cost</a></li>
 										<li><a href="#">Time</a></li>
 										<li><a href="#">Visibility</a></li>
-										<li><a href="#">Access and Capacity</a></li>
+										<li><a href="#">Access & Capacity</a></li>
+										<li><a href="#">Supply Chain Management</a></li>
 									</ul>
 								</li>
 								<li>
-									<a href="#">Resource Center</a>
+									<a href="#">Resource Center <span class="dropdownbtn"></span></a>
 									<ul class="dropdown">
 										<li><a href="#">What is transloading?</a></li>
 										<li><a href="#">Rail 101</a></li>
 										<li><a href="#">FAQs, Glossary, etc.</a></li>
 										<li><a href="#">Rates</a></li>
-										<li><a href="#">Fina a facility</a></li>
+										<li><a href="#">Find a facility</a></li>
 										<li><a href="#">Intermodal Savings Calculator</a></li>
 									</ul>
 								</li>
 								<li><a href="#">Suppliers</a></li>
-								<li><a href="#">News & Events</a></li>
+								<li><a href="#">News & Events <span class="dropdownbtn"></span></a>
+									<ul class="dropdown">
+										<li><a href="#">Announcements</a></li>
+										<li><a href="#">Articles</a></li>
+										<li><a href="#">Events</a></li>
+										<li><a href="#">Solutions in Action</a></li>
+										<li><a href="#">Tips & Tricks</a></li>
+									</ul>
+								</li>
 								<li><a href="#">Connect with us</a></li>
 							</ul>
 						</nav>
 					</div>
 				</div>
 			</header>
-			<div class="section main_section_wrapper">
-				<div class="main_section">
-					<div class="main_section_img">
-					</div>
-					<div class="main_section_text">
-						<h1>Shipping Challenges?</h1>
-						<h2>We have solutions.</h2>
-						<a href="#" class="button alt">Find Yours</a>
-					</div>
-				</div>
+			<div class="section section_intro">
+				<h1>Who we are</h1>
+				<p>Intro text starts here lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. </p>
 			</div>
 			<div class="section section_imgoverlap">
 				<div class="section_contentbox">
-					<h2>Welcome to Loup</h2>
-					<p>Creative solutions, innovative technology, experts who care. Let’s keep your supply chain moving.   </p>
+					<h2>Headline here</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam <a href="#">this is a link</a> odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. Sed lobortis facilisis blandit. Donec quis nibh vitae.</p>
+					<h4>Another Headline</h4>
+					<p>If you’re looking for the most effective, efficient and economical transportation solutions on the market, we’ll combine shipping modes to make it happen. </p>
+					<h5>This is a list:</h5>
+					<ul>
+						<li><strong>Bold Description</strong> Morbi a dolor vitae odio accumsan luctus</li>
+						<li><strong>Bold Description</strong> Maecenas eget lorem euismod, suscipit.</li>
+						<li><strong>Bold Description</strong> Donec porta turpis at ullamcorper tempus.</li>
+					</ul>
 					<a href="#" class="button">Learn more</a>
 				</div>
-				<div class="section_image">
-					<img src="images/placeholder_homewelcome.jpg" />
+				<div class="section_image parallax" data-speed=".4">
+					<img src="images/placeholder_interiorimgoverlap.jpg" />
 				</div>
 			</div>
-			<div class="section section_challenges">
-				<a href="#" class="button desktopbtn">What's your challenge?</a>
-				<h2>Why Work With Loup?</h2>
-				<p>We’re ready to resolve your challenges.</p>
-				<h4 class="backuptitle">What's your challenge?</h4>
-				<div class="challenges_wrappers">
-					<a href="#" class="challenge">
-						<div class="challenge_inside">
-							<div class="gradient_icon">
-								<img src="images/iconblock-cost.png" class="svg" />
-							</div>
-							<h3>Cost</h3>
-							<div class="challenge_description">
-								<p>Looking to reduce costs? We’ll find the most efficient shipping modes to get your products where they’re going. Already have a good plan in place? We’ll identify cost-saving efficiencies.</p>
-							</div>
-							<span class="popupcta">Let us help you</span>
+			<div class="section">
+				<div class="carousel_wrapper">
+					<div class="carousel_content">
+						<div class="slide">
+							<blockquote>
+								<p>We feel that Loup has our best interest at heart. Today, it’s rare to find a company that is actually interested in us as people and not just as customers. They truely care about our problems and help us find solutions. <img src="images/icon-quote.png" class="quoteend"></p>
+								<footer>BRIDGITTE RICHARDSON</footer>
+							</blockquote>
 						</div>
-					</a>
-					<a href="#" class="challenge">
-						<div class="challenge_inside">
-							<div class="gradient_icon">
-								<img src="images/iconblock-time.png" class="svg" />
-							</div>
-							<h3>Time</h3>
-							<div class="challenge_description">
-								<p>Need just-in-time delivery? Or simply a transportation plan that’s reliable. Every. Single. Time? We can do both.</p>
-							</div>
-							<span class="popupcta">Let us help you</span>
-						</div>
-					</a>
-					<a href="#" class="challenge">
-						<div class="challenge_inside">
-							<div class="gradient_icon">
-								<img src="images/iconblock-visibility.png" class="svg" />
-							</div>
-							<h3>Visibility</h3>
-							<div class="challenge_description">
-								<p>Wondering where your shipments are &mdash; and when they’ll get to where they’re going? Our technology gives you the visibility you’re seeking.</p>
-							</div>
-							<span class="popupcta">Let us help you</span>
-						</div>
-					</a>
-					<a href="#" class="challenge">
-						<div class="challenge_inside">
-							<div class="gradient_icon">
-								<img src="images/iconblock-access.png" class="svg" />
-							</div>
-							<h3>Access & Capacity</h3>
-							<div class="challenge_description">
-								<p>Want access to rail? Looking to reach a new market? We can get you there. Need equipment, storage or surge capacity? We’ll deliver that, too.</p>
-							</div>
-							<span class="popupcta">Let us help you</span>
-						</div>
-					</a>
-					<a href="#" class="challenge">
-						<div class="challenge_inside">
-							<div class="gradient_icon">
-								<img src="images/iconblock-supplychain.png" class="svg" />
-							</div>
-							<h3>Supply Chain Management</h3>
-							<div class="challenge_description">
-								<p>We can customize a logistics management solution just for you. Our services can be as highor low-touch as you feel necessary &mdash; you make the call.</p>
-							</div>
-							<span class="popupcta">Let us help you</span>
-						</div>
-					</a>
+					</div>
+					<div class="carousel_navigation">
+						<button class="btn_prev">Prev</button>
+						<ul>
+							<li class="active"><a href="#"><span>Slide 1</span></a></li>
+							<li><a href="#"><span>Slide 2</span></a></li>
+							<li><a href="#"><span>Slide 3</span></a></li>
+						</ul>
+						<button class="btn_next">Next</button>
+					</div>
 				</div>
-				<a href="#" class="button mobilebtn">Unsure? Let us help</a>
-			</div>
-			<div class="section image_cta">
-				<img src="images/placeholder_fullimgcta.jpg" />
-				<div class="image_cta_msg">
-					<h4>READY TO TRANSFORM YOUR SUPPLY&nbsp;CHAIN?</h4>
-					<h5>You’ve come to the right place.</h5>
-					<p>Loup is where your needs craft our goals. It’s where solutions replace your challenges. And it’s where your supply chain becomes its very best.</p>
+				<h2>Single Column section</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. Sed lobortis facilisis blandit. Donec quis nibh vitae quam ultricies condimentum. Mauris at imperdiet massa, eget viverra mauris. Quisque varius imperdiet tincidunt. Sed ut quam eget ante viverra euismod ut non.</p>
+				<div class="image_cta">
+					<img src="images/placeholder_interiorfullimg.jpg" class="full_width" />
+					<div class="image_cta_msg cta_left">
+						<h4>Optional Box</h4>
+						<h5>Subhead here</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt conser lectetur molestie. Nam molestie mauris velit, eu consectetur magna gravida at.</p>
+					</div>
 				</div>
 			</div>
-			<div class="section collapsible_section">
+			<div class="section section_break">
+				<h1>Section Break</h1>
+				<p>If it ever occurs where we need to add a new section you can use this style here.</p>
+			</div>
+			<div class="section section_twocol">
+				<h2>Two Column Section</h2>
 				<div class="section_col1">
-					<h2>Your Challenges Inspire Our Solutions</h2>
-					<p>Reach new markets. Resolve supply chain glitches. Find a better way forward. Whatever your
-goal, we’re here to help you achieve it.</p>
-					<p>Our comprehensive supply chain solutions are customized to meet your needs and cost requirements.</p>   
+					<h4>Another headline</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. Sed lobortis facilisis blandit. Donec quis nibh vitae quam ultricies condimentum. Mauris at imperdiet massa, eget viverra mauris. Quisque varius imperdiet tincidunt. Sed ut quam eget ante viverra euismod ut non.</p>
 				</div>
 				<div class="section_col2">
-					<div class="collapsible_wrapper">
-						<div class="collapsible_item open">
-							<div class="collapsible_handle">
-								<h3>Door-to-door shipping</h3>
-								<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
-									<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
-									<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
-								</svg>
-							</div>
-							<div class="collapsible_content">
-								<p>If you’re looking for the most effective, efficient and economical transportation solutions on the market, we’ll combine shipping modes to make it happen.</p>
-								<p class="listtitle">We ship:</p>
-								<ul>
-									<li>Almost Any Commodity</li>
-									<li>Door to Door</li>
-									<li>Across North America</li>
-								</ul>
-							</div>
+					<h4>Another Headline</h4>
+					<p>Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. Sed lobortis facilisis blandit. Donec quis nibh vitae quam ultricies condimentum. Mauris at imperdiet massa, eget viverra mauris. Quisque varius imperdiet tincidunt. Sed ut quam eget ante viverra euismod ut non.</p>
+					<a href="#" class="button">Learn more</a>
+				</div>
+			</div>
+			<div class="section section_alt">
+				<div class="section_inside">
+					<h2>Section with a Pull Quote + Gray Background Option</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. Sed lobortis 
+	facilisis blandit. Donec quis nibh vitae quam ultricies condimentum. Mauris at imperd 
+	massa, eget viverra mauris. Quisque varius imperdiet tincidunt. Sed ut quam eget ante 
+	viverra euismod ut non.</p>
+					<blockquote>
+						<p>We feel that Loup has our best interest at heart. Today, it’s rare to find a company that is actually interested in us as people and not just as customers. They truely care about our problems and help us find solutions. <img src="images/icon-quote.png" class="quoteend"></p>
+						<footer>BRIDGITTE RICHARDSON</footer>
+					</blockquote>
+					<p>Aliquam metus magna, pulvinar vel libero et, viverra ullamcorper arcu. Nullam ac sceler
+	isque lectus. Aenean vitae sem id arcu eleifend auctor ac a orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur convallis luctus. Sed vitae tincidunt nisi. Pellentesque et accumsan enim. Aenean dapibus sollicitudin arcu, eu congue augue orre sdsid. Nam ut dolor consectetur, cursus augue quis, hendrerit libero. Proin sed egestas ligula. Pellentesque ornare sapien tincidunt, elementum urna in, posuere mauris. Nam pulvinar, metus in placerat rutrum, nunc dui lacinia turpis, at euismod. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor.</p>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Content Blocks</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor.</p>
+				<div class="content_blocks blocks-4">
+					<div class="block_item">
+						<div class="block_header">
+							<p>Block Title <span>Subhead here</span></p>
 						</div>
-						<div class="collapsible_item">
-							<div class="collapsible_handle">
-								<h3>Logistics</h3>
-								<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
-									<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
-									<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
-								</svg>
-							</div>
-							<div class="collapsible_content">
-								<p>If you’re looking for ways to make your supply chain run smoother — or to simply take a little work off your plate — we can customize a logistics management solution just for you.</p>
-								<h6>We ship:</h6>
-								<ul>
-									<li>Real-Time Visibility</li>
-									<li>Shipment Management</li>
-									<li>Cross-Border Clearance</li>
-									<li>On-Site Warehouse Management</li>
-								</ul>
-							</div>
+						<div class="block_content">
+							<ul>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p>Table text goes here</p></li>
+								<li><p>Table text goes here</p></li>
+							</ul>
+							<a href="#" class="button">Call to action</a>
 						</div>
-						<div class="collapsible_item">
-							<div class="collapsible_handle">
-								<h3>Specialized Services</h3>
-								<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
-									<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
-									<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
-								</svg>
-							</div>
-							<div class="collapsible_content">
-								<p>Can your supply chain benefit from specialized services? We’ll connect you.</p>
-								<ul>
-									<li>Warehousing</li>
-									<li>Packaging</li>
-									<li>Equipment</li>
-									<li>Equipment</li>
-								</ul>
-							</div>
+					</div>
+					<div class="block_item">
+						<div class="block_header">
+							<p>Block Title <span>Subhead here</span></p>
+						</div>
+						<div class="block_content">
+							<ul>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p>Table text goes here</p></li>
+								<li><p>Table text goes here</p></li>
+							</ul>
+							<a href="#" class="button">Call to action</a>
+						</div>
+					</div>
+					<div class="block_item">
+						<div class="block_header">
+							<p>Block Title <span>Subhead here</span></p>
+						</div>
+						<div class="block_content">
+							<ul>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p>Table text goes here</p></li>
+								<li><p>Table text goes here</p></li>
+							</ul>
+							<a href="#" class="button">Call to action</a>
+						</div>
+					</div>
+					<div class="block_item">
+						<div class="block_header">
+							<p>Block Title <span>Subhead here</span></p>
+						</div>
+						<div class="block_content">
+							<ul>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p><strong>BOLD</strong> table text</p></li>
+								<li><p>Table text goes here</p></li>
+								<li><p>Table text goes here</p></li>
+							</ul>
+							<a href="#" class="button">Call to action</a>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="section section_alt">
+				<div class="section_inside">
+					<h2>Form</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor.</p>
+					<form>
+						<div class="form_wrapper">
+							<div class="field field_half">
+								<label for="field1" tabindex="1"><span>This is the label</span></label>
+								<input type="text" name="field1">
+							</div>
+							<div class="field field_half">
+								<label for="field1" tabindex="2"><span>This is the label</span></label>
+								<input type="text" name="field1">
+							</div>
+							<div class="field field_half">
+								<label for="field1" tabindex="3"><span>This is the label</span></label>
+								<input type="text" name="field1">
+							</div>
+							<div class="field field_half">
+								<label for="field1" tabindex="4"><span>This is the label</span></label>
+								<input type="text" name="field1">
+							</div>
+							<div class="field field_half">
+								<label for="field1" tabindex="5"><span>This is the label</span></label>
+								<input type="text" name="field1">
+							</div>
+							<div class="field field_half field_wrapper">
+								<div class="field checkbox field_half">
+									<label for="field1check"><input type="checkbox" id="field1check">
+									<span>Checkbox text</span></label>
+								</div>
+								<div class="field checkbox field_half">
+									<label for="field2check"><input type="checkbox" id="field2check">
+									<span>Checkbox text</span></label>
+								</div>
+							</div>
+						</div>
+						<input type="submit" value="Let Us Help You">
+					</form>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Photo Gallery</h2>
+				<div class="gallery carousel_wrapper carousel_gallery">
+					<div class="carousel_content">
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery1.jpg" /></a></div>
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery2.jpg" /></a></div>
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery3.jpg" /></a></div>
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery4.jpg" /></a></div>
+					</div>
+					<div class="carousel_navigation">
+						<button class="btn_prev">Prev</button>
+						<ul>
+							<li class="active"><a href="#"><span>Slide 1</span></a></li>
+							<li><a href="#"><span>Slide 2</span></a></li>
+							<li><a href="#"><span>Slide 3</span></a></li>
+						</ul>
+						<button class="btn_next">Next</button>
+					</div>
+				</div>
+			</div>
+			<div class="section section_twocol section_alt">
+				<div class="section_inside">
+					<h2>Two Column Section</h2>
+					<div class="section_col1">
+						<h4>Another headline</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. Sed lobortis facilisis blandit. Donec quis nibh vitae quam ultricies condimentum. Mauris at imperdiet massa, eget viverra mauris. Quisque varius imperdiet tincidunt. Sed ut quam eget ante viverra euismod ut non.</p>
+					</div>
+					<div class="section_col2">
+						<div class="video">
+							<img src="images/placeholder_videobg.jpg" class="full_img" / >
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Table</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor.</p>
+				<div class="table_container">
+					<table>
+						<tr>
+							<th><p>Table Title <span>Subhead here</span></p></th>
+							<th><p>Table Title <span>Subhead here</span></p></th>
+							<th><p>Table Title <span>Subhead here</span></p></th>
+							<th><p>Table Title <span>Subhead here</span></p></th>
+							<th><p>Table Title <span>Subhead here</span></p></th>
+							<th><p>Table Title <span>Subhead here</span></p></th>
+							<th><p>Table Title <span>Subhead here</span></p></th>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+						<tr>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+							<td>000000.00</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Photo with caption</h2>
+				<div class="photo_caption">
+					<img src="images/placeholder_interiorfullimg.jpg" class="full_img" />
+					<div class="fancycaption">
+						<h4>Optional Caption</h4>
+						<h6>Subhead here</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt conser lectetur molestie. Nam molestie mauris velit, eu consectetur magna gravida at.</p>
+					</div>
+				</div>
+			</div>
+			<div class="section section_cta">
+				<div class="section_inside">
+					<h2 class="h1">What you'll get</h2>
+					<p>With Loup, you’ll get a customized supply chain solution that meets your time, cost, transportation and visibility requirements. Whether you want to reach new markets, resolve supply chain glitches or simply find a better way forward, we’re here to help you achieve your goals.</p>
+					<a href="#" class="button">What's your challenge</a>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Inline Photo with Caption</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa non, vehicula est. Cras aliquet sodales odio, eu mattis dolor egestas sit amet. Sed lobortis facilisis blandit. Donec quis nibh vitae quam ultricies condimentum. Mauris at imperd massa, eget viverra mauris. Quisque varius imperdiet tincidunt. Sed ut quam eget ante viverra euismod ut non.</p>
+				<div class="inline_photo_caption">
+					<img src="images/placeholder_inlineimg.jpg" />
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt conser lectetur molestie.</p>
+				</div>
+				<p>Aliquam metus magna, pulvinar vel libero et, viverra ullamcorper arcu. Nullam ac sceler
+isque lectus. Aenean vitae sem id arcu eleifend auctor ac a orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur convallis luctus. Sed vitae tincidunt nisi. Pellentesque et accumsan enim. Proin euismod euismod nisi, ut gravida elit egestas sagtis. Fusce lectus ex, bibendum eu porttitor eget, malesuada eget odio.</p>
+
+				<p>Aenean dapibus sollicitudin arcu, eu congue augue orre sdsid. Nam ut dolor consectetur, 
+cursus augue quis, hendrerit libero. Proin sed egestas ligula. Pellentesque ornare sapien tincidunt, lementum urna in, posuere mauris. Nam pulvinar, metus in placerat rutrum, nunc dui lacinia turpis, at euismod. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Lorem ipsum dolor sit amet, onsectetur adipiscing elit. Nulla consequat odio euismod lorem dignissim, at imperdiet sem mollis. Duis consectetur consequat auctor. Etiam accumsan urna in odio finibus, sed dictum diam porttitor. Suspendisse convallis risus convallis, ultricies massa.</p>
+
+			</div>
+			<div class="section">
+				<h2>Resources: Downloadable links & links</h2>
+				<h3>6 Articles</h3>
+				<a href="http://www.google.com" target="_blank" class="external">External Link Title Here</a>
+				<a href="placeholder/placeholder.pdf" class="pdflink">Downloadable PDF Title here</a>
+				<a href="placeholder/placeholder.pdf" class="pdflink">This is a long link title that could go here</a>
+				<a href="http://www.google.com" target="_blank" class="external">External Link Title Here</a>
+				<a href="placeholder/placeholder.pdf" class="pdflink">Downloadable PDF Title here</a>
+				<a href="placeholder/placeholder.pdf" class="pdflink">This is a long link title that could go here</a>
+			</div>
 			<div class="endpage_cta_wrapper">
 				<div class="endpage_cta">
-					<h2>EFFECTIVE. EFFICIENT. ECONOMICAL.</h2>
-					<h3>CUSTOMIZED FOR YOU.</h3>
+					<h2>Call To Action.</h2>
+					<h3>Subhead Goes here.</h3>
 					<p>Ready to get started?<br />Let’s find a better way forward for your supply chain.</p>
 					<a href="#" class="button alt">Contact Us</a>
 				</div>
@@ -254,7 +515,7 @@ goal, we’re here to help you achieve it.</p>
 		</div>
 		<div class="footer_wrapper">
 			<a href="#" class="logo">
-				<img src="images/logo.png" class="svg" />
+				<img src="images/logo.svg" class="svg" />
 			</a>
 			<ul class="footer_links sitenav">
 				<li class="list_title">Site Navigation</li>
@@ -275,8 +536,7 @@ goal, we’re here to help you achieve it.</p>
 				<li><a href="#">Careers</a></li>
 			</ul>
 			<div class="btn_quicklinks">
-				<a href="#" class="button">Secure site</a>
-				<a href="#" class="button">Dashboard</a>
+				<a href="#" class="button"><span>Dashboard Login</span></a>
 			</div>
 			<div class="up_logo">
 				<p>A Union Pacific Company</p>
@@ -305,17 +565,6 @@ goal, we’re here to help you achieve it.</p>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="js/main.js"></script>
-	<script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Montserrat:300,400,400i,500,500i,600,700' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); </script>
+	<script src="js/scrollbar.js"></script>
 </body>
 </html>
