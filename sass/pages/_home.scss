@@ -172,6 +172,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	.home .section_imgoverlap {
 		margin-bottom: 40px;
 		padding-top: 100px;
+		&:before {
+			display: none;
+		}
 		.section_image {
 			max-width: 975px;
 			width: 75%;
@@ -185,6 +188,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			right: 0;
 			top: 50%;
 			transform: translate(0, -50%);
+			background: $white;
 		}
 	}
 	.main_section_overlay {

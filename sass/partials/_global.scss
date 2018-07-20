@@ -913,6 +913,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 .carousel_content {
 	margin-bottom: 25px;
 	text-align: left;
+	.slick-slide {
+		padding: 5px;
+	}
 	.slide {
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
 		padding: 40px 45px;
@@ -922,6 +925,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		p {
 			color: $limedspruce;
 		}
+		img {
+			display: inline-block;
+		}
 	}
 }
 .carousel_navigation {
@@ -930,7 +936,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	display: inline-block;
 	position: relative;
 	padding: 0 30px;
-	.btn_prev, .btn_next {
+	.btn_prev, .btn_next, .slick-next, .slick-prev {
 		display: block;
 		outline: 0;
 		border: 0;
@@ -944,7 +950,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		padding: 0;
 		@include transition(.2s);
 	}
-	.btn_prev {
+	.btn_prev, .slick-prev {
 		transform: rotate(180deg);
 		left: 5px;
 		&:hover {
@@ -952,7 +958,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			left: 0;
 		}
 	}
-	.btn_next {
+	.btn_next, .slick-next {
 		right: 5px;
 		&:hover {
 			width: 25px;
@@ -965,11 +971,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		padding: 0 5px;
 		margin-bottom: 0;
 		text-align: center;
-		a {
-			display: block;
+		li {
+			display: inline-block;
 			padding: 10px;
-			span {
+			span, button {
 				text-indent: -99999em;
+				outline: 0;
+				padding: 0;
+				border-color: transparent;
+				cursor: pointer;
+				@include removeappearance();
 				display: block;
 				width: 10px;
 				height: 10px;
@@ -977,17 +988,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 				border-radius: 50%;
 				@include transition(.2s);
 			}
-			&:hover span {
+			&:hover span, &:hover button, &.active span, &.slick-active button {
 				background: $darkblue;
-			}
-		}
-		li {
-			display: inline-block;
-			padding-left: 0;
-			&.active {
-				a span {
-					background: $darkblue;
-				}
 			}
 		}	
 	}
@@ -998,25 +1000,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		overflow: hidden;
 		padding-bottom: 7px;
 	}
+	.slick-slide {
+		padding: 20px;
+	}
 	.slide {
 		padding: 0;
-		width: 46%;
-		margin-right: 8%;
-		float: left;
 		position: relative;
 		overflow: hidden;
-		&:nth-child(2n) {
-			margin-right: 0;
-		}
-		&:nth-child(3n), &:nth-child(4n) {
-			display: none;
-		}
 		&:hover {
-			a:before {
+			&:before {
 				top: 50%;
 			}
 		}
-		a:before {
+		&:before {
 			content: '';
 			display: block;
 			background: url(../images/icon-zoom.png);
@@ -1239,6 +1235,7 @@ input[type="submit"] {
 	/* :::::::::::::::::::::::::::::::::::::: Footer */
 	.logo {
 		margin-right: 30px;
+		width: 195px;
 	}
 	.sitenav {
 		clear: none;
@@ -1306,26 +1303,6 @@ input[type="submit"] {
 			float: none;
 			&:nth-child(3n) {
 				display: block;
-			}
-		}
-		.carousel_content {
-			@include displaygrid();
-			@include gridcolumns(1fr 1fr 1fr);
-			grid-gap: 30px;
-		}
-	}
-	.no-cssgrid {
-		.carousel_gallery {
-			.slide {
-				width: 29%;
-				margin-right: 6%;
-				float: left;
-				&:nth-child(2n) {
-					margin-right: 6%;
-				}
-				&:nth-child(3n) {
-					margin-right: 0;
-				}
 			}
 		}
 	}
@@ -1499,35 +1476,11 @@ input[type="submit"] {
 			padding: 80px 90px;
 		}	
 	}
+	.carousel_gallery .slide {
+		padding: 0;
+	}
 	.carousel_navigation ul a {
 		padding: 10px 6px;
-	}
-	/* :::::::::::::::::::::::::::::::::::::: Content Carousel */
-	.carousel_gallery {
-		.slide {
-			padding: 0;
-			&:nth-child(4n) {
-				display: block;
-			}
-		}
-		.carousel_content {
-			@include gridcolumns(1fr 1fr 1fr 1fr);
-			grid-gap: 30px;
-		}
-	}
-	.no-cssgrid {
-		.carousel_gallery {
-			.slide {
-				width: 20%;
-				margin-right: 6%;
-				&:nth-child(3n) {
-					margin-right: 6%;
-				}
-				&:nth-child(4n) {
-					margin-right: 0;
-				}
-			}
-		}
 	}
 	/* :::::::::::::::::::::::::::::::::::::: Content Blocks */
 	.content_blocks.blocks-3 {
@@ -1604,7 +1557,8 @@ input[type="submit"] {
 		width: auto;
 		position: relative;
 		clear: none;
-		padding-top: 14px;
+		overflow: auto;
+		padding: 14px 0 0 0;
 		@include removeshadow();
 		opacity: 0;
 		-webkit-animation: fade 1s ease 1;
@@ -1802,8 +1756,23 @@ input[type="submit"] {
 	.content_blocks.blocks-4 {
 		@include gridcolumns(1fr 1fr 1fr 1fr);
 	}
+	.no-cssgrid {
+		.content_blocks.blocks-4 {
+			.block_item {
+				width: 25%;
+			}
+		}
+	}
 }
 @media screen and (min-width:1400px) {
+	.table_container {
+		width: 100%;
+		overflow: auto;
+	}
+	table {
+		width: 100%;
+		width: calc(100% - 10px);
+	}
 	.footer_links {
 		padding-right: 6%;
 	}

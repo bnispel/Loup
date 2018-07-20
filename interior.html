@@ -157,8 +157,20 @@
 				</div>
 			</div>
 			<div class="section">
-				<div class="carousel_wrapper">
+				<div class="carousel_wrapper general_carousel">
 					<div class="carousel_content">
+						<div class="slide">
+							<blockquote>
+								<p>We feel that Loup has our best interest at heart. Today, it’s rare to find a company that is actually interested in us as people and not just as customers. They truely care about our problems and help us find solutions. <img src="images/icon-quote.png" class="quoteend"></p>
+								<footer>BRIDGITTE RICHARDSON</footer>
+							</blockquote>
+						</div>
+						<div class="slide">
+							<blockquote>
+								<p>We feel that Loup has our best interest at heart. Today, it’s rare to find a company that is actually interested in us as people and not just as customers. They truely care about our problems and help us find solutions. <img src="images/icon-quote.png" class="quoteend"></p>
+								<footer>BRIDGITTE RICHARDSON</footer>
+							</blockquote>
+						</div>
 						<div class="slide">
 							<blockquote>
 								<p>We feel that Loup has our best interest at heart. Today, it’s rare to find a company that is actually interested in us as people and not just as customers. They truely care about our problems and help us find solutions. <img src="images/icon-quote.png" class="quoteend"></p>
@@ -167,13 +179,8 @@
 						</div>
 					</div>
 					<div class="carousel_navigation">
-						<button class="btn_prev">Prev</button>
-						<ul>
-							<li class="active"><a href="#"><span>Slide 1</span></a></li>
-							<li><a href="#"><span>Slide 2</span></a></li>
-							<li><a href="#"><span>Slide 3</span></a></li>
-						</ul>
-						<button class="btn_next">Next</button>
+						<div class="carousel_dots">
+						</div>
 					</div>
 				</div>
 				<h2>Single Column section</h2>
@@ -329,15 +336,14 @@
 						<div class="slide"><a href="#"><img src="images/placeholder_gallery2.jpg" /></a></div>
 						<div class="slide"><a href="#"><img src="images/placeholder_gallery3.jpg" /></a></div>
 						<div class="slide"><a href="#"><img src="images/placeholder_gallery4.jpg" /></a></div>
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery1.jpg" /></a></div>
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery2.jpg" /></a></div>
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery3.jpg" /></a></div>
+						<div class="slide"><a href="#"><img src="images/placeholder_gallery4.jpg" /></a></div>
 					</div>
 					<div class="carousel_navigation">
-						<button class="btn_prev">Prev</button>
-						<ul>
-							<li class="active"><a href="#"><span>Slide 1</span></a></li>
-							<li><a href="#"><span>Slide 2</span></a></li>
-							<li><a href="#"><span>Slide 3</span></a></li>
-						</ul>
-						<button class="btn_next">Next</button>
+						<div class="carousel_dots">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -566,5 +572,38 @@ cursus augue quis, hendrerit libero. Proin sed egestas ligula. Pellentesque orna
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/scrollbar.js"></script>
+	<script src="js/slick.js"></script>
+	<script>
+		$(".carousel_gallery .carousel_content").slick({
+		  adaptiveHeight: true,
+		  dots: true,
+		  slidesToShow: 4,
+		  slidesToScroll: 4,
+		  appendArrows: '.carousel_gallery .carousel_navigation',
+		  appendDots: '.carousel_gallery .carousel_dots',
+		  responsive: [{
+		      breakpoint: 1000,
+		      settings: {
+		        slidesToShow: 3,
+		        infinite: true
+		      }
+		    }, {
+		
+		      breakpoint: 800,
+		      settings: {
+		        slidesToShow: 2,
+		        dots: true
+		      }
+		    }]
+		});
+		$(".general_carousel .carousel_content").slick({
+		  adaptiveHeight: true,
+		  dots: true,
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  appendArrows: '.general_carousel .carousel_navigation',
+		  appendDots: '.general_carousel .carousel_dots'
+		});
+	</script>
 </body>
 </html>

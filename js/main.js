@@ -104,10 +104,12 @@ $( document ).ready(function() {
 			$(this).closest("li").addClass("active");
 		}
 	});
-	$(".table_container").mCustomScrollbar({
-	    axis:"x",
-	    theme:"loup"
-	});
+	if (screen < 1400) {
+		$(".table_container").mCustomScrollbar({
+	    	axis:"x",
+			theme:"loup"
+		});
+	}
 	$("input").on('focus blur', function(){
 	     $(this).parent().toggleClass('is_focused');
 	})
