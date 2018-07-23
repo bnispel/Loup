@@ -14,22 +14,22 @@
 	margin: 0 auto;
 }
 /* :::::::::::::::: Section Break */
-	.section_break {
-		max-width: 800px;
-		text-align: center;
-		&:after {
-			content: '';
-			display: block;
-			height: 1px;
-			width: 100%;
-			background: rgba($rollingstone, .23);
-		}
-		p {
-			padding-bottom: 15px;
-			font-size: px_to_rem(16px);
-			line-height: px_to_decimal(27px, 16px);
-		}
+.section_break {
+	max-width: 800px;
+	text-align: center;
+	&:after {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 100%;
+		background: rgba($rollingstone, .23);
 	}
+	p {
+		padding-bottom: 15px;
+		font-size: px_to_rem(16px);
+		line-height: px_to_decimal(27px, 16px);
+	}
+}
 /* :::::::::::::::: Intro section */
 .section_intro {
 	max-width: 800px;

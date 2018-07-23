@@ -182,8 +182,8 @@ ul {
 		display: block;
 		float: right;
 		margin: 1px 0 0 7px;
-		width: 7.5px;
-		height: 11.5px;
+		width: 8px;
+		height: 12px;
 		@include transition(.2s);
 		background: url(../images/icon-rightarrow-spruce.svg) no-repeat top left;
 		background-size: 8px 13px;
@@ -268,6 +268,12 @@ img.align_center {
 		color: $rollingstone;
 	}
 }
+/* :::::::::::::::::::::::::::::::::::::: Video */
+.video video {
+	width: 100%;
+	height: auto;
+}
+
 /* :::::::::::::::::::::::::::::::::::::: Tables */
 .table_container {
 	width: 100%;
@@ -399,6 +405,7 @@ table {
 .logo {
 	display: block;
 	width: 130px;
+	height: 48px;
 	float: left;
 	opacity: 0;
 	-webkit-animation: fade 1s ease 1;
@@ -727,6 +734,10 @@ nav {
 	a {
 		float: left;
 	}
+	img {
+		width: 61px;
+		height: 69px;
+	}
 }
 .copyright {
 	text-align: center;
@@ -1001,30 +1012,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		padding-bottom: 7px;
 	}
 	.slick-slide {
-		padding: 20px;
+		padding: 10px;
 	}
 	.slide {
 		padding: 0;
 		position: relative;
 		overflow: hidden;
-		&:hover {
+		a {
+			display: block;
 			&:before {
-				top: 50%;
+				content: '';
+				display: block;
+				background: url(../images/icon-zoom.png);
+				width: 76px;
+				height: 74px;
+				position: absolute;
+				top: 300%;
+				left: 50%;
+				z-index: 2;
+				cursor: pointer;
+				transform: translate(-50%, -50%);
+				@include transition(.2s);
 			}
 		}
-		&:before {
-			content: '';
-			display: block;
-			background: url(../images/icon-zoom.png);
-			width: 76px;
-			height: 74px;
-			position: absolute;
-			top: 300%;
-			left: 50%;
-			z-index: 2;
-			cursor: pointer;
-			transform: translate(-50%, -50%);
-			@include transition(.2s);
+		&:hover {
+			a:before {
+				top: 50%;
+			}
 		}
 		img {
 			display: block;
@@ -1115,6 +1129,7 @@ input {
 	line-height: px_to_decimal(30px, 13px);
 	letter-spacing: XDunits_to_ems(50);
 	color: $rollingstone;
+	min-height: 50px;
 	&:focus {
 		border-color: rgba($darkblue, .3);
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
@@ -1132,18 +1147,25 @@ input {
 input[type="checkbox"] {
 	background: none;
 	@include removeappearance();
+	border: 1px solid $limedspruce;
 	width: 25px;
 	height: 25px;
+	min-height: 25px;
 	padding: 0;
 	cursor: pointer;
 	float: left;
 	margin-right: 10px;
 }
+input[type="checkbox"]::-ms-check {
+   // display: none;
+}
 input[type="checkbox"]:checked {
 	background: url(../images/icon-check.png) no-repeat center center;
 }
 .checkbox {
-	
+	input {
+		float: left;
+	}
 	label {
 		overflow: hidden;
 		display: block;
@@ -1202,6 +1224,9 @@ input[type="submit"] {
 	}
 }
 @media screen and (min-width: 600px) {
+	.carousel_gallery .slick-slide {
+		padding: 20px;
+	}
 	/* :::::::::::::::::::::::::::::::::::::: Footer */
 	.footer_links {
 		li {
@@ -1236,13 +1261,17 @@ input[type="submit"] {
 	.logo {
 		margin-right: 30px;
 		width: 195px;
+		height: 72px;
+	}
+	.menubtn {
+		margin-top: 14px;
 	}
 	.sitenav {
 		clear: none;
-		width: 36%;
+		width: 32%;
 	}
 	.helpfullinks {
-		width: 38%;
+		width: 35%;
 	}
 	.footer_links {
 		padding-top: 17px;
@@ -1255,12 +1284,18 @@ input[type="submit"] {
 		padding: 40px 60px;
 		max-width: 1520px;
 		margin: 0 auto;
+		.logo {
+			width: 145px;
+			height: 58px;
+			margin-right: 50px;
+		}
 	}
 	.btn_quicklinks {
 		padding-top: 17px;
 	}
 	.up_logo {
-		clear: both;
+		width: 305px;
+		margin: 0 auto 15px;
 	}
 	.copyright {
 		clear: both;
@@ -1317,6 +1352,16 @@ input[type="submit"] {
 			border-right: 1px solid rgba($rollingstone, .3);
 		}
 	}
+	.no-cssgrid {
+		.content_blocks {
+			display: block;
+			overflow: hidden;
+		}
+		.block_item {
+			float: left;
+			width: 50%;
+		}
+	}
 	/* :::::::::::::::::::::::::::::::::::::: Form */ 
 	form {
 		padding: 30px 0;
@@ -1331,7 +1376,7 @@ input[type="submit"] {
 		padding-bottom: 0;
 		position: relative;
 	}
-	div.field_wrapper.field_half {
+	.field_wrapper.field_half {
 		@include displaygrid();
 		@include gridcolumns(1fr 1fr);
 	}
@@ -1341,14 +1386,19 @@ input[type="submit"] {
 			padding-top: 3px;
 		}
 	}
-	.no-cssgrid div.field_half {
-		width: 48%;
-		margin-right: 4%;
-		margin-bottom: 20px;
-		float: left;
-		clear: none;
-		&:nth-child(2n) {
-			margin-right: 0;
+	.no-cssgrid {
+		.form_wrapper, .field_wrapper.field_half {
+			display: block;
+		}
+		.field_half {
+			width: 48%;
+			margin-right: 4%;
+			margin-bottom: 20px;
+			float: left;
+			clear: none;
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
 		}
 	}
 	/* :::::::::::::::: Floating fields */
@@ -1379,8 +1429,18 @@ input[type="submit"] {
 		}
 	}
 	.checkbox {
-		label span {
-			position: static;
+		input {
+			display: inline-block;
+		}
+		label {
+			width: 100%;
+			span {
+				position: static;
+				top: auto;
+				left: auto;
+				clear: none;
+				display: inline;
+			}
 		}
 	}
 }
@@ -1498,11 +1558,22 @@ input[type="submit"] {
 		clear: none; 
 		float: right;
 	}
+	/* :::::::::::::::::::::::::::::::::::::: Content Blocks */
+	.block_header p {
+		font-size: px_to_rem(34px);
+		line-height: px_to_decimal(38px, 34px);
+		letter-spacing: XDunits_to_ems(35);	
+		span {
+			font-size: px_to_rem(14px);
+			line-height: px_to_decimal(22px, 14px);
+			letter-spacing: XDunits_to_ems(20);	
+		}	
+	}
 }
 @media screen and (min-width: 1200px) {
 	h1, .h1 {
 		font-size: px_to_rem(60px);
-		line-height: px_to_decimal(36px, 60px);
+		line-height: px_to_decimal(75px, 60px);
 		letter-spacing: XDunits_to_ems(30);
 	}
 	h2, .h2 {
@@ -1557,7 +1628,7 @@ input[type="submit"] {
 		width: auto;
 		position: relative;
 		clear: none;
-		overflow: auto;
+		overflow: visible;
 		padding: 14px 0 0 0;
 		@include removeshadow();
 		opacity: 0;
@@ -1689,12 +1760,24 @@ input[type="submit"] {
 		display: none;
 	}
 	.no-flexbox {
+		.mainnav_inside {
+			padding: 10px 15px 0 0;
+		}
 		nav {
-			width: 100%;
+			width: 80%;
+			padding-top: 20px;
+			float: right;
+			&:after {
+				content: '';
+				display: block;
+				width: 1px;
+				clear: both;
+			}
 			ul {
 				display: block;
+				float: right;
 				li {
-					padding-right: 15px;
+					padding-right: 25px;
 					float: left;
 				}
 				ul {
@@ -1707,6 +1790,13 @@ input[type="submit"] {
 				float: left;
 				width: 17%;
 			}
+		}
+	}
+	.footer_wrapper {
+		.logo {
+			margin-right: 40px;
+			width: 195px;
+			height: 72px;
 		}
 	}
 	/* :::::::::::::::::::::::::::::::::::::: Endpage CTA */

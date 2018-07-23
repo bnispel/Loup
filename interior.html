@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 	<link rel="icon" type="image/png" sizes="16x16 32x32 48x48"  href="favicon.png" />
-	<link rel="stylesheet" href="stylesheets/styles.css?v=1.2">
+	<link rel="stylesheet" href="stylesheets/styles.css?v=1.5">
 	<!--[if IE]>
     	<link rel="stylesheet" href="stylesheets/ie.css">
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -52,7 +52,13 @@
 								</div>
 							</div>
 							<ul>
-								<li><a href="#">What We Do</a></li>
+								<li><a href="#">What We Do <span class="dropdownbtn"></span></a>
+									<ul class="dropdown">
+										<li><a href="#">Door-to-Door</a></li>
+										<li><a href="#">Logistics</a></li>
+										<li><a href="#">Specialized Services</a></li>
+									</ul>
+								</li>
 								<li class="solutionsnav">
 									<a href="#">Solutions<span class="dropdownbtn"></span></a>
 									<ul class="dropdown">
@@ -110,11 +116,11 @@
 								<li>
 									<a href="#">Resource Center <span class="dropdownbtn"></span></a>
 									<ul class="dropdown">
-										<li><a href="#">What is transloading?</a></li>
+										<li><a href="#">What is Transloading?</a></li>
 										<li><a href="#">Rail 101</a></li>
 										<li><a href="#">FAQs, Glossary, etc.</a></li>
 										<li><a href="#">Rates</a></li>
-										<li><a href="#">Find a facility</a></li>
+										<li><a href="#">Find a Facility</a></li>
 										<li><a href="#">Intermodal Savings Calculator</a></li>
 									</ul>
 								</li>
@@ -332,14 +338,14 @@
 				<h2>Photo Gallery</h2>
 				<div class="gallery carousel_wrapper carousel_gallery">
 					<div class="carousel_content">
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery1.jpg" /></a></div>
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery2.jpg" /></a></div>
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery3.jpg" /></a></div>
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery4.jpg" /></a></div>
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery1.jpg" /></a></div>
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery2.jpg" /></a></div>
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery3.jpg" /></a></div>
-						<div class="slide"><a href="#"><img src="images/placeholder_gallery4.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull1.jpg" data-featherlight="image"><img src="images/placeholder_gallery1.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull2.jpg" data-featherlight="image"><img src="images/placeholder_gallery2.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull3.jpg" data-featherlight="image"><img src="images/placeholder_gallery3.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull4.jpg" data-featherlight="image"><img src="images/placeholder_gallery4.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull1.jpg" data-featherlight="image"><img src="images/placeholder_gallery1.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull2.jpg" data-featherlight="image"><img src="images/placeholder_gallery2.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull3.jpg" data-featherlight="image"><img src="images/placeholder_gallery3.jpg" /></a></div>
+						<div class="slide"><a href="images/placeholder_galleryfull4.jpg" data-featherlight="image"><img src="images/placeholder_gallery4.jpg" /></a></div>
 					</div>
 					<div class="carousel_navigation">
 						<div class="carousel_dots">
@@ -356,7 +362,7 @@
 					</div>
 					<div class="section_col2">
 						<div class="video">
-							<img src="images/placeholder_videobg.jpg" class="full_img" / >
+							<video poster="video/placeholdervid.jpg" src="video/placeholder.mp4" data-overlay="1" data-ckin="compact" data-color="#ffffff" controls></video>
 						</div>
 					</div>
 				</div>
@@ -546,7 +552,7 @@ cursus augue quis, hendrerit libero. Proin sed egestas ligula. Pellentesque orna
 			</div>
 			<div class="up_logo">
 				<p>A Union Pacific Company</p>
-				<a href="#"><img src="images/logo-up.png" /></a>
+				<a href="#"><img src="images/logo-up.svg" /></a>
 			</div>
 			<div class="copyright">
 				<p>&copy; Copyright Loup 2018</p>
@@ -573,6 +579,8 @@ cursus augue quis, hendrerit libero. Proin sed egestas ligula. Pellentesque orna
 	<script src="js/main.js"></script>
 	<script src="js/scrollbar.js"></script>
 	<script src="js/slick.js"></script>
+	<script src="js/featherlight.js"></script>
+	<script src="js/ckin.min.js"></script>
 	<script>
 		$(".carousel_gallery .carousel_content").slick({
 		  adaptiveHeight: true,

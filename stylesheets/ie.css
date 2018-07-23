@@ -204,7 +204,7 @@
 /* line 8, ../sass/ie.scss */
 h1, .h1 {
   font-size: 3.75em;
-  line-height: 0.6;
+  line-height: 1.25;
   letter-spacing: 0.03em;
 }
 
@@ -511,15 +511,47 @@ li.solutionsnav .challenge .challenge_inside {
 .section {
   width: 1400px;
   margin: 0 auto;
+  padding: 50px 25px;
+}
+/* line 256, ../sass/ie.scss */
+.section.section_alt {
+  width: 100%;
+  max-width: 100%;
 }
 
-/* line 256, ../sass/ie.scss */
-.section_imgoverlap {
+/* line 261, ../sass/ie.scss */
+.section_inside {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* line 266, ../sass/ie.scss */
+.section_cta {
+  max-width: 100%;
+  width: 100%;
+  padding: 40px 20px;
+}
+/* line 271, ../sass/ie.scss */
+.section_cta .button:after {
+  width: 10px;
+  height: 12px;
+  background: url(../images/icon-rightarrow-yellow.png) no-repeat top left;
+  background-size: 8px 12px;
+}
+/* line 278, ../sass/ie.scss */
+.section_cta .button:hover:after {
+  background: url(../images/icon-rightarrow.png) no-repeat top left;
+  background-size: 8px 12px;
+}
+
+/* line 285, ../sass/ie.scss */
+.home .section_imgoverlap {
   position: relative;
   padding-top: 75px;
 }
-/* line 259, ../sass/ie.scss */
-.section_imgoverlap .section_contentbox {
+/* line 288, ../sass/ie.scss */
+.home .section_imgoverlap .section_contentbox {
   padding: 45px 0 45px 45px;
   position: absolute;
   margin: 0;
@@ -528,31 +560,31 @@ li.solutionsnav .challenge .challenge_inside {
   margin-top: -140px;
 }
 
-/* line 268, ../sass/ie.scss */
+/* line 297, ../sass/ie.scss */
 .home .section_imgoverlap {
   margin-bottom: 40px;
 }
-/* line 270, ../sass/ie.scss */
+/* line 299, ../sass/ie.scss */
 .home .section_imgoverlap .section_image {
   max-width: 975px;
   width: 75%;
 }
-/* line 274, ../sass/ie.scss */
+/* line 303, ../sass/ie.scss */
 .home .section_imgoverlap .section_contentbox {
   max-width: 486px;
 }
 
-/* line 278, ../sass/ie.scss */
+/* line 307, ../sass/ie.scss */
 .section_challenges {
   overflow: hidden;
 }
 
-/* line 281, ../sass/ie.scss */
+/* line 310, ../sass/ie.scss */
 .challenges_wrappers {
   margin: 0 -5px;
 }
 
-/* line 284, ../sass/ie.scss */
+/* line 313, ../sass/ie.scss */
 .challenge {
   padding: 2px;
   border-width: 0;
@@ -571,27 +603,27 @@ li.solutionsnav .challenge .challenge_inside {
   float: left;
   margin: 0 15px 30px;
 }
-/* line 299, ../sass/ie.scss */
+/* line 328, ../sass/ie.scss */
 .challenge:hover {
   padding: 0;
   border-width: 2px 2px 2px 2px;
 }
-/* line 302, ../sass/ie.scss */
+/* line 331, ../sass/ie.scss */
 .challenge:hover .gradient_icon:before {
   display: block;
 }
-/* line 306, ../sass/ie.scss */
+/* line 335, ../sass/ie.scss */
 .challenge .challenge_inside {
   padding: 40px 25px 53px;
   width: 100%;
 }
-/* line 310, ../sass/ie.scss */
+/* line 339, ../sass/ie.scss */
 .challenge h3 {
   font-size: 1em;
   line-height: 1.375;
   font-weight: 600;
 }
-/* line 315, ../sass/ie.scss */
+/* line 344, ../sass/ie.scss */
 .challenge .popupcta {
   display: block;
   position: absolute;
@@ -618,7 +650,7 @@ li.solutionsnav .challenge .challenge_inside {
   -moz-animation: Gradient 8s ease infinite;
   animation: Gradient 8s ease infinite;
 }
-/* line 337, ../sass/ie.scss */
+/* line 366, ../sass/ie.scss */
 .challenge .popupcta:after {
   content: '';
   display: inline-block;
@@ -630,22 +662,22 @@ li.solutionsnav .challenge .challenge_inside {
   transition: all 0.2s ease-out;
   background: url(../images/icon-rightarrow.svg) no-repeat top left;
 }
-/* line 348, ../sass/ie.scss */
+/* line 377, ../sass/ie.scss */
 .challenge:hover .popupcta {
   bottom: 0;
 }
 
-/* line 353, ../sass/ie.scss */
+/* line 382, ../sass/ie.scss */
 .challenge_description, .popupcta {
   display: block;
 }
 
-/* line 356, ../sass/ie.scss */
+/* line 385, ../sass/ie.scss */
 .section_challenges .mobilebtn {
   display: none;
 }
 
-/* line 359, ../sass/ie.scss */
+/* line 388, ../sass/ie.scss */
 .challenge_description p {
   text-transform: none;
   float: none;
@@ -653,72 +685,72 @@ li.solutionsnav .challenge .challenge_inside {
   line-height: 1.85714;
 }
 
-/* line 365, ../sass/ie.scss */
+/* line 394, ../sass/ie.scss */
 .gradient_icon {
   width: 70px;
   height: 70px;
 }
-/* line 368, ../sass/ie.scss */
+/* line 397, ../sass/ie.scss */
 .gradient_icon:before {
   display: none;
 }
-/* line 371, ../sass/ie.scss */
+/* line 400, ../sass/ie.scss */
 .gradient_icon img, .gradient_icon svg {
   width: 70px;
   height: 70px;
 }
 
 /* :::::::: Challenge tile teasers */
-/* line 377, ../sass/ie.scss */
+/* line 406, ../sass/ie.scss */
 .challenge_teasers {
   margin: 0 -10px;
   max-width: 140%;
 }
-/* line 380, ../sass/ie.scss */
+/* line 409, ../sass/ie.scss */
 .challenge_teasers .challenge {
   height: 410px;
   width: 27%;
   margin: 0 50px 70px;
   cursor: pointer;
 }
-/* line 386, ../sass/ie.scss */
+/* line 415, ../sass/ie.scss */
 .challenge_teasers .challenge:hover .popupcta {
   height: 63px;
 }
-/* line 388, ../sass/ie.scss */
+/* line 417, ../sass/ie.scss */
 .challenge_teasers .challenge:hover .popupcta span {
   top: 0;
 }
-/* line 393, ../sass/ie.scss */
+/* line 422, ../sass/ie.scss */
 .challenge_teasers .challenge:after {
   content: '';
   display: block;
   width: 1px;
   clear: both;
 }
-/* line 399, ../sass/ie.scss */
+/* line 428, ../sass/ie.scss */
 .challenge_teasers .challenge:before {
   display: none;
 }
-/* line 402, ../sass/ie.scss */
+/* line 431, ../sass/ie.scss */
 .challenge_teasers .challenge:first-child {
   margin-left: 0;
 }
-/* line 405, ../sass/ie.scss */
+/* line 434, ../sass/ie.scss */
 .challenge_teasers .challenge:nth-child(3n) {
   margin-right: 0;
 }
-/* line 409, ../sass/ie.scss */
+/* line 438, ../sass/ie.scss */
 .challenge_teasers .challenge_inside {
   height: 410px;
   position: static;
 }
 
-/* line 414, ../sass/ie.scss */
+/* line 443, ../sass/ie.scss */
 .challenge_description {
   display: block;
 }
-/* line 416, ../sass/ie.scss */
+/* line 445, ../sass/ie.scss */
 .challenge_description p {
   text-transform: none;
   float: none;
@@ -726,7 +758,7 @@ li.solutionsnav .challenge .challenge_inside {
   line-height: 1.85714;
 }
 
-/* line 423, ../sass/ie.scss */
+/* line 452, ../sass/ie.scss */
 .teaser_shadow {
   border: 1px solid #000000;
   position: absolute;
@@ -739,13 +771,13 @@ li.solutionsnav .challenge .challenge_inside {
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* line 432, ../sass/ie.scss */
+/* line 461, ../sass/ie.scss */
 .teaser_shadow:hover {
   border: 1px solid #F7B352;
   transform: scale(1.05);
 }
 
-/* line 437, ../sass/ie.scss */
+/* line 466, ../sass/ie.scss */
 .popupcta {
   display: block;
   position: absolute;
@@ -761,7 +793,7 @@ li.solutionsnav .challenge .challenge_inside {
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-/* line 449, ../sass/ie.scss */
+/* line 478, ../sass/ie.scss */
 .popupcta span {
   position: absolute;
   left: 0;
@@ -787,7 +819,7 @@ li.solutionsnav .challenge .challenge_inside {
   -moz-animation: Gradient 8s ease infinite;
   animation: Gradient 8s ease infinite;
 }
-/* line 471, ../sass/ie.scss */
+/* line 500, ../sass/ie.scss */
 .popupcta span:after {
   content: '';
   display: inline-block;
@@ -801,74 +833,114 @@ li.solutionsnav .challenge .challenge_inside {
 }
 
 /* :::::::::::::::::::::::::::::::::::::: Full width image CTA */
-/* line 483, ../sass/ie.scss */
+/* line 512, ../sass/ie.scss */
 .image_cta {
   position: relative;
-  padding: 20px 60px 0 60px;
+  padding: 0;
   width: 1400px;
   margin: 0 auto 70px;
 }
-/* line 488, ../sass/ie.scss */
+/* line 517, ../sass/ie.scss */
 .image_cta .image_cta_msg {
   position: absolute;
   bottom: 0;
-  right: 60px;
+  right: 0;
   max-width: 486px;
   padding: 40px;
 }
-/* line 495, ../sass/ie.scss */
+/* line 523, ../sass/ie.scss */
+.image_cta .image_cta_msg.cta_left {
+  left: 0;
+}
+/* line 527, ../sass/ie.scss */
 .image_cta img {
   display: block;
+  width: 100%;
+  height: auto;
 }
-/* line 498, ../sass/ie.scss */
+/* line 532, ../sass/ie.scss */
 .image_cta p {
   font-size: 0.9375em;
   line-height: 1.66667;
 }
 
 /* :::::::::::::::::::::::::::::::::::::: Collapsible section */
-/* line 504, ../sass/ie.scss */
+/* line 538, ../sass/ie.scss */
 .collapsible_section {
   overflow: hidden;
   width: 1400px;
   margin: 0 auto 70px;
 }
-/* line 508, ../sass/ie.scss */
+/* line 542, ../sass/ie.scss */
 .collapsible_section .section_col1 {
   width: 40%;
   float: left;
   padding-right: 40px;
 }
-/* line 513, ../sass/ie.scss */
+/* line 547, ../sass/ie.scss */
 .collapsible_section .section_col2 {
   width: 60%;
   float: right;
 }
 
-/* line 518, ../sass/ie.scss */
+/* line 552, ../sass/ie.scss */
 .collapsible_wrapper {
   padding: 35px 45px;
 }
 
-/* line 522, ../sass/ie.scss */
+/* line 556, ../sass/ie.scss */
 .collapsible_item.open h3 {
   font-size: 1.5625em;
   line-height: 0.88;
 }
-/* line 526, ../sass/ie.scss */
+/* line 560, ../sass/ie.scss */
 .collapsible_item h3 {
   font-size: 1em;
   line-height: 1.375;
 }
 
 /* :::::::::::::::::::::::::::::::::::::: Content Blocks */
-/* line 533, ../sass/ie.scss */
+/* line 566, ../sass/ie.scss */
+.block_header p {
+  font-size: 2.125rem;
+  line-height: 1.11765;
+  letter-spacing: 0.035em;
+}
+/* line 570, ../sass/ie.scss */
+.block_header p span {
+  font-size: 0.875rem;
+  line-height: 1.57143;
+  letter-spacing: 0.02em;
+}
+
+/* line 576, ../sass/ie.scss */
+.content_blocks.blocks-3 {
+  overflow: hidden;
+}
+/* line 578, ../sass/ie.scss */
+.content_blocks.blocks-3 .block_item {
+  width: 33%;
+  float: left;
+}
+
+/* line 583, ../sass/ie.scss */
+.content_blocks.blocks-4 {
+  overflow: hidden;
+}
+/* line 585, ../sass/ie.scss */
 .content_blocks.blocks-4 .block_item {
   width: 25%;
+  float: left;
+}
+
+/* :::::::::::::::::::::::::::::::::::::: Carousel */
+/* line 592, ../sass/ie.scss */
+.carousel_navigation .slick-prev {
+  background: url(../images/icon-leftarrow-blue.svg) no-repeat right center;
 }
 
 /* :::::::::::::::::::::::::::::::::::::: Endpage CTA */
-/* line 539, ../sass/ie.scss */
+/* line 598, ../sass/ie.scss */
 .endpage_cta_wrapper:before {
   background: #354f5f;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -876,52 +948,52 @@ li.solutionsnav .challenge .challenge_inside {
   opacity: .8;
 }
 
-/* line 547, ../sass/ie.scss */
+/* line 606, ../sass/ie.scss */
 .endpage_cta h2 {
   font-size: 2.5em;
   line-height: 0.625;
 }
-/* line 551, ../sass/ie.scss */
+/* line 610, ../sass/ie.scss */
 .endpage_cta h3 {
   font-size: 1.25em;
   line-height: 1.35;
 }
 
 /* :::::::::::::::::::::::::::::::::::::: Footer */
-/* line 557, ../sass/ie.scss */
+/* line 616, ../sass/ie.scss */
 .footer_links {
   width: auto;
   padding-right: 6%;
 }
 
-/* line 561, ../sass/ie.scss */
+/* line 620, ../sass/ie.scss */
 .btn_quicklinks {
   width: 280px;
   float: left;
 }
 
-/* line 565, ../sass/ie.scss */
+/* line 624, ../sass/ie.scss */
 .up_logo {
   float: right;
   clear: none;
 }
 
-/* line 570, ../sass/ie.scss */
+/* line 629, ../sass/ie.scss */
 .social_links a {
   padding: 10px 4px;
 }
-/* line 574, ../sass/ie.scss */
+/* line 633, ../sass/ie.scss */
 .social_links .facebook svg, .social_links .twitter svg, .social_links .instagram svg, .social_links .linkedin svg {
   width: 14px;
   height: 14px;
 }
 
-/* line 581, ../sass/ie.scss */
+/* line 640, ../sass/ie.scss */
 .footer_wrapper .logo {
   margin-right: 60px;
 }
 
-/* line 585, ../sass/ie.scss */
+/* line 644, ../sass/ie.scss */
 .copyright {
   clear: both;
 }

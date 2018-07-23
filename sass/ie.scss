@@ -7,7 +7,7 @@
  * <![endif]--> */
 h1, .h1 {
 	font-size: px_to_em(60px);
-	line-height: px_to_decimal(36px, 60px);
+	line-height: px_to_decimal(75px, 60px);
 	letter-spacing: XDunits_to_ems(30);
 }
 h2, .h2 {
@@ -252,8 +252,37 @@ li.solutionsnav {
 .section {
 	width: 1400px;
 	margin: 0 auto;
+	padding: 50px 25px;
+	&.section_alt {
+		width: 100%;
+		max-width: 100%;
+	}
 }
-.section_imgoverlap {
+.section_inside {
+	max-width: 1400px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.section_cta {
+	max-width: 100%;
+	width: 100%;
+	padding: 40px 20px;
+	.button {
+		&:after {
+			width: 10px;
+			height: 12px;
+			background: url(../images/icon-rightarrow-yellow.png) no-repeat top left;
+			background-size: 8px 12px;
+		}
+		&:hover {
+			&:after {
+				background: url(../images/icon-rightarrow.png) no-repeat top left;
+				background-size: 8px 12px;
+			}
+		}
+	}
+}
+.home .section_imgoverlap {
 	position: relative;
 	padding-top: 75px;
 	.section_contentbox {
@@ -482,18 +511,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', end
 /* :::::::::::::::::::::::::::::::::::::: Full width image CTA */
 .image_cta {
 	position: relative;
-	padding: 20px 60px 0 60px;
+	padding: 0;
 	width: 1400px;
 	margin: 0 auto 70px;
 	.image_cta_msg {
 		position: absolute;
 		bottom: 0;
-		right:60px;
+		right:0;
 		max-width: 486px;
 		padding: 40px;
+		&.cta_left {
+			left: 0;
+		}
 	}
 	img {
 		display: block;
+		width: 100%;
+		height: auto;
 	}
 	p {
 		font-size: px_to_em(15px);
@@ -529,10 +563,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', end
 	}
 }
 /* :::::::::::::::::::::::::::::::::::::: Content Blocks */
+.block_header p {
+	font-size: px_to_rem(34px);
+	line-height: px_to_decimal(38px, 34px);
+	letter-spacing: XDunits_to_ems(35);	
+	span {
+		font-size: px_to_rem(14px);
+		line-height: px_to_decimal(22px, 14px);
+		letter-spacing: XDunits_to_ems(20);	
+	}
+}
+.content_blocks.blocks-3 {
+	overflow: hidden;
+	.block_item {
+		width: 33%;
+		float: left;
+	}
+}
 .content_blocks.blocks-4 {
+	overflow: hidden;
 	.block_item {
 		width: 25%;
+		float: left;
 	}
+}
+/* :::::::::::::::::::::::::::::::::::::: Carousel */
+.carousel_navigation {
+	.slick-prev {
+		background: url(../images/icon-leftarrow-blue.svg) no-repeat right center;
+	}	
 }
 /* :::::::::::::::::::::::::::::::::::::: Endpage CTA */
 .endpage_cta_wrapper { 
