@@ -508,22 +508,26 @@ table {
 }
 /* ::::::::::::: Nav */
 nav {
-	overflow: scroll;
+	overflow: auto;
 	max-height: calc(100vh - 90px);
 	clear: both;
 	@include transition(.2s);
-	background: $white;
-	@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
 	display: none;
 	position: absolute;
 	z-index: 7;
 	top: 100%;
 	left: 0;
 	width: 100%;
-	padding-bottom: 50px;
+	padding: 0 5px 50px 5px;
 	ul {
 		padding-left: 0;
 		list-style-image: none;
+		background: $white;
+		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
+		ul {
+			background: none;
+			@include removeshadow();
+		}
 	}
 	li {
 		border-bottom: 1.25px solid $athensgray;
@@ -1571,6 +1575,11 @@ input[type="submit"] {
 	}
 }
 @media screen and (min-width: 1200px) {
+	.mobileopen {
+		overflow: auto;
+		position: static;
+		height: auto;
+	}
 	h1, .h1 {
 		font-size: px_to_rem(60px);
 		line-height: px_to_decimal(75px, 60px);
@@ -1640,6 +1649,8 @@ input[type="submit"] {
 		ul {
 			margin-bottom: 0;
 			@include flexbox();
+			@include removeshadow();
+			background: none;
 			justify-content: space-between;
 		}
 		a {
