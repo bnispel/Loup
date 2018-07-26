@@ -160,7 +160,7 @@ and dependencies (minified).
 				enable mouse-wheel scrolling
 				values: boolean
 				*/
-				enable:true,
+				enable:false,
 				/* 
 				scrolling amount in pixels
 				values: "auto", integer 
