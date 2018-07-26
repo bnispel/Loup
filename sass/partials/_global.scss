@@ -535,6 +535,7 @@ nav {
 		padding-bottom: 0;
 	}
 	a {
+		-ms-font-feature-settings: normal;
 		text-transform: uppercase;
 		text-decoration: none;
 		position: relative;
@@ -1611,7 +1612,6 @@ input[type="submit"] {
 		a {
 			display: inline-block;
 			margin-left: 30px;
-			font-weight: 300;
 			&:last-child {
 				padding-right: 0;
 			}

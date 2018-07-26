@@ -105,9 +105,11 @@ $( document ).ready(function() {
 		}
 	});
 	if (screen < 1400) {
-		$(".table_container").mCustomScrollbar({
-	    	axis:"x",
-			theme:"loup"
+		$(".table_container").each(function( index ) {
+			$(this).mCustomScrollbar({
+		    	axis:"x",
+				theme:"loup"
+			});
 		});
 	}
 	$("input").on('focus blur', function(){
