@@ -235,7 +235,23 @@ li.solutionsnav {
 		letter-spacing: XDunits_to_ems(100);
 	}
 }
-
+.section_pageheader {
+	&:before {
+		content: '';
+		display: block;
+		background: #354f5f;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		opacity: .8;
+	}
+}
+.section_pageheader_text {
+	padding-top: 160px;
+}
 .challenges_wrappers {
 	margin: 0 -5px;
 }
@@ -643,4 +659,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', end
 }
 .copyright {
 	clear: both;
+}
+/* Items list */
+.item_list {
+	overflow: hidden;
+	li {
+		width: 30%;
+		float: left;
+		min-height: 150px;
+	}
+}
+/* 3 col section */
+.section_3col {
+	overflow: hidden;
+	.section_col1, .section_col2, .section_col3 {
+		width: 30%;
+		float: left;
+		min-height: 550px;
+		padding: 0 50px 50px;
+	}
+		.section_col1, .section_col2 {
+		border-bottom: none;
+	}
+	.section_col1 {
+		border-right: 1px solid rgba($rollingstone, .23);
+	}
+	.section_col2 {
+		border-right: 1px solid rgba($rollingstone, .23);
+	}
 }

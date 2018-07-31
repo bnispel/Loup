@@ -323,3 +323,35 @@ $base-font-size: 16px;
 		margin-top: 0px;
 	}
 }
+@mixin slideintoptitle($before, $after, $time) {
+	@-webkit-keyframes slideintoptitle {
+		0% {
+			top: $before;
+		}
+		100% {
+			top: $after;
+		}
+	}
+	
+	@-moz-keyframes slideintoptitle {
+		0% {
+			top: $before;
+		}
+		100% {
+			top: $after;
+		}
+	}
+	
+	@keyframes slideintoptitle {
+		0% {
+			top: $before;
+		}
+		100% {
+			top: $after;
+		}
+	}
+	-webkit-animation: slideintoptitle $time ease 1;
+	-moz-animation: slideintoptitle $time ease 1;
+	animation: slideintoptitle $time ease 1;
+	animation-fill-mode: forwards;
+}
