@@ -173,6 +173,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	padding: 0 20px;
 	text-align: center;
 	position: relative;
+	align-self: center;
+	justify-self: center;
 	color: $white;
 	h1 {
 		color: $white;
@@ -197,7 +199,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 .no-cssgrid {
 	.section_pageheader {
 		display: block;
-		display: table;
 		width: 100%;
 	}
 	.section_pageheader_text {

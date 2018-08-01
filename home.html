@@ -143,7 +143,7 @@
 			</header>
 			<div class="section main_section_wrapper">
 				<div class="main_section">
-					<div class="main_section_img">
+					<div class="main_section_img" id="rotatebgimg">
 					</div>
 					<div class="main_section_text">
 						<h1>Shipping Challenges?</h1>
@@ -428,5 +428,11 @@ goal, we’re here to help you achieve it.</p>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+		var bgColorArray = ['images/placeholder_homeheader.jpg','images/placeholder_homeheader2.jpg'],
+		selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+
+$('#rotatebgimg').css('background-image', 'url(' + selectBG + ')')
+	</script>
 </body>
 </html>
