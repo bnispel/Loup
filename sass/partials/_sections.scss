@@ -13,6 +13,15 @@
 	max-width: 1450px;
 	margin: 0 auto;
 }
+.challenge_section h3 {
+	max-width: 650px;
+	margin: 0 auto 20px;
+	text-align: center;
+}
+.colicon {
+	margin: 0 auto 20px;
+	display: block;
+}
 /* :::::::::::::::: Section Navigation */
 .section_nav {
 	.dropdown {
@@ -98,8 +107,7 @@
 	&.fixed {
 		position: fixed;
 		z-index: 10;
-		top: -300px;
-		@include slideintoptitle(-300px, 70px, .2s);
+		top: 68px;
 		left: 0;
 		width: 100%;
 		.dropdown {
@@ -198,7 +206,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 }
 .no-cssgrid {
 	.section_pageheader {
-		display: block;
+		display: table;
 		width: 100%;
 	}
 	.section_pageheader_text {
@@ -241,6 +249,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			width: 100%;
 		}
 	}
+	
 }
 /* :::::::::::::::: Image CTA section */
 .image_cta {
@@ -367,6 +376,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			z-index: 1;
 			margin-top: 0;
 		}
+		&.section_imgoverlap_alt {
+			&:before {
+				left: auto;
+				right: 30px;
+				height: 100%;
+				top: 0;
+			}
+			.section_contentbox {
+				float: right;	
+			}
+			.section_image {
+				right: auto;
+				left: 25px;	
+			}
+		}
 	}
 	.section_imgoverlap.image_left {
 		&:before {
@@ -413,7 +437,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	}
 	.section_nav_stick {
 		&.fixed {
-			@include slideintoptitle(-300px, 90px, .2s);
+			top: 90px;
 		}
 	}
 }
@@ -504,6 +528,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		@include displaygrid();
 		@include gridcolumns(1fr 1fr 1fr);
 		margin: 0 auto;
+		max-width: 1540px;
 		.section_col1, .section_col2 {
 			border-bottom: none;
 		}
@@ -530,7 +555,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	}
 	.section_nav_stick {
 		&.fixed {
-			@include slideintoptitle(-300px, 105px, .2s);
+			top: 105px;
 			h2 {
 				font-size: px_to_rem(44px);
 				line-height: px_to_decimal(50px, 44px);

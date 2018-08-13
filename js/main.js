@@ -96,13 +96,22 @@ var stickyHeaders = (function() {
 var _whenScrolling = function() {
 $stickies.each(function(i) {			
 	var $thisSticky = $(this),
-    	$stickyPosition = $thisSticky.data('originalPosition') - 180;
+		$stickyHeaderHeight = $('.mainnav_wrapper').height();
+		console.log($stickyHeaderHeight);
+    	$stickyPosition = $thisSticky.data('originalPosition') - $stickyHeaderHeight;
 	if ($stickyPosition <= $window.scrollTop()) {        
         var $nextSticky = $stickies.eq(i + 1),
             $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
         $thisSticky.addClass("fixed");
-        if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
-          $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
+        if ($nextSticky.hasClass('nav_clear')) {
+	         $nextStickyPositionlast = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
+	         if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPositionlast) {
+	          $thisSticky.addClass("absolute").css("top", $nextStickyPositionlast);
+	        }
+        } else {
+	         if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
+	          $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
+	        }
         }
     } else {
         var $prevSticky = $stickies.eq(i - 1);
