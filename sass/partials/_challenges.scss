@@ -164,7 +164,16 @@
 		.challenge {
 			width: 27%;
 		}
-	}	
+	}
+	.endpage_alt {
+		.challenges_wrappers {
+			max-width: 370px;
+		}
+		.challenge {
+			flex-basis: calc(50% - 26px);  
+			height: 144px;
+		}	
+	}
 }
 @media screen and (min-width:700px) {
 	.gradient_icon {
@@ -215,6 +224,15 @@
 	}	
 	.challenge{
 		height: 240px;
+	}
+	.endpage_alt {
+		.challenges_wrappers {
+			max-width: 850px;
+		}
+		.challenge {
+			flex-basis: calc(25% - 40px); 
+			height: 165px;
+		}
 	}
 }
 @media screen and (min-width:1100px) {
@@ -363,6 +381,20 @@
 			float: none;
 			font-size: px_to_rem(14px);
 			line-height: px_to_decimal(26px, 14px);
+		}
+	}
+	.endpage_alt {
+		.challenges_wrappers {
+			max-width: 1000px;
+		}
+		.challenge {
+			flex-basis: calc(25% - 40px); 
+			height: 205px;
+			h3 {
+				font-size: px_to_rem(16px);
+				line-height: px_to_decimal(20px, 16px);
+				font-weight: $font_semibold;
+			}
 		}
 	}
 }

@@ -832,6 +832,9 @@ nav {
 	h3 {
 		text-transform: uppercase;
 		margin-bottom: 0;
+		font-size: px_to_rem(15px);
+		line-height: px_to_decimal(23px, 15px);
+		letter-spacing: XDunits_to_ems(120);
 	}
 	ul {
 		margin-bottom: 0;
@@ -846,6 +849,7 @@ nav {
 .collapsible_handle {
 	position: relative;
 	cursor: pointer;
+	padding-right: 20px;
 	&:hover {
 		h3 {
 			color: $yellow;
@@ -870,8 +874,8 @@ nav {
 }
 .collapsible_item.open {
 	h3 {
-		font-size: px_to_rem(22px);
-		line-height: px_to_decimal(28px, 22px);
+		font-size: px_to_rem(20px);
+		line-height: px_to_decimal(24px, 20px);
 		letter-spacing: XDunits_to_ems(120);
 		margin-bottom: 15px;
 	}
@@ -891,6 +895,9 @@ nav {
 	background-position: center center;
 	background-size: cover;
 	position: relative;
+	min-height: 400px;
+	@include displaygrid();
+	@include centergrid();
 	&:before {
 		content: '';
 		display: block;
@@ -912,9 +919,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	}
 	&.endpage_alt {
 		background: $athensgray;
+		display: block;
 		&:before {
 			display: none;
 		}
+	}
+}
+.no-cssgrid {
+	.endpage_cta_wrapper {
+		display: table;
+	}
+	.endpage_cta {
+		display: table-cell;
+		vertical-align: middle;
 	}
 }
 .endpage_cta {
@@ -933,14 +950,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		letter-spacing: XDunits_to_ems(30);	
 		font-weight: $font_semibold;
 		font-family: $main_font;
-		margin-bottom: 2px;
+		margin-bottom: 10px;
 		text-transform: uppercase;
 	}
 	h3 {
 		font-size: px_to_rem(18px);
 		line-height: px_to_decimal(34px, 18px);
 		letter-spacing: XDunits_to_ems(100);
-		font-weight: $font_medium;
+		font-weight: $font_regular;
+		margin-bottom: 20px;
 	}
 	p {
 		font-size: px_to_rem(15px);
@@ -1595,7 +1613,7 @@ input[type="submit"] {
 	.collapsible_item {
 		&.open h3 {
 			font-size: px_to_rem(25px);
-			line-height: px_to_decimal(22px, 25px);
+			line-height: px_to_decimal(30px, 25px);
 		}
 		h3 {
 			font-size: px_to_rem(16px);
