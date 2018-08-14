@@ -91,17 +91,26 @@ p {
 	color: $stormyblue;
 	letter-spacing: XDunits_to_ems(30);
 	margin-bottom: 25px;
-	strong {
-		color: $darkblue;
-		font-weight: $font_semibold;
-	}
 }
+strong {
+	color: $darkblue;
+	font-weight: $font_semibold;
+}
+em {
+	font-style: italic;
+}
+
 p.listtitle {
 	font-weight: $font_bold;
 	margin-bottom: 0;
 }
 p.alt {
 	font-weight: $font_medium;
+}
+p.meta {
+	font-size: px_to_rem(13px);
+	line-height: px_to_decimal(22px, 13px);
+	letter-spacing: XDunits_to_ems(30);
 }
 blockquote {
 	padding: 15px 30px 25px;
@@ -339,6 +348,33 @@ table {
 		}
 	}
 }
+/* :::::::::::::::::::::::::::::::::::::: Infobox */
+.infobox {
+	@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
+	padding: 40px 30px;
+	text-align: center;
+	em {
+		font-size: px_to_rem(13px);
+		line-height: px_to_decimal(22px, 13px);
+		letter-spacing: XDunits_to_ems(30);
+		margin-bottom: 15px;
+	}
+	a[href^="tel:"] {
+		font-weight: $font_semibold;
+		font-size: px_to_rem(16px);
+		line-height: px_to_decimal(34px, 16px);
+		letter-spacing: XDunits_to_ems(30);
+		color: $yellow;
+	}
+	.or {
+		font-size: px_to_rem(14px);
+		line-height: px_to_decimal(25px, 14px);
+		letter-spacing: XDunits_to_ems(30);
+		margin-bottom: 15px;
+	}
+}
+
+
 
 /* :::::::::::::::::::::::::::::::::::::: Header Styles */
 
