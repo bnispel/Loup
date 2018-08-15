@@ -7,15 +7,18 @@
  * <![endif]--> */
 h1, .h1 {
 	font-size: px_to_em(60px);
+	font-size: px_to_rem(60px);
 	line-height: px_to_decimal(75px, 60px);
 	letter-spacing: XDunits_to_ems(30);
 }
 h2, .h2 {
 	font-size: px_to_em(46px);
+	font-size: px_to_rem(46px);
 	line-height: px_to_decimal(45px, 46px);
 }
 h3, .h3 {
 	font-size: px_to_em(25px);
+	font-size: px_to_rem(25px);
 	line-height: px_to_decimal(22px, 25px);
 	letter-spacing: XDunits_to_ems(120);
 }
@@ -31,6 +34,18 @@ p {
 button, button.alt {
 	&:after {
 		display: none;	
+	}
+}
+.button {
+	&:after {
+		background: url(../images/icon-rightarrow-spruce.png) no-repeat left center;
+		background-size: 9px 13px;
+	}
+}
+.button.alt {
+	&:after {
+		background: url(../images/icon-rightarrow.png) no-repeat top left;
+		background-size: 9px 13px;
 	}
 }
 .fancycaption {
@@ -138,10 +153,13 @@ ul.dropdown {
 	left: 0;
 	z-index: 20;
 	background: $white;
-	width: 355px;
+	min-width: 300px;
 	@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
 	a:after {
 		display: none;
+	}
+	li {
+		padding: 0;
 	}
 	li, a {
 		display: block;
@@ -252,9 +270,6 @@ li.solutionsnav {
 .section_pageheader_text {
 	padding-top: 160px;
 }
-.challenges_wrappers {
-	margin: 0 -5px;
-}
 .challenge {
 	flex-basis: calc(30% - 30px);
 	margin: 0 50px 70px;
@@ -324,13 +339,15 @@ li.solutionsnav {
 	overflow: hidden;
 }
 .challenges_wrappers {
-		margin: 0 -5px;
+		display: block;	
+		overflow: hidden;
 	}
 	.challenge {
 		padding: 2px;
 		border-width: 0;
 		display: block;
 		border-color: transparent;
+		border: 1px solid $athensgray;
 		border-bottom: 10px solid $yellow;
 		@include transition(.2s);
 		position: relative;
@@ -611,6 +628,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', end
 }
 /* :::::::::::::::::::::::::::::::::::::: Endpage CTA */
 .endpage_cta_wrapper { 
+	display: table;
 	&:before {
 		background: #354f5f;
 		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -619,13 +637,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', end
 	}
 }
 .endpage_cta {
+	display: table-cell;
+	vertical-align: middle;
 	h2 {
-		font-size: px_to_em(40px);
-		line-height: px_to_decimal(25px, 40px);
+		font-size: px_to_rem(50px);
+		line-height: px_to_decimal(34px, 50px);
+		letter-spacing: XDunits_to_ems(30);
 	}
 	h3 {
-		font-size: px_to_em(20px);
-		line-height: px_to_decimal(27px, 20px);
+		font-size: px_to_rem(25px);
+		line-height: px_to_decimal(34px, 25px);
+		letter-spacing: XDunits_to_ems(100);
 	}
 }
 /* :::::::::::::::::::::::::::::::::::::: Footer */
@@ -672,10 +694,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', end
 /* 3 col section */
 .section_3col {
 	overflow: hidden;
+	max-width: 1540px;
+	width: 100%;
 	.section_col1, .section_col2, .section_col3 {
 		width: 30%;
 		float: left;
-		min-height: 550px;
+		min-height: 450px;
 		padding: 0 50px 50px;
 	}
 		.section_col1, .section_col2 {

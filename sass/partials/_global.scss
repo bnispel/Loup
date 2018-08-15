@@ -47,6 +47,7 @@ h4, .h4 {
 	font-size: px_to_rem(15px);
 	line-height: px_to_decimal(22px, 15px);
 	letter-spacing: XDunits_to_ems(120);
+	margin-bottom: 10px;
 	color: $darkblue;
 	font-weight: $font_bold;
 	text-transform: uppercase;
@@ -111,6 +112,16 @@ p.meta {
 	font-size: px_to_rem(13px);
 	line-height: px_to_decimal(22px, 13px);
 	letter-spacing: XDunits_to_ems(30);
+}
+p.smallheader {
+	margin-bottom: 5px;
+}
+.divider {
+	width: 33px;
+	height: 1px;
+	display: block;
+	margin: 15px 0;
+	background: $rollingstone;
 }
 blockquote {
 	padding: 15px 30px 25px;
@@ -199,11 +210,11 @@ ul {
 		display: block;
 		float: right;
 		margin: 1px 0 0 7px;
-		width: 8px;
+		width: 9px;
 		height: 12px;
 		@include transition(.2s);
-		background: url(../images/icon-rightarrow-spruce.svg) no-repeat top left;
-		background-size: 8px 13px;
+		background: url(../images/icon-rightarrow-spruce.svg) no-repeat left center;
+		background-size: 9px 13px;
 	}
 	&:hover {
 		border: 1px solid $yellow;
@@ -222,7 +233,7 @@ ul {
 	@include transition(0);
 	&:after {
 		background: url(../images/icon-rightarrow.svg) no-repeat top left;
-		background-size: 8px 13px;
+		background-size: 9px 13px;
 	}
 	&:hover {
 		background: rgb(3,91,153);
@@ -931,6 +942,8 @@ nav {
 	background-position: center center;
 	background-size: cover;
 	position: relative;
+	width: 100%;
+	clear: both;
 	min-height: 400px;
 	@include displaygrid();
 	@include centergrid();
@@ -1200,12 +1213,28 @@ form {
 	max-width: 800px;
 	margin: 0 auto;
 }
-div.field {
+.formnote {
+	text-align: center;
+	margin-bottom: 0;
+}
+.field {
 	margin-bottom: 8px;
 	padding-bottom: 10px;
 	clear: both;
 	display: block;
 	overflow: hidden;
+	width: 100%;
+}
+.required {
+	font-size: px_to_rem(12px);
+	line-height: px_to_decimal(25px, 12px);
+	letter-spacing: XDunits_to_ems(50);
+	text-align: center;
+	margin-bottom: 5px;
+}
+.checkbox_wrapper.last_checkbox {
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 label {
 	font-size: px_to_rem(16px);
@@ -1213,7 +1242,7 @@ label {
 	letter-spacing: XDunits_to_ems(50);
 	color: $rollingstone;
 }
-input {
+input, textarea {
 	display: block;
 	width: 100%;
 	background: none;
@@ -1235,7 +1264,7 @@ input {
 	label {
 		color: $darkblue;
 	}
-	input {
+	input, textarea {
 		border-color: rgba($darkblue, .3);
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
 	}
@@ -1258,7 +1287,12 @@ input[type="checkbox"]::-ms-check {
 input[type="checkbox"]:checked {
 	background: url(../images/icon-check.png) no-repeat center center;
 }
-.checkbox {
+.grouplabel {
+	font-weight: $font_semibold;
+	margin-bottom: 15px;
+}
+.field_checkbox {
+	margin: 15px 20px 20px 0;
 	input {
 		float: left;
 	}
@@ -1268,7 +1302,11 @@ input[type="checkbox"]:checked {
 	}
 	span {
 		float: left;
+		position: static;
 	}
+}
+.form_wrapper {
+	margin-bottom: 40px;
 }
 input[type="submit"] {
 	@include removeappearance();
@@ -1290,7 +1328,7 @@ input[type="submit"] {
 	@include transition(0);
 	cursor: pointer;
 	max-width: 260px;
-	margin: 40px auto 0;
+	margin: 0 auto 0;
 	&:after {
 		content: '';
 		display: block;
@@ -1483,22 +1521,23 @@ input[type="submit"] {
 	form {
 		padding: 30px 0;
 	}
-	.form_wrapper {
-		@include displaygrid();
-		@include gridcolumns(1fr 1fr);
-		grid-gap: 20px 40px;
-	}
-	div.field {
+	.field {
 		margin-bottom: 0;
 		padding-bottom: 0;
 		position: relative;
+		margin-bottom: 20px;
 	}
-	.field_wrapper.field_half {
+	.field_wrapper {
 		@include displaygrid();
 		@include gridcolumns(1fr 1fr);
+		grid-gap: 20px 40px;
+		.field {
+			margin-bottom: 0;
+		}
 	}
-	.field.checkbox {
-		padding-top: 35px;
+	.field_checkbox {
+		float: left;
+		margin: 0 20px 20px 0;
 		span {
 			padding-top: 3px;
 		}
