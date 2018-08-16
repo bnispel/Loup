@@ -1624,7 +1624,7 @@ input[type="submit"] {
 	}
 	h1, .h1 {
 		font-size: px_to_rem(50px);
-		line-height: px_to_decimal(30px, 50px);
+		line-height: px_to_decimal(60px, 50px);
 		letter-spacing: XDunits_to_ems(25);
 	}
 	h2, .h2 {
@@ -1966,20 +1966,24 @@ input[type="submit"] {
 			padding: 10px 15px 0 0;
 		}
 		nav {
-			width: 80%;
+			width: auto;
 			padding-top: 20px;
 			float: right;
+			position: static;
 			&:after {
 				content: '';
 				display: block;
 				width: 1px;
 				clear: both;
 			}
+			a {
+				font-size: px_to_rem(12px); 
+			}
 			ul {
 				display: block;
 				float: right;
 				li {
-					padding-right: 25px;
+					padding-right: 0;
 					float: left;
 				}
 				ul {
@@ -2060,6 +2064,13 @@ input[type="submit"] {
 	.footer_wrapper {
 		.logo {
 			margin-right: 40px;
+		}
+	}
+	.no-flexbox {
+		nav {
+			ul li {
+				padding-right: 15px;
+			}
 		}
 	}
 	/* :::::::::::::::::::::::::::::::::::::: Content Blocks */

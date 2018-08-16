@@ -47,7 +47,9 @@ $base-font-size: 16px;
 }
 @mixin centergrid() {
 	justify-content: center;
+	align-content: center;
 	align-items: center;
+	justify-items: center;
 }
 @mixin gridcolumns($cols) {
 	-ms-grid-columns: $cols;
