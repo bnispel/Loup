@@ -42,7 +42,6 @@ $base-font-size: 16px;
 	-webkit-border-radius: $value;
 }
 @mixin displaygrid() {
-  display: -ms-grid;
   display: grid;
 }
 @mixin centergrid() {
@@ -52,7 +51,7 @@ $base-font-size: 16px;
 	justify-items: center;
 }
 @mixin gridcolumns($cols) {
-	-ms-grid-columns: $cols;
+	
 	grid-template-columns: $cols;
 }
 @mixin gridrows($rows) {

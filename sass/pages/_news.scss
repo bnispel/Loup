@@ -75,6 +75,9 @@
 	}
 }
 @media screen and (min-width:1000px) {
+	p.meta {
+		padding-bottom: 15px;
+	}
 	.newslist_item_media {
 		width: 300px;
 		height: auto;
@@ -102,22 +105,22 @@
 			line-height: px_to_decimal(22px, 14px);
 			letter-spacing: XDunits_to_ems(20);
 			&.cat_annoucements {
-				background: $yellow;
+				background: rgba($yellow, .90);
 			}
 			&.cat_events {
-				background: $lightblue;
+				background: rgba($lightblue, .9);
 			}
 			&.cat_articles {
-				background: $darkblue;
+				background: rgba($darkblue, .9);
 			}
 			&.cat_solutions {
-				background: $gray;
+				background: rgba($gray, .9);
 			}
 			&.cat_tips {
-				background: $lightgray;
+				background: rgba($lightgray, .9);
 			}
 			&.cat_tips {
-				background: $lightgray;
+				background: rgba($lightgray, .9);
 			}
 		}
 	}

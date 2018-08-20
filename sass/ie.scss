@@ -5,6 +5,13 @@
  * <!--[if IE]>
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
+ 
+ .page_wrapper, .mainnav_wrapper {
+	 min-width: 1500px;
+ }
+ .dropdownbtn {
+	 display: none;
+ }
 h1, .h1 {
 	font-size: px_to_em(60px);
 	font-size: px_to_rem(60px);
@@ -278,6 +285,13 @@ li.solutionsnav {
 	}
 	&:nth-child(3n) {
 		margin-right:0;
+	}
+}
+/* :::::::: Challenge tiles base - No Flexbox */
+.no-flexbox {
+	.challenge_inside {
+		margin-top: -100px;
+		transform: translate(0,-50%);
 	}
 }
 .section {
@@ -711,4 +725,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b352', end
 	.section_col2 {
 		border-right: 1px solid rgba($rollingstone, .23);
 	}
+}
+
+.contact .section_imgoverlap .section_contentbox {
+	position: relative;
+	background: $white;
 }

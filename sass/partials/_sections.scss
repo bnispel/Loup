@@ -22,6 +22,9 @@
 	margin: 0 auto 20px;
 	display: block;
 }
+.last_section {
+	padding-bottom: 0;
+}
 /* :::::::::::::::::::::::::::::::::::::: News Filter */
 .news_filter {
 	margin-bottom: 30px;
@@ -69,7 +72,7 @@
 		letter-spacing: XDunits_to_ems(50);
 		padding: 10px 0;
 		&:hover {
-			color: $darkblue;
+			color: $yellow;
 		}
 	}
 	.current {
@@ -377,7 +380,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 .section_imgoverlap {
 	.section_contentbox {
 		background: $white;
-		padding: 20px 20px 50px 0;
+		padding: 20px 20px 0 0;
 		width: 100%;
 		position: relative;
 		z-index: 2;
@@ -497,7 +500,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			}
 		}
 		a {
-			padding: 10px;
+			padding: 10px 15px;
 		}
 		.current a {
 			color: $darkblue;
@@ -551,6 +554,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			position: relative;
 			width: 50%;
 			margin-top: 30px;
+			margin-bottom: 50px;
 			background: none;
 		}
 		.section_image {
@@ -627,6 +631,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	}
 }
 @media screen and (min-width:1000px) {
+	.last_section.image_cta {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		.image_cta_msg.cta_left {
+			bottom: 0;
+		}
+	}
 	/* :::::::::::::::::::::::::::::::::::::: Section Intro */
 	.section_intro {
 		padding: 60px 25px 40px;
@@ -721,6 +732,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		.sidebar {
 			float: right;
 			width: 30%;
+			padding: 10px;
 		}
 	}
 	/* :::::::::::::::: 3 col section */

@@ -890,7 +890,8 @@ nav {
 		display: none;
 	}
 	&:first-child {
-		padding-top: 10px;
+		border-top: 1px solid $rollingstone;
+		border-top: 1px solid rgba($rollingstone, .3);
 	}
 }
 .collapsible_handle {
@@ -1255,6 +1256,7 @@ input, textarea {
 	letter-spacing: XDunits_to_ems(50);
 	color: $rollingstone;
 	min-height: 50px;
+	@include removeappearance;
 	&:focus {
 		border-color: rgba($darkblue, .3);
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
@@ -1545,6 +1547,7 @@ input[type="submit"] {
 	.no-cssgrid {
 		.form_wrapper, .field_wrapper.field_half {
 			display: block;
+			overflow: hidden;
 		}
 		.field_half {
 			width: 48%;
@@ -1910,6 +1913,14 @@ input[type="submit"] {
 			display: block;
 			width: 100%;
 		}
+		li {
+			margin-bottom: 0;
+		}
+		li:last-child {
+			a {
+				border-bottom: 0;
+			}
+		}
 		a {
 			padding: 25px 10px 25px 30px;
 			border-left: 10px solid $white;
@@ -1946,6 +1957,7 @@ input[type="submit"] {
 		.challenge {
 			padding: 10px;
 			border-bottom: 0;
+			margin-bottom: 0;
 			@include flexbox();
 			@include flexcenter();
 			border-left: 0;
