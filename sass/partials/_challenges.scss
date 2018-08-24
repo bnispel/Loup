@@ -51,7 +51,9 @@
 	margin: 0 auto;
 	text-align: center;
 	@include flexbox();
+	-webkit-flex-direction: row;
 	flex-direction: row;
+	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
 	justify-content: center;
 }
@@ -59,6 +61,8 @@
 	text-align: center;
 	@include flexbox(); 
 	background: $white;
+	width: 46%;
+	flex-basis: 48%;
 	flex-basis: calc(50% - 26px);  
 	height: 144px;
 	justify-content: center;
@@ -122,6 +126,9 @@
 	}
 	
 }
+.challenge_inside {
+	margin: 0 auto;
+}
 /* :::::::: Challenge tiles base - No Flexbox */
 .no-flexbox {
 	.challenges_wrappers {
@@ -148,8 +155,15 @@
 .challenge_description {
 	display: none;
 }
-
-
+/* :::::::: End page alt styles */
+.endpage_alt {
+	.challenge {
+		width: 46%;
+		flex-basis: 48%;
+		flex-basis: calc(50% - 46px);  
+		height: 144px;
+	}
+}
 
 
 
@@ -158,6 +172,8 @@
 		max-width: 560px;
 	}
 	.challenge {
+		width: 28%;
+		flex-basis: 30%;
 		flex-basis: calc(33% - 23px);
 		height: 150px;
 	}
@@ -171,10 +187,12 @@
 	}
 	.endpage_alt {
 		.challenges_wrappers {
-			max-width: 370px;
+			max-width: 400px;
 		}
 		.challenge {
-			flex-basis: calc(50% - 26px);  
+			width: 46%;
+			flex-basis: 48%;
+			flex-basis: calc(50% - 46px);  
 			height: 144px;
 		}
 	}
@@ -234,6 +252,19 @@
 			max-width: 850px;
 		}
 		.challenge {
+			width: 28%;
+			flex-basis: 30%;
+			flex-basis: calc(33% - 40px); 
+			height: 205px;
+		}
+	}
+	.solutionschild .endpage_alt {
+		.challenges_wrappers {
+			max-width: 850px;
+		}
+		.challenge {
+			width: 19%;
+			flex-basis: 21%;
 			flex-basis: calc(25% - 40px); 
 			height: 165px;
 		}
@@ -256,7 +287,8 @@
 		text-transform: uppercase;
 		font-weight: $font_bold;
 		height: 224px;
-		width: 100%;
+		width: 28%;
+		flex-basis: 30%;
 		flex-basis: calc(33% - 40px);
 		margin: 0 20px 50px;
 		.challenge_inside {
@@ -398,11 +430,13 @@
 			line-height: px_to_decimal(26px, 14px);
 		}
 	}
-	.endpage_alt {
+	.solutionschild .endpage_alt {
 		.challenges_wrappers {
 			max-width: 1000px;
 		}
 		.challenge {
+			width: 19%;
+			flex-basis: 21%;
 			flex-basis: calc(25% - 40px); 
 			height: 205px;
 			h3 {
@@ -416,9 +450,24 @@
 @media screen and (min-width:1200px) {	
 	.challenges_wrappers {
 		max-width: 100%;
+		-webkit-flex-wrap: nowrap;
 		flex-wrap: nowrap;
 	}
+	.endpage_alt {
+		.challenges_wrappers {
+			max-width: 1400px;
+		}
+	}
+	.solutionschild .endpage_alt {
+		.challenges_wrappers {
+			max-width: 1000px;
+		}
+		.challenge {
+			
+		}
+	}
 	.challenge {
+		flex-basis: 18%;
 		flex-basis: calc(20% - 30px);
 		margin: 0 15px 30px;
 		height: 175px;
@@ -435,8 +484,10 @@
 		}
 	}
 	.challenge_teasers {
+		-webkit-flex-wrap: wrap;
 		flex-wrap: wrap;
 		.challenge {
+			flex-basis: 28%;
 			flex-basis: calc(30% - 30px);
 			margin: 0 50px 70px;
 			&:first-child {

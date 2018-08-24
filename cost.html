@@ -25,7 +25,7 @@
 	<![endif]-->
 </head>
 <body>
-	<div class="page_wrapper">
+	<div class="page_wrapper solutionschild">
 		<div class="main_wrapper">
 			<header>
 				<div class="quicklinks_wrapper quicklinks_desktop">
@@ -50,7 +50,7 @@
 								</button>
 							</div>
 						</div>
-						<nav class="nav">
+						<nav class="nav" id="nav">
 							<div class="quicklinks_wrapper quicklinks_mobile">
 								<div class="quicklinks"><!-- If more than 4 items - add class longlinks -->
 									<a href="#" title="Rates">Rates</a>
@@ -174,9 +174,11 @@
 			<div class="section">
 				<h2>What’s Your Challenge? Find Your Solution.</h2>
 				<p>To learn how you can get solutions that address your cost challenges, find your challenge below. </p>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="costeffectiveshipping">
 					<div class="collapsible_handle">
-						<h3>I need to find more cost-effective ways to ship.</h3>
+						<a href="#costeffectiveshipping">
+							<h3>I need to find more cost-effective ways to ship.</h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
@@ -186,9 +188,11 @@
 						<p>We can leverage multiple modes of transportation in a single supply chain. For instance, if you want to use a more efficient shipping mode like rail, we can pick up and/or deliver your products with trucks, then ship by rail for the long haul. The result? You save and your products still arrive safe and sound. </p>
 					</div>
 				</div>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="savecosts">
 					<div class="collapsible_handle">
-						<h3>I have the right shipping modes in place, but I still need to save costs. </h3>
+						<a href="#savecosts">
+							<h3>I have the right shipping modes in place, but I still need to save costs. </h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
@@ -198,9 +202,11 @@
 						<p>We can find ways to actually remove steps from your supply chain, while keeping the modes you use intact. For instance, if your product is shipped to a warehouse to be packaged, we can perform that service (and many other <a href="#">specialized services</a>) onsite, saving the additional time and transportation cost. </p>
 					</div>
 				</div>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="productdamage">
 					<div class="collapsible_handle">
-						<h3>My products have experienced damage in transit — I can’t keep incurring these costs.</h3>
+						<a href="#productdamage">
+							<h3>My products have experienced damage in transit — I can’t keep incurring these costs.</h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
@@ -210,9 +216,11 @@
 						<p>There will always be risks when shipping, but we can help you reduce that risk by working with proven partners. Our suppliers are vetted to ensure your products are handled with care.</p>
 					</div>
 				</div>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="rail">
 					<div class="collapsible_handle">
-						<h3>I want to ship by rail but I don’t want to pay to get tracks at my door. </h3>
+						<a href="#rail">
+							<h3>I want to ship by rail but I don’t want to pay to get tracks at my door. </h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
@@ -222,9 +230,11 @@
 						<p>Good news: You don’t have to have tracks at your door to use rail. Our transloaders and intermodal terminal operators safely move products between trucks and trains, so you can connect to rail.</p>
 					</div>
 				</div>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="excesscosts">
 					<div class="collapsible_handle">
-						<h3>We have a lot of excess costs for things like demurrage and PECS. </h3>
+						<a href="#excesscosts">
+							<h3>We have a lot of excess costs for things like demurrage and PECS. </h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
@@ -234,33 +244,39 @@
 						<p>Additional costs are painful. Our logistics experts use technology and expertise to identify problems before they happen, so you can avoid these costs altogether. </p>
 					</div>
 				</div>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="deliverydelays">
 					<div class="collapsible_handle">
-						<h3>Delivery delays are costing me money. </h3>
+						<a href="#deliverydelays">
+							<h3>Delivery delays are costing me money. </h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
 						</svg>
 					</div>
 					<div class="collapsible_content">
-						<p>sing our <a href="#">ShipmentVision</a> shipment tracking tool, you can see exactly where your products are — and if it looks like a problem is ahead, our logistics team can help avoid delays.</p>
+						<p>Using our <a href="#">ShipmentVision</a> shipment tracking tool, you can see exactly where your products are — and if it looks like a problem is ahead, our logistics team can help avoid delays.</p>
 					</div>
 				</div>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="manageinventory">
 					<div class="collapsible_handle">
-						<h3>I wish I could better manage my inventory – putting too much in the pipeline gets costly.</h3>
+						<a href="#manageinventory">
+							<h3>I wish I could better manage my inventory – putting too much in the pipeline gets costly.</h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>
 						</svg>
 					</div>
 					<div class="collapsible_content">
-						<p>You can! Our logistics services give you visibility to your product across rail carriers, providing customized reporting on how much product is in your pipeline and when it is scheduled to arrive. Using the ShipmentVision [link to SV page] Capacity Manager tool, you’ll have time to make the right decisions about inventory as well as greater control over your pipeline’s health. </p>
+						<p>You can! Our logistics services give you visibility to your product across rail carriers, providing customized reporting on how much product is in your pipeline and when it is scheduled to arrive. Using the <a href="#">ShipmentVision</a> Capacity Manager tool, you’ll have time to make the right decisions about inventory as well as greater control over your pipeline’s health. </p>
 					</div>
 				</div>
-				<div class="collapsible_item">
+				<div class="collapsible_item" id="storeproducts">
 					<div class="collapsible_handle">
-						<h3>I need to store my products, but buying land and building a warehouse isn’t realistic. </h3>
+						<a href="#storeproducts">
+							<h3>I need to store my products, but buying land and building a warehouse isn’t realistic. </h3>
+						</a>
 						<svg class="collapsible_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
 							<rect id="plus_vert" x="8.35" width="6.3" height="23"/>
 							<rect id="plus_horiz" y="8.35" width="23" height="6.3"/>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-cssgrid">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Connect With us - Loup Logistics</title>
@@ -50,7 +50,7 @@
 								</button>
 							</div>
 						</div>
-						<nav class="nav">
+						<nav class="nav" id="nav">
 							<div class="quicklinks_wrapper quicklinks_mobile">
 								<div class="quicklinks"><!-- If more than 4 items - add class longlinks -->
 									<a href="#" title="Rates">Rates</a>
@@ -189,85 +189,85 @@
 					<p class="formnote">Or, complete the form below and we'll get back to you within one business day.</p>
 					<div class="form_wrapper">
 						<div class="field_wrapper">
-							<div class="field field_half">
-								<label for="name" tabindex="1"><span>Name*</span></label>
-								<input type="text" name="name">
+							<div class="field field_half field_required">
+								<label for="name" tabindex="1"><span>Name</span></label>
+								<input type="text" name="name" required>
 							</div>
 							<div class="field field_half">
-								<label for="companyname" tabindex="2"><span>Company Name*</span></label>
-								<input type="text" name="companyname">
+								<label for="companyname" tabindex="2"><span>Company Name</span></label>
+								<input type="text" name="companyname" required>
 							</div>
 						</div>
 						<div class="field_wrapper">
 							<div class="field field_half">
-								<label for="email" tabindex="3"><span>Email*</span></label>
-								<input type="text" name="email">
+								<label for="email" tabindex="3"><span>Email</span></label>
+								<input type="text" name="email" required>
 							</div>
 							<div class="field field_half">
-								<label for="phone" tabindex="4"><span>Phone</span></label>
+								<label for="phone" tabindex="4"><span>Phone <small>(optional)</small></span></label>
 								<input type="text" name="phone">
 							</div>
 						</div>
 						<div class="field">
-							<label for="products" tabindex="5"><span>What products do you ship?*</span></label>
+							<label for="products" tabindex="5"><span>What products do you ship?</span></label>
 							<textarea name="products"></textarea>
 						</div>
 						<div class="field checkbox_wrapper">
-							<label class="grouplabel">How do you currently ship your products?*</label>
-							<div class="field_checkbox">
-								<label for="product_ltl"><input type="checkbox" id="product_ltl">
-								<span>LTL</span></label>
-							</div>
+							<label class="grouplabel">How do you currently ship your products?</label>
 							<div class="field_checkbox">
 								<label for="bulk_carload"><input type="checkbox" id="bulk_carload">
 								<span>Bulk Carload</span></label>
-							</div>
-							<div class="field_checkbox">
-								<label for="otr_truck"><input type="checkbox" id="otr_truck">
-								<span>OTR Truck</span></label>
 							</div>
 							<div class="field_checkbox">
 								<label for="intermodal"><input type="checkbox" id="intermodal">
 								<span>Intermodal</span></label>
 							</div>
 							<div class="field_checkbox">
+								<label for="product_ltl"><input type="checkbox" id="product_ltl">
+								<span>LTL</span></label>
+							</div>
+							<div class="field_checkbox">
+								<label for="otr_truck"><input type="checkbox" id="otr_truck">
+								<span>OTR Truck</span></label>
+							</div>
+							
+							<div class="field_checkbox">
 								<label for="other"><input type="checkbox" id="other">
 								<span>Other</span></label>
 							</div>
 						</div>
 						<div class="field checkbox_wrapper last_checkbox">
-							<label class="grouplabel">What is your primary challenge? (Select one)</label>
+							<label class="grouplabel">What is your primary challenge? <small>(Optional - Select one)</small></label>
 							<div class="field_checkbox">
-								<label for="challenge_cost"><input type="checkbox" id="challenge_cost">
+								<label for="challenge_cost"><input type="radio" name="challenge" id="challenge_cost">
 								<span>Cost</span></label>
 							</div>
 							<div class="field_checkbox">
-								<label for="challenge_time"><input type="checkbox" id="challenge_time">
+								<label for="challenge_time"><input type="radio" name="challenge" id="challenge_time">
 								<span>Time</span></label>
 							</div>
 							<div class="field_checkbox">
-								<label for="challenge_visibility"><input type="checkbox" id="challenge_visibility">
+								<label for="challenge_visibility"><input type="radio" name="challenge" id="challenge_visibility">
 								<span>Visibility</span></label>
 							</div>
 							<div class="field_checkbox">
-								<label for="challenge_access"><input type="checkbox" id="challenge_access">
+								<label for="challenge_access"><input type="radio" name="challenge" id="challenge_access">
 								<span>Access & Capacity</span></label>
 							</div>
 							<div class="field_checkbox">
-								<label for="challenge_supplychain"><input type="checkbox" id="challenge_supplychain">
+								<label for="challenge_supplychain"><input type="radio" name="challenge" id="challenge_supplychain">
 								<span>Supply Chain Management</span></label>
 							</div>
 							<div class="field_checkbox">
-								<label for="challenge_other"><input type="checkbox" id="challenge_other">
+								<label for="challenge_other"><input type="radio" name="challenge" id="challenge_other">
 								<span>Other</span></label>
 							</div>
 						</div>
 						<div class="field">
-							<label for="products" tabindex="5"><span>Message</span></label>
+							<label for="products" tabindex="5"><span>Message <small>(optional)</small></span></label>
 							<textarea name="message"></textarea>
 						</div>
 					</div>
-					<p class="required">*Indicates required</p>
 					<input type="submit" value="Submit">
 				</form>
 			</div>

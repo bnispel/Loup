@@ -66,6 +66,9 @@ h6, .h6 {
 a {
 	color: $lightblue;
 	text-decoration: none;
+	&:hover {
+		color: $yellow;
+	}
 }
 a[target="_blank"], a.external, a[href$=".pdf"], a.pdf {
 	font-size: px_to_rem(16px);
@@ -92,6 +95,11 @@ p {
 	color: $stormyblue;
 	letter-spacing: XDunits_to_ems(30);
 	margin-bottom: 25px;
+}
+small {
+	font-size: px_to_rem(12px);
+	font-weight: $font_light;
+	opacity: .8;
 }
 strong {
 	color: $darkblue;
@@ -574,7 +582,7 @@ nav {
 	top: 100%;
 	left: 0;
 	width: 100%;
-	padding: 0 5px 50px 5px;
+	padding: 0 5px 0 5px;
 	ul {
 		padding-left: 0;
 		list-style-image: none;
@@ -589,6 +597,7 @@ nav {
 		border-bottom: 1.25px solid $athensgray;
 		padding-left: 0;
 		padding-bottom: 0;
+		margin-bottom: 0;
 	}
 	a {
 		-ms-font-feature-settings: normal;
@@ -661,6 +670,7 @@ nav {
 	top: 0;
 	right: 0;
 	width: 80px;
+	min-width: 40%;
 	height: 60px;
 	cursor: pointer;
 	&:before {
@@ -672,7 +682,7 @@ nav {
 		height: 14px;
 		position: absolute;
 		top: 50%;
-		left: 50%;
+		right: 20px;
 		margin-top: -7px;
 		@include transition(.2s);
 	}
@@ -813,6 +823,7 @@ nav {
 }
 .copyright {
 	text-align: center;
+	overflow: hidden;
 	p, a {
 		font-size: px_to_rem(13px);
 		line-height: px_to_decimal(30px, 13px);
@@ -1215,27 +1226,67 @@ form {
 	margin: 0 auto;
 }
 .formnote {
-	text-align: center;
-	margin-bottom: 0;
+	text-align: left;
+	margin-bottom: 20px;
 }
 .field {
 	margin-bottom: 8px;
 	padding-bottom: 10px;
 	clear: both;
 	display: block;
-	overflow: hidden;
 	width: 100%;
-}
-.required {
-	font-size: px_to_rem(12px);
-	line-height: px_to_decimal(25px, 12px);
-	letter-spacing: XDunits_to_ems(50);
-	text-align: center;
-	margin-bottom: 5px;
+	position: relative;
 }
 .checkbox_wrapper.last_checkbox {
 	margin-bottom: 0;
 	padding-bottom: 0;
+}
+.field_required, .field_error {
+	label {
+		color: $red;
+		position: relative;
+		span:after {
+			content: '';
+			display: inline-block;
+			padding-left: 10px;
+			font-size: px_to_rem(10px);
+			line-height: px_to_decimal(15px, 10px);
+			letter-spacing: XDunits_to_ems(50);
+			color: $red;
+		}
+	}
+	input {
+		border-color: $red;
+		position: relative;
+	}
+}
+.checkbox_wrapper.field_required {
+	label:after {
+		display: none;
+	}
+	.grouplabel {
+		&:after {
+			content: '';
+			display: inline-block;
+			position: static;
+			padding-left: 10px;
+			font-size: px_to_rem(10px);
+			line-height: px_to_decimal(15px, 10px);
+			font-weight: $font_regular;
+			letter-spacing: XDunits_to_ems(50);
+			color: $red;
+		}
+	}
+}
+.field_required {
+	label span:after {
+		content: 'Field is required';
+	}
+}
+.checkbox_wrapper.field_required {
+	.grouplabel:after {
+		content: 'Field is required';
+	}
 }
 label {
 	font-size: px_to_rem(16px);
@@ -1248,9 +1299,10 @@ input, textarea {
 	width: 100%;
 	background: none;
 	outline: 0;
-	border: 1px solid $limedspruce;
+	border: 1px solid rgba($limedspruce, .3);
 	padding: 10px 20px;
 	border-radius: 8px;
+	font-family: $main_font;
 	font-size: px_to_rem(13px);
 	line-height: px_to_decimal(30px, 13px);
 	letter-spacing: XDunits_to_ems(50);
@@ -1271,7 +1323,7 @@ input, textarea {
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
 	}
 }
-input[type="checkbox"] {
+/*input[type="checkbox"], input[type="radio"] {
 	background: none;
 	@include removeappearance();
 	border: 1px solid $limedspruce;
@@ -1282,12 +1334,12 @@ input[type="checkbox"] {
 	cursor: pointer;
 	float: left;
 	margin-right: 10px;
-}
-input[type="checkbox"]::-ms-check {
+}*/
+input[type="checkbox"]::-ms-check, input[type="radio"]::-ms-check {
    // display: none;
 }
-input[type="checkbox"]:checked {
-	background: url(../images/icon-check.png) no-repeat center center;
+input[type="checkbox"]:checked + span, input[type="radio"]:checked  + span {
+	background: url(../images/formbox-checked.png) no-repeat left top;
 }
 .grouplabel {
 	font-weight: $font_semibold;
@@ -1296,7 +1348,7 @@ input[type="checkbox"]:checked {
 .field_checkbox {
 	margin: 15px 20px 20px 0;
 	input {
-		float: left;
+		display: none;
 	}
 	label {
 		overflow: hidden;
@@ -1305,6 +1357,9 @@ input[type="checkbox"]:checked {
 	span {
 		float: left;
 		position: static;
+		background: url(../images/formbox.png) no-repeat left top;
+		padding: 5px 0 5px 40px;
+		cursor: pointer;
 	}
 }
 .form_wrapper {
@@ -1370,12 +1425,22 @@ input[type="submit"] {
 	}
 }
 
+@media screen and (max-height: 600px) {
+	nav {
+		padding: 0 5px 50px 5px;
+	}	
+}
 @media screen and (max-width: 800px) {
 	.parallax {
 		transform: translate(0,0) !important;
 	}
 }
 @media screen and (min-width: 600px) {
+	.dropdownbtn {
+		span {
+			min-width: 65%;
+		}	
+	}
 	.carousel_gallery .slick-slide {
 		padding: 20px;
 	}
@@ -1392,6 +1457,9 @@ input[type="submit"] {
 	}
 }
 @media screen and (min-width: 800px) {
+	.formnote {
+		text-align: center;
+	}
 	blockquote {
 		max-width: 500px;
 		float: right;
@@ -1533,9 +1601,6 @@ input[type="submit"] {
 		@include displaygrid();
 		@include gridcolumns(1fr 1fr);
 		grid-gap: 20px 40px;
-		.field {
-			margin-bottom: 0;
-		}
 	}
 	.field_checkbox {
 		float: left;
@@ -1574,7 +1639,7 @@ input[type="submit"] {
 			top: 40px;
 			left: 20px;
 			@include transition(.2s);
-			z-index: 1;
+			z-index: -1;
 		}
 	}
 	input {
@@ -1609,14 +1674,24 @@ input[type="submit"] {
 		grid-gap: 20px 30px;
 		padding-top: 20px;
 	}
-	.no-cssgrid {
+	.no-cssgrid.flexbox {
+		.item_list {
+			@include flexbox();
+			flex-wrap: wrap;
+			justify-content: space-between;
+			li {
+				width: 45%;
+			}
+		}
+	}
+	.no-cssgrid.no-flexbox {
 		.item_list {
 			overflow: hidden;
 			display: block;
 			li {
 				width: 45%;
 				float: left;
-				min-height: 150px;
+				min-height: 200px;
 			}
 		}
 	}
@@ -2034,7 +2109,14 @@ input[type="submit"] {
 	.item_list {
 		@include gridcolumns(1fr 1fr 1fr);
 	}
-	.no-cssgrid {
+	.no-cssgrid.flexbox {
+		.item_list {
+			li {
+				width: 32%;
+			}
+		}
+	}
+	.no-cssgrid.no-flexbox {
 		display: block;
 		.item_list {
 			li {

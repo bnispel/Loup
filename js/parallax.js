@@ -36,4 +36,7 @@ if (screen > 800) {
 	    }
 	  });
 	});
+	$( window ).resize(function() {
+	  parallaxImg();
+	});
 }

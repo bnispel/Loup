@@ -43,6 +43,7 @@ $(document).ready(function() {
 	
     toggleElment();
     
+    
     /* Replace SVGs with PNGs if not supported */
     if (Modernizr.svgasimg) {
 		$("img.src").attr("src", function (idx, attr) {
@@ -70,6 +71,16 @@ $(document).ready(function() {
 			$('body').addClass("mobileopen");
 		}
 	});
+	$(document).mouseup(function(e) {
+	    var container = $(".mobileopen header");
+	
+	    // if the target of the click isn't the container nor a descendant of the container
+	    if (!container.is(e.target) && container.has(e.target).length === 0) 
+	    {
+	       $('body').removeClass("mobileopen");
+	    }
+	});
+	
 	
 	/* Dropdown toggle functionality */
 	if( $('.dropdownbtn').length ) {
@@ -82,6 +93,7 @@ $(document).ready(function() {
 			}
 		});
 	}
+	
 	
 	/* Custom scrollbar activated */
 	if (screen < 1400) {
@@ -116,20 +128,33 @@ $(document).ready(function() {
 	        $(this).parent().addClass('filled');
 	    }
 	});
-	
+	$('input').each(function(index, value) {
+	    if(value !== '') {
+	        $(this).parent().addClass('filled');
+			
+	    }
+	});
 	/* Section navigation functionality */
-	if( $('.section_nav').length ) {
-		var navHeight = $('.section_nav').height();
-		$('.section_nav').height(navHeight);
+	if( $('.section_nav_stick').length ) {
+		var navHeight = $('.section_nav_stick').height();
 		$(".section_nav_text").click(function(){
-		    $(this).siblings('ul').toggleClass('open');
+		    $(this).parents('.dropdown').toggleClass('open');
 		});
 		$(".section_nav_stick a").click(function(){
-		    $(this).closest('ul').removeClass('open');
-		});
+		    $(this).parents('.dropdown').removeClass('open');
+		});	
 	}
+	$(document).mouseup(function(e) {
+	    var container = $(".section_nav_stick .dropdown");
+	    // if the target of the click isn't the container nor a descendant of the container
+	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+	       $(container).removeClass('open');
+	    }
+	});
 });
+
 /* In page link functionality */
+var mainnav_height = $('.mainnav').outerHeight();
 $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
 
@@ -141,7 +166,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 /* Section navigation functionality */
 if( $('.section_nav').length ) {
 	var sections = $('.section_grouping .section_wrapper'),
-		nav = $('.section_nav'),
+		nav = $('.section_nav_stick'),
 		nav_height = nav.outerHeight(), 
 		mainnav_height = $('.mainnav').outerHeight();
 }
@@ -178,7 +203,7 @@ $(window).scroll(function(){
 			  nav.find('.svg').attr('src', iconpath);
 			}
 		});
-		var navsectiontop = $('.section_grouping').offset().top,
+		var navsectiontop = $('.section_grouping').offset().top  - nav_height - mainnav_height,
 			navsectionbottom = navsectiontop + $('.section_grouping').outerHeight();
 		
 		if (cur_pos >= navsectiontop && cur_pos <= navsectionbottom) {
@@ -190,6 +215,7 @@ $(window).scroll(function(){
 });
 
 $(window).resize(function(){
+	var mainnav_height = $('.mainnav').outerHeight();
 	/* Section navigation functionality */
 	if( $('.section_nav').length ) {
 		var navHeight = $('.section_nav').height();
