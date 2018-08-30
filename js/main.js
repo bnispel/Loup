@@ -94,7 +94,6 @@ $(document).ready(function() {
 		});
 	}
 	
-	
 	/* Custom scrollbar activated */
 	if (screen < 1400) {
 		$(".table_container").each(function( index ) {
@@ -104,7 +103,15 @@ $(document).ready(function() {
 			});
 		});
 	}
+	$(document).mouseup(function(e) {
+	    var container = $(".news_filter");
 	
+	    // if the target of the click isn't the container nor a descendant of the container
+	    if (!container.is(e.target) && container.has(e.target).length === 0) 
+	    {
+	       $('.news_filter').removeClass("is-active");
+	    }
+	});
 	/* Add focused class for form inputs floating fields */
 	$("input").on('focus blur', function(){
 	     $(this).parent().toggleClass('is_focused');
@@ -199,7 +206,7 @@ $(window).scroll(function(){
 			  
 			  var sectionID = $(this).attr('id');
 			  var sectionID = sectionID.substr(9);
-			  var iconpath = "images/iconblock-" + sectionID + '.png';
+			  var iconpath = "../images/iconblock-" + sectionID + '.png';
 			  nav.find('.svg').attr('src', iconpath);
 			}
 		});
