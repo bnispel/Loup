@@ -390,7 +390,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			width: 100%;
 		}
 	}
-	
+	.section_contentextra {
+		position: relative;
+		z-index: 3;
+	}
+}
+.section_imgoverlap.section_extended {
+	.section_contentbox {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
 }
 /* :::::::::::::::: Image CTA section */
 .image_cta {

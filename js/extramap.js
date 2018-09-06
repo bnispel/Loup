@@ -18,7 +18,25 @@ $(document).ready(function(){
 		}
 		working=true;																					
 		simplemaps_namap.refresh();	
-	});
+	}); 
+	$(".state_toggle").click(function(event){		
+		if (working){return};						
+		for (var state in simplemaps_namap_mapdata.state_specific){
+			var item=simplemaps_namap_mapdata.state_specific[state];	
+			if (item.color!=undefined) {
+				if (item.color!='#cecece'){
+					item.description=item.color;
+					item.color='#cecece';
+					$(this).addClass('hidden');
+				} else {
+					item.color=item.description;
+					$(this).removeClass('hidden');
+				}
+			}
+		}
+		working=true;																					
+		simplemaps_namap.refresh();	
+	}); 
 	function resizeMap() {
 		var browserWidth = document.documentElement.clientWidth;
 		if ( browserWidth < 500) {

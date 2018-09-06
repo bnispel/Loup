@@ -2,7 +2,7 @@
 .section {
 	padding: 20px 25px;
 	max-width: 1450px;
-	margin: 0 auto 30px;
+	margin: 0 auto 20px;
 	&.section_alt {
 		background: $athensgray;
 		padding: 50px 25px;
@@ -12,6 +12,10 @@
 .section_inside {
 	max-width: 1450px;
 	margin: 0 auto;
+}
+.section_spacer {
+	margin: 50px auto;
+	overflow: hidden;
 }
 .challenge_section h3 {
 	max-width: 650px;
@@ -365,10 +369,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		display: block;
 		height: 1px;
 		width: 100%;
+		margin-top: 30px;
 		background: rgba($rollingstone, .23);
 	}
 	p {
-		padding-bottom: 35px;
 		font-size: px_to_rem(16px);
 		line-height: px_to_decimal(27px, 16px);
 	}
@@ -390,7 +394,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			width: 100%;
 		}
 	}
-	
+	.section_contentextra {
+		position: relative;
+		z-index: 3;
+	}
+}
+.section_imgoverlap.section_extended {
+	.section_contentbox {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
 }
 /* :::::::::::::::: Image CTA section */
 .image_cta {
@@ -432,12 +445,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	text-align: center;
 	max-width: 100%;
 	padding: 40px 20px;
+	margin: 80px 0;
 	.section_inside {
 		max-width: 850px;
 		margin: 0 auto;
 	}
-	h2 {
+	h2, h3, h4, h5 {
 		color: $yellow;
+		margin-bottom: 20px;
+	}
+	h3 {
+		font-weight: $font_medium;
 	}
 	p {
 		color: $white;
@@ -462,10 +480,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 }
 /* :::::::::::::::: 3 col section */
 .section_3col {
-	.section_col1, .section_col2 {
-		margin-bottom: 50px;
-		padding-bottom: 50px;
-		border-bottom: 1px solid rgba($rollingstone, .23);
+	.section_col {
+		margin-bottom: 70px;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 	img {
 		padding-bottom: 20px;
@@ -497,6 +516,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		}
 	}
 }
+@media screen and (min-width:700px) {
+	/* :::::::::::::::: 3 col section */
+	.section_3col {
+		@include displaygrid();
+		@include gridcolumns(1fr 1fr);
+		grid-gap: 30px;
+	}
+	.no-cssgrid {
+		.section_3col {
+			overflow: hidden;
+			display: block;
+			.section_col {
+				width: 50%;
+				float: left;
+				min-height: 550px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
 @media screen and (min-width:800px) {
 	.section_nav .dropdown {
 		padding: 25px 0 10px 0;
@@ -513,6 +552,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		}
 	}
 	/* :::::::::::::::::::::::::::::::::::::: News Filter */
+	.news_filter_wrapper {
+		margin-bottom: 70px;
+	}
 	.news_filter {
 		border: none;
 		text-align: center;
@@ -594,7 +636,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		.section_contentbox {
 			position: relative;
 			width: 50%;
-			margin-top: 30px;
+			margin-top: 100px;
 			margin-bottom: 50px;
 			background: none;
 		}
@@ -639,35 +681,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	.section_cta {
 		padding: 60px 20px;
 	}
-	
-	/* :::::::::::::::: 3 col section */
-	.section_3col {
-		@include displaygrid();
-		@include gridcolumns(1fr 1fr);
-		.section_col1, .section_col2 {
-			border-bottom: none;
-		}
-		.section_col1, .section_col2, .section_col3{
-			padding: 0 50px 0;
-		}
-		.section_col1 {
-			border-right: 1px solid rgba($rollingstone, .23);
-		}
-	}
-	.no-cssgrid {
-		.section_3col {
-			overflow: hidden;
-			display: block;
-			.section_col1, .section_col2, .section_col3 {
-				width: 50%;
-				float: left;
-				min-height: 550px;
-			}
-		}
-	}
 	.section_nav_stick {
 		&.fixed {
 			top: 90px;
+		}
+	}
+	/* :::::::::::::::: Image overlap section */
+	.section_imgoverlap {
+		ul.list_2col {
+			li {
+				width: 100%;
+				margin-right: 0;
+				&.spacer {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -692,7 +720,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		padding-top: 30px;
 		h1 {
 			font-size: px_to_rem(50px);
-			line-height: px_to_decimal(30px, 50px);
+			line-height: px_to_decimal(55px, 50px);
 			letter-spacing: XDunits_to_ems(25);
 			margin-bottom: 13px;
 		}
@@ -763,7 +791,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	.section_pageheader_text { 
 		h1 {
 			font-size: px_to_rem(60px);
-			line-height: px_to_decimal(36px, 60px);
+			line-height: px_to_decimal(65px, 60px);
 			letter-spacing: XDunits_to_ems(30);
 		}
 		h2 {
@@ -789,19 +817,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	.section_3col {
 		@include displaygrid();
 		@include gridcolumns(1fr 1fr 1fr);
+		grid-gap: 0;
 		margin: 0 auto;
 		max-width: 1540px;
 		.section_col1, .section_col2 {
 			border-bottom: none;
 		}
-		.section_col1, .section_col2, .section_col3 {
-			padding: 0 50px 50px;
-		}
-		.section_col1 {
+		.section_col {
+			padding: 0 40px 50px;
 			border-right: 1px solid rgba($rollingstone, .23);
-		}
-		.section_col2 {
-			border-right: 1px solid rgba($rollingstone, .23);
+			&:nth-child(3n) {
+				border-right: 0;
+			}
 		}
 	}
 	.no-cssgrid {
@@ -826,6 +853,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			h2 {
 				font-size: px_to_rem(44px);
 				line-height: px_to_decimal(50px, 44px);
+			}
+		}
+	}
+	/* :::::::::::::::: Image overlap section */
+	.section_imgoverlap {
+		ul.list_2col {
+			li {
+				float: left;
+				width: 47%;
+				margin-right: 3%;
+				&.spacer {
+					display: block;
+				}
 			}
 		}
 	}
