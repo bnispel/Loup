@@ -8,9 +8,13 @@
 		padding: 50px 25px;
 		max-width: 100%;
 	}
+	&.section_narrow {
+		max-width: 850px;
+		text-align: center;
+	}
 }
 .section_inside {
-	max-width: 1450px;
+	max-width: 1400px;
 	margin: 0 auto;
 }
 .section_spacer {
@@ -35,6 +39,9 @@
 .section_grouping {
 	.section_wrapper {
 		padding-top: 60px;
+		&:nth-child(2n) {
+			padding-top: 0;
+		}
 	}
 	.section {
 		padding-bottom: 0;
@@ -360,7 +367,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 
 
 /* :::::::::::::::: Intro section */
-.section_intro {
+.section_intro, .section_intro_blank {
 	max-width: 800px;
 	text-align: center;
 	margin-bottom: 0;
@@ -377,7 +384,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		line-height: px_to_decimal(27px, 16px);
 	}
 }
-
+.section_intro_blank {
+	min-height: 400px;
+	&:after {
+		display: none;
+	}
+}
 /* :::::::::::::::: Image overlap section */
 .section_imgoverlap {
 	.section_contentbox {
@@ -453,6 +465,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 	h2, h3, h4, h5 {
 		color: $yellow;
 		margin-bottom: 20px;
+		text-transform: uppercase;
 	}
 	h3 {
 		font-weight: $font_medium;
@@ -587,7 +600,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		}
 	}
 	/* :::::::::::::::::::::::::::::::::::::: Section Intro */
-	.section_intro {
+	.section_intro, .section_intro_blank {
 		margin: 0 auto;
 	}
 	/* :::::::::::::::::::::::::::::::::::::: First Section */
@@ -679,7 +692,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		}
 	}
 	.section_cta {
-		padding: 60px 20px;
+		padding: 50px 20px;
 	}
 	.section_nav_stick {
 		&.fixed {
@@ -708,7 +721,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		}
 	}
 	/* :::::::::::::::::::::::::::::::::::::: Section Intro */
-	.section_intro {
+	.section_intro, .section_intro_blank {
 		padding: 60px 25px 40px;
 		p {
 			font-size: px_to_rem(18px);

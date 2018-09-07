@@ -51,7 +51,6 @@ $base-font-size: 16px;
 	justify-items: center;
 }
 @mixin gridcolumns($cols) {
-	
 	grid-template-columns: $cols;
 }
 @mixin gridrows($rows) {

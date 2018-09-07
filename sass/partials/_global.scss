@@ -24,6 +24,9 @@ h1, .h1 {
 	font-weight: $font_semibold;
 	font-family: $main_font;
 	margin-bottom: 20px;
+	a {
+		color: $darkblue;
+	}
 }
 h2, .h2 {
 	font-size: px_to_rem(27px);
@@ -34,6 +37,9 @@ h2, .h2 {
 	font-family: $narrow;
 	margin-bottom: 15px;
 	text-transform: none;
+	a {
+		color: $darkblue;
+	}
 }
 h3, .h3 {
 	font-size: px_to_rem(22px);
@@ -43,6 +49,9 @@ h3, .h3 {
 	font-weight: $font_bold;
 	margin-bottom: 10px;
 	text-transform: uppercase;
+	a {
+		color: $darkblue;
+	}
 }
 h4, .h4 {
 	font-size: px_to_rem(15px);
@@ -52,6 +61,9 @@ h4, .h4 {
 	color: $darkblue;
 	font-weight: $font_bold;
 	text-transform: uppercase;
+	a {
+		color: $darkblue;
+	}
 }
 h5, .h5 {
 	font-size: px_to_rem(16px);
@@ -90,6 +102,20 @@ a[target="_blank"], a.external {
 }
 a[href$=".pdf"], a.pdf {
 	background: url(../images/icon-download.png) no-repeat left top;
+}
+.backtotop {
+	width: 40px;
+	height: 40px;
+	display: block;
+	background: url(../images/back-to-top.svg) no-repeat left top;
+	background-size: contain;
+	@include removeappearance();
+	border: 0;
+	position: fixed;
+	text-indent: -9999em;
+	bottom: 40px;
+	right: 40px;
+	cursor: pointer;
 }
 p {
 	font-weight: $font_light;
@@ -221,6 +247,13 @@ ol {
 		}
 	}
 }
+.list_2col_wrapper {
+	overflow: hidden;
+	margin-bottom: 25px;
+	ul {
+		margin-bottom: 0;
+	}
+}
 .glossary {
 	list-style-image: none;
 	ul {
@@ -278,8 +311,8 @@ ol {
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
 		color: $yellow;
 		&:after {
-			background: url(../images/icon-rightarrow-yellow.svg) no-repeat top left;
-			background-size: 8px 13px;
+			background: url(../images/icon-rightarrow-yellow.svg) no-repeat left center;
+			background-size: 9px 13px;
 		}
 	}
 }
@@ -629,6 +662,7 @@ nav {
 	padding: 0 5px 0 5px;
 	ul {
 		padding-left: 0;
+		padding-top: 0;
 		list-style-image: none;
 		background: $white;
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
@@ -641,6 +675,7 @@ nav {
 		border-bottom: 1.25px solid $athensgray;
 		padding-left: 0;
 		padding-bottom: 0;
+		position: relative;
 		margin-bottom: 0;
 	}
 	a {
@@ -977,7 +1012,7 @@ nav {
 	rect {
 		fill: $darkblue;
 	}
-	#plus_vert {
+	.plus_vert {
 		height: 23px;
 	}
 }
@@ -992,7 +1027,7 @@ nav {
 		display: block;
 	}
 	.collapsible_handle {
-		#plus_vert {
+		.plus_vert {
 			height: 0;
 		}
 	}
@@ -1007,7 +1042,7 @@ nav {
 	width: 100%;
 	clear: both;
 	min-height: 400px;
-	margin-top: 80px;
+	margin-top: 30px;
 	@include displaygrid();
 	@include centergrid();
 	&:before {
@@ -1190,7 +1225,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 .pagination_wrapper {
 	text-align: center;
 }
-.pagination {
+.pagination_wrapper {
 	overflow: hidden;
 	text-align: center;
 	display: inline-block;
@@ -1206,6 +1241,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		cursor: pointer;
 		background: url(../images/icon-rightarrow-blue.svg) no-repeat right center;
 		position: absolute;
+		@include removeappearance();
+		
 		top: 0;
 		padding: 0;
 		@include transition(.2s);
@@ -1585,15 +1622,30 @@ input[type="submit"] {
 @media screen and (min-width: 800px) {
 	ul,ol {
 		&.list_2col {
-			overflow: hidden;
-			li {
-				float: left;
-				width: 47%;
-				margin-right: 3%;
+			@include displaygrid();
+			@include gridcolumns(1fr 1fr);
+		}
+	}
+	.no-cssgrid {
+		ul,ol {
+			&.list_2col {
+				overflow: hidden;
+				li {
+					float: left;
+					width: 47%;
+					margin-right: 3%;
+				}
+			}
+			li.spacer {
+				display: block;
 			}
 		}
-		li.spacer {
-			display: block;
+	}
+	.glossary-nav {
+		li {
+			a {
+				padding: 10px;
+			}
 		}
 	}
 	.formnote {
@@ -1664,7 +1716,7 @@ input[type="submit"] {
 	}
 	/* :::::::::::::::::::::::::::::::::::::: Endpage CTA */
 	.endpage_cta {
-		max-width: 1000px;
+		max-width: 1100px;
 		padding: 80px 30px;
 		h2 {
 			font-size: px_to_rem(35px);
@@ -1943,12 +1995,27 @@ input[type="submit"] {
 @media screen and (min-width: 1100px) {
 	ul,ol {
 		&.list_2col_small {
-			overflow: hidden;
-			li {
-				float: left;
-				width: 47%;
-				margin-right: 3%;
+			@include displaygrid();
+			@include gridcolumns(1fr 1fr);
+		}
+	}
+	.no-cssgrid {
+		ul,ol {
+			&.list_2col_small {
+				overflow: hidden;
+				li {
+					float: left;
+					width: 47%;
+					margin-right: 3%;
+				}
 			}
+		}
+	}
+	.list_2col_wrapper {
+		ul {
+			float: left;
+			max-width: 47%;
+			margin-right: 3%;
 		}
 	}
 	.sitenav {
