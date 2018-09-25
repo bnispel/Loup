@@ -4,7 +4,7 @@ if (screen > 800) {
 	$('.parallax').each(function(){
 	  var elem = $(this);
 	  var elemParent = $(this).parent();
-	  function parallaxImg () {
+	  function parallaxImg() {
 	    var speed = elem.data('speed');
 	    var elemY = elemParent.offset().top;
 	    var winY = $(this).scrollTop();

@@ -7,6 +7,7 @@
 /* :::::::::::::::::::::::::::: CUSTOM STYLES */
 
 /* :::::::::::::: TOGGLE ACTIVE CLASS */
+var windowwidth = $( window ).width();
 var elems = document.querySelectorAll("[data-active]");
 for(var i = 0; i < elems.length; i++){
     // Add event listeners to each one
@@ -56,7 +57,6 @@ function scrolltotop() {
 }
 /* :::::::::::::: REMOVE NON BREAKING SPACES */
 function removenbsp() {
-	var windowwidth = $( window ).width();
 	if (windowwidth < 800) {
 		$( ".nbsp" ).each(function( index ) {
 			return $(this).text(' ');
@@ -124,16 +124,7 @@ $(document).ready(function() {
 			}
 		});
 	}
-	
-	/* Custom scrollbar activated */
-	if (screen < 1400) {
-		$(".table_container").each(function( index ) {
-			$(this).mCustomScrollbar({
-		    	axis:"x",
-				theme:"loup"
-			});
-		});
-	}
+	/* News filter */
 	$(document).mouseup(function(e) {
 	    var container = $(".news_filter");
 	
@@ -145,31 +136,30 @@ $(document).ready(function() {
 	});
 	/* Add focused class for form inputs floating fields */
 	$("input").on('focus blur', function(){
-	     $(this).parent().toggleClass('is_focused');
+	     $(this).parent('.field').toggleClass('is_focused');
 	})
 	$('input').blur(function(){
 	    tmpval = $(this).val();
 	    if(tmpval == '') {
-	        $(this).parent().removeClass('filled');
+	        $(this).parent('.field').removeClass('filled');
 	    } else {
-	        $(this).parent().addClass('filled');
+	        $(this).parent('.field').addClass('filled');
 	    }
 	});
 	$("textarea").on('focus blur', function(){
-	     $(this).parent().toggleClass('is_focused');
+	     $(this).parent('.field').toggleClass('is_focused');
 	})
 	$('textarea').blur(function(){
 	    tmpval = $(this).val();
 	    if(tmpval == '') {
-	        $(this).parent().removeClass('filled');
+	        $(this).parent('.field').removeClass('filled');
 	    } else {
-	        $(this).parent().addClass('filled');
+	        $(this).parent('.field').addClass('filled');
 	    }
 	});
-	$('input').each(function(index, value) {
-	    if(value !== '') {
-	        $(this).parent().addClass('filled');
-			
+	$('input').each(function() {
+	    if( $(this).val() ) {
+	        $(this).parent('.field').addClass('filled');
 	    }
 	});
 	/* Section navigation functionality */
@@ -200,7 +190,6 @@ var windowwidth = $( window ).width();
 
 $(document).on('click', 'a[href^="#"]', function (event) {
 	event.preventDefault();
-		
     if ( $(this).hasClass('mobileScrollTo') ) {
 	    if ( windowwidth < 800 ) {
 		    $('html, body').animate({
@@ -208,9 +197,15 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 	    	}, 500);
 	    }
     } else {
-	    $('html, body').animate({
-	        scrollTop: $($.attr(this, 'href')).offset().top - mainnav_height
-	    }, 500);
+	    if ( windowwidth < 800 ) {
+		    $('html, body').animate({
+	        	scrollTop: $($.attr(this, 'href')).offset().top - mainnav_height
+	    	}, 500);
+	    } else {
+		    $('html, body').animate({
+		        scrollTop: $($.attr(this, 'href')).offset().top - mainnav_height
+		    }, 500);
+		}
     }
 });
 
@@ -221,7 +216,6 @@ if( $('.section_nav').length ) {
 		nav_height = nav.outerHeight(), 
 		mainnav_height = $('.mainnav').outerHeight();
 }
-	
 $(window).scroll(function(){
 	/* Scroll to top */
 	scrolltotop();

@@ -18,12 +18,16 @@
 @import 'pages/_parent.scss';
 @import 'pages/_news.scss';
 @import 'pages/_contact.scss';
-
-
-
+@import 'pages/_resources.scss';
 
 /* Vendor styles */
 @import 'vendor/_scrollbar.scss';
 @import 'vendor/_slick.scss';
 @import 'vendor/_featherlight.scss';
 @import 'vendor/_videoskins.scss';
+
+
+/* Print sytles */
+@media print {
+  @import 'print.scss';
+}

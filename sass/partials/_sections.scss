@@ -3,6 +3,7 @@
 	padding: 20px 25px;
 	max-width: 1450px;
 	margin: 0 auto 20px;
+	clear: both;
 	&.section_alt {
 		background: $athensgray;
 		padding: 50px 25px;
@@ -48,13 +49,20 @@
 		margin-bottom: 0;
 	}
 }
+.whatwedo_group .section_wrapper, .whatwedo_group .section_wrapper:nth-child(2n) {
+	padding-top: 60px;
+}
 /* :::::::::::::::::::::::::::::::::::::: News Filter */
-.news_filter_wrapper {
+.news_filter_wrapper, .resources_filter_wrapper {
 	height: 50px;
 	margin-bottom: 30px;
 	position: relative;
 }
-.news_filter {
+.resources_filter_wrapper {
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+.news_filter, .resources_filter {
 	border: 1px solid rgba($rollingstone, .23);
 	background: $white;
 	@include roundedborder(8px);
@@ -390,8 +398,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		display: none;
 	}
 }
+.intro_noborder {
+	max-width: 900px;
+	&:after {
+		display: none;
+	}
+}
 /* :::::::::::::::: Image overlap section */
 .section_imgoverlap {
+	min-height: 500px;
 	.section_contentbox {
 		background: $white;
 		padding: 20px 20px 40px 0;
@@ -543,6 +558,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			.section_col {
 				width: 50%;
 				float: left;
+				padding: 0 15px;
 				min-height: 550px;
 				margin-bottom: 30px;
 			}
@@ -564,11 +580,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			height: 40px;
 		}
 	}
+	.whatwedo_group .section_wrapper, .whatwedo_group .section_wrapper:nth-child(2n) {
+		padding-top: 110px;
+	}
 	/* :::::::::::::::::::::::::::::::::::::: News Filter */
 	.news_filter_wrapper {
 		margin-bottom: 70px;
 	}
-	.news_filter {
+	.news_filter, .resources_filter {
 		border: none;
 		text-align: center;
 		.filter_title {
@@ -851,7 +870,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 			.section_col1, .section_col2, .section_col3 {
 				width: 30%;
 				float: left;
-				min-height: 550px;
+				min-height: 500px;
+				padding: 0 25px;
 			}
 		}
 	}

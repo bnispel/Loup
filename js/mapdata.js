@@ -990,6 +990,14 @@ var simplemaps_namap_mapdata={
       type: "image",
       image_url: "http://skwintz.com/testing/images/icon-railport.png", 
       group: 2
+    },
+    "79": {
+      lat: "29.732",
+      lng: "-95.243",
+      name: "Galena Park, TX",
+      type: "image",
+      image_url: "http://skwintz.com/testing/images/icon-railport.png", 
+      group: 2
     }
   },
   labels: {},

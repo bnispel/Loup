@@ -1,3 +1,115 @@
 /* Welcome to Compass. Use this file to define print styles.
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+/* all text */
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
+}
+p {
+	color: #000;
+	strong {
+		color: #000;
+	}
+}
+ul li {
+	strong {
+		color: #000;
+	}
+}
+strong {
+	color: #000;
+}
+.button.alt {
+	background: none;
+	border-color: #000;
+	color: #000;
+}
+/* Clean up navigation */
+.menubtn {
+	display: none;
+}
+.stickynav .mainnav_wrapper {
+	display: none;
+}
+
+/* Clean up imags */
+img {
+	max-width: 50%;
+}
+
+/* clean up footer */
+.footer_wrapper {
+	.logo {
+		margin: 0 auto;
+		float: none;
+	}
+}
+.footer_links, .btn_quicklinks {
+	display: none;
+}
+/* Challenge wrappers */
+.challenges_wrappers {
+	display: none;	
+}
+
+/* End page CTA */
+.endpage_cta_wrapper {
+	display: none;
+}
+
+/* Img CTA */
+.image_cta {
+	h4, h5 {
+		color: #000;
+	}
+}
+/* Section CTA */
+.section_cta {
+	h2, h3, h4, h5, h6, p {
+		color: #000;
+	}
+	.button {
+		border-color: #000;
+		color: #000;
+	}
+}
+
+/* Section header */
+.section_pageheader {
+	min-height: 100px;
+}
+.section_pageheader_text {
+	h1 {
+		color: #000;
+	}
+}
+.section_nav {
+	display: none;
+}
+/* Collapsible content */
+.collapsible_item .collapsible_content {
+	display: block;
+}
+
+/* Home only */
+.main_section {
+	height: auto;
+	margin-bottom: 50px;
+	&:before, &:after {
+		display: none;
+	}
+}
+.main_section_img {
+	display: none;
+}
+.main_section_text {
+	color: #000000;	
+	h1, h2, h3, h4, h5 p {
+		color: #000000;
+	}
+}
+.collapsible_wrapper {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}

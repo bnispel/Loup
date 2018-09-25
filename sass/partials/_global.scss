@@ -69,8 +69,11 @@ h5, .h5 {
 	font-size: px_to_rem(16px);
 	line-height: px_to_decimal(25px, 16px);
 	letter-spacing: XDunits_to_ems(30);
-	color: $gray;
-	font-weight: $font_bold;
+	color: $darkblue;
+	font-weight: $font_semibold;
+	a {
+		color: $darkblue;
+	}
 }
 h6, .h6 {
 	font-weight: bold;
@@ -91,7 +94,7 @@ a[target="_blank"], a.external, a[href$=".pdf"], a.pdf {
 	font-weight: $font_bold;
 	display: inline-block;
 	padding-left: 30px;
-	margin-left: 10px;
+	margin-right: 10px;
 	min-height: 30px;
 	&:hover {
 		color: $yellow;
@@ -99,6 +102,7 @@ a[target="_blank"], a.external, a[href$=".pdf"], a.pdf {
 }
 a[target="_blank"], a.external {
 	background: url(../images/icon-external.png) no-repeat left top;
+	padding-left: 40px;
 }
 a[href$=".pdf"], a.pdf {
 	background: url(../images/icon-download.png) no-repeat left top;
@@ -115,6 +119,7 @@ a[href$=".pdf"], a.pdf {
 	text-indent: -9999em;
 	bottom: 40px;
 	right: 40px;
+	z-index: 999;
 	cursor: pointer;
 }
 p {
@@ -320,7 +325,7 @@ ol {
 	background: $yellow;
 	color: $white;
 	border-color: transparent;
-	@include transition(0);
+	@include removetransition();
 	&:after {
 		background: url(../images/icon-rightarrow.svg) no-repeat top left;
 		background-size: 9px 13px;
@@ -354,10 +359,6 @@ img {
 }
 img.full_img {
 	width: 100%;
-	height: auto;
-}
-img.half_img {
-	width: 50%;
 	height: auto;
 }
 img.align_left {
@@ -596,6 +597,7 @@ table {
 	border-radius: 4px;
 	position: absolute;
 	@include roundedborder(0);
+	text-indent: -9999em;
 	&::before, &::after {
 		width: 30px;
 		height: 4px;
@@ -943,6 +945,10 @@ nav {
 	}
 	a {
 		padding: 10px;
+		span {
+			text-indent: -99999em;
+			display: block;
+		}
 		&:before {
 			display: none;
 		}
@@ -995,7 +1001,7 @@ nav {
 	cursor: pointer;
 	padding-right: 20px;
 	&:hover {
-		h3 {
+		h5, h3 {
 			color: $yellow;
 		}
 		rect {
@@ -1017,10 +1023,9 @@ nav {
 	}
 }
 .collapsible_item.open {
-	h3 {
-		font-size: px_to_rem(20px);
-		line-height: px_to_decimal(24px, 20px);
-		letter-spacing: XDunits_to_ems(120);
+	h5 {
+		font-size: px_to_rem(25px);
+		line-height: px_to_decimal(35px, 25px);
 		margin-bottom: 15px;
 	}
 	.collapsible_content {
@@ -1034,7 +1039,7 @@ nav {
 }
 /* :::::::::::::::::::::::::::::::::::::: End page CTA */
 .endpage_cta_wrapper {
-	background-image: url(../images/placeholder_endpagecta.jpg);
+	background-image: url(../images/endpage_cta_placeholder.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -1222,7 +1227,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333e48', end
 		}	
 	}
 }
-.pagination_wrapper {
+.pagination_wrapper, .pagination_section {
 	text-align: center;
 }
 .pagination_wrapper {
@@ -1451,7 +1456,7 @@ form {
 		content: 'Field is required';
 	}
 }
-label {
+label, legend {
 	font-size: px_to_rem(16px);
 	line-height: px_to_decimal(26px, 16px);
 	letter-spacing: XDunits_to_ems(50);
@@ -1478,7 +1483,7 @@ input, textarea {
 	}
 }
 .is_focused {
-	label {
+	label, legend {
 		color: $darkblue;
 	}
 	input, textarea {
@@ -1486,27 +1491,13 @@ input, textarea {
 		@include dropshadow(0px, 3px, 6px, 0px, $black, .16);
 	}
 }
-/*input[type="checkbox"], input[type="radio"] {
-	background: none;
-	@include removeappearance();
-	border: 1px solid $limedspruce;
-	width: 25px;
-	height: 25px;
-	min-height: 25px;
-	padding: 0;
-	cursor: pointer;
-	float: left;
-	margin-right: 10px;
-}*/
-input[type="checkbox"]::-ms-check, input[type="radio"]::-ms-check {
-   // display: none;
-}
 input[type="checkbox"]:checked + span, input[type="radio"]:checked  + span {
 	background: url(../images/formbox-checked.png) no-repeat left top;
 }
-.grouplabel {
+.grouplabel, legend.grouplabel {
 	font-weight: $font_semibold;
 	margin-bottom: 15px;
+	font-size: px_to_rem(13px);
 }
 .field_checkbox {
 	margin: 15px 20px 20px 0;
@@ -1545,7 +1536,7 @@ input[type="submit"] {
 	@include dropshadow(0px, 3px, 6px, 0px, $black, .0);
 	background: $yellow;
 	color: $white;
-	@include transition(0);
+	@include removetransition();
 	cursor: pointer;
 	max-width: 260px;
 	margin: 0 auto 0;
@@ -1599,6 +1590,16 @@ input[type="submit"] {
 	}
 }
 @media screen and (min-width: 600px) {
+	img.quarter_img {
+		width: 25%;
+		height: auto;
+		min-width: 300px;
+	}
+	img.third_img {
+		width: 33%;
+		height: auto;
+		min-width: 300px;
+	}
 	.dropdownbtn {
 		span {
 			min-width: 65%;
@@ -1620,6 +1621,14 @@ input[type="submit"] {
 	}
 }
 @media screen and (min-width: 800px) {
+	img.half_img {
+		width: 50%;
+		height: auto;
+	}
+	img.threefourths_img {
+		width: 50%;
+		height: auto;
+	}
 	ul,ol {
 		&.list_2col {
 			@include displaygrid();
@@ -1830,7 +1839,7 @@ input[type="submit"] {
 			top: 40px;
 			left: 20px;
 			@include transition(.2s);
-			z-index: -1;
+			z-index: 0;
 		}
 	}
 	input {
@@ -1869,7 +1878,6 @@ input[type="submit"] {
 		.item_list {
 			@include flexbox();
 			flex-wrap: wrap;
-			justify-content: space-between;
 			li {
 				width: 45%;
 			}
@@ -1910,9 +1918,17 @@ input[type="submit"] {
 		line-height: px_to_decimal(22px, 16px);
 		letter-spacing: XDunits_to_ems(120);
 	}
+	h5, .h5 {
+		font-size: px_to_rem(18px);
+		line-height: px_to_decimal(25px, 18px);
+	}
 	p {
 		font-size: px_to_rem(16px);
 		line-height: px_to_decimal(30px, 16px);
+	}
+	img.threefourths_img {
+		width: 75%;
+		height: auto;
 	}
 	.button {
 		&:after {

@@ -1,11 +1,15 @@
-/*-----------------------------------------------------------------*/
-    /* TRANSLOAD PROCESS SECTION
-/*-----------------------------------------------------------------*/
 .transload-wrapper {
-	margin-bottom: 60px;
+	overflow-x: scroll;
+	-ms-overflow-y: hidden;
+	-ms-overflow-style: none; 
+	cursor: ew-resize;
+	cursor : -o-ew-resize; 
+	cursor : -moz-ew-resize; 
+	cursor : -webkit-ew-resize;
+	padding: 0 23px;
 }
 .transload-process {
-	width: 930px;
+	width: 780px;
 	margin: 0;
 	padding-left: 0;
 	list-style-image: none;
@@ -16,7 +20,7 @@
 		width: 1px;
 	}
 	&.d2d {
-		width: 1400px;
+		width: 1120px;
 	}
 	li {
 		background: none;
@@ -35,16 +39,45 @@
 	p {
 		color: $darkblue;
 		line-height: 1.3;
+		font-size: .8em;
 		margin-bottom: 0;
 	}
+	.customer-railserved, .receiver-railserved {
+		width: 93px;
+		.transload-image {
+			height: 62px;
+		}
+	}
+	.customer-nonrailserved, .receiever-nonrailserved {
+		width: 100px;
+		.transload-image {
+			height: 58px;
+		}
+	}
+	.origintrucking, .destination-trucking {
+		width: 130px;
+		.transload-image {
+			height: 61px;
+		}
+	}
+	.transload-animation {
+		width: 225px;
+		padding-top: 0;
+	}
+	.railtransit {
+		width: 190px;
+		.transload-image {
+			height: 62px;
+		}
+	}
 	.transload-image {
-		height: 75px;
+		height: 50px;
 		margin-bottom: 10px;
 	}
 }
 p.swipe {
-	display: none;
-	margin: 0 auto 20px;
+	display: block;
+	margin: 0 auto 70px;
 	font-size: .8em;
 	font-weight: 600;
 	color: $lightgray;
@@ -56,16 +89,17 @@ li.transload-animation {
 }
 .transload-icon {
 	position: relative;
-	height: 75px;
-	width: 213px;
+	width: 100%;
+	height: 80px;
 	&:after {
 		content: '';
 		display: block;
 		background: url(#{$imagePath}/transload-process-trucktransfer-crane.png) no-repeat left top;
-		width: 96px;
-		height: 33px;
+		background-size: contain;
 		position: absolute;
-		bottom: 7px;
+		width: 85px;
+		height: 29px;
+		bottom: 17px;
 		left: 39px;
 		z-index: 90;
 	}
@@ -74,41 +108,44 @@ li.transload-animation {
 	}
 	.arrow {
 		position: relative;
-		width: 93px;
-		height: 42px;
+		width: 73px;
+		height: 34px;
 		margin: 0 auto;
 		overflow: hidden;
 		z-index: 9;
 	}
 	.arrow-inside {
 		background: url(#{$imagePath}/transloading-arrow.png) no-repeat center top;
+		background-size: 100%;
 		position: absolute;
 		top: 0;
 		left: 50%;
-		margin-left: -47px;
-		width: 94px;
-		height: 85px;
+		width: 74px;
+		height: 65px;
+		margin-left: -37px;
 		transform: rotate(180deg) ;
 		-webkit-transform: rotate(180deg);
 		-moz-transform: rotate(180deg);
 		-o-transform: rotate(180deg);
-		
 	}
 	.truck {
 		position: absolute;
 		top: 36px;
 		left: 0;
-		width: 123px;
-		height: 38px;
+		
+		width: 106px;
+		height: 32px;
 		background: url(#{$imagePath}/transload-process-trucktransfer.png) no-repeat center top;
+		background-size: 100%;
 		.truck-inside {
-			width: 123px;
-			height: 38px;
+			width: 106px;
+			height: 32px;
 			position: absolute;
 			z-index: 5;
 			top: 0;
 			left: 0;
 			background: url(#{$imagePath}/transload-process-truck-cover.png) no-repeat center top;
+			background-size: 100%;
 		}
 		&:after {
 			content: '';
@@ -122,22 +159,25 @@ li.transload-animation {
 			background: $darkblue;
 		}
 	}
+	
 	.train {
 		position: absolute;
 		top: 38px;
 		right: 0;
 		overflow: hidden;
-		width: 93px;
-		height: 38px;
+		width: 79px;
+		height: 30px;
 		background: url(#{$imagePath}/transload-process-railcartransfer.png) no-repeat center top;
+		background-size: 100%;
 		.train-inside {
-			width: 93px;
-			height: 38px;
+			width: 79px;
+			height: 30px;
 			position: absolute;
 			z-index: 5;
 			top: 0;
 			left: 0;
 			background: url(#{$imagePath}/transload-process-railcar-cover.png) no-repeat center top;
+			background-size: 100%;
 		}
 		&:after {
 			content: '';
@@ -153,11 +193,12 @@ li.transload-animation {
 	}
 	&.totruck {
 		&:after {
-			left: 50px;
-			bottom: 4px;
 			background: url(#{$imagePath}/transload-process-railcartransfer-crane.png) no-repeat left top;
-			width: 73px;
-			height: 75px;
+			background-size: contain;
+			width: 68px;
+			height: 69px;
+			left: 43px;
+			bottom: 16px;
 		}
 		.truck {
 			left: auto;
@@ -258,159 +299,113 @@ li.transload-animation {
 .equipment-section {
 	background: url(#{$imagePath}/transload-graphic.jpg) no-repeat center bottom;
 	background-size: 100%;
-	padding-bottom: 180px;
+	padding-bottom: 60px;
 }
-@media screen and (max-width:1400px) {
-/* TRANSLOAD PROCESS SECTION */
-	.transload-process {
-		width: 780px;
-		&.d2d {
-			width: 1120px;
-		}
-		.customer-railserved, .receiver-railserved {
-			width: 93px;
-			.transload-image {
-				height: 62px;
-			}
-		}
-		.customer-nonrailserved, .receiever-nonrailserved {
-			width: 100px;
-			.transload-image {
-				height: 58px;
-			}
-		}
-		.origintrucking, .destination-trucking {
-			width: 130px;
-			.transload-image {
-				height: 61px;
-			}
-		}
-		.transload-animation {
-			width: 225px;
-			padding-top: 0;
-		}
-		.railtransit {
-			width: 190px;
-			.transload-image {
-				height: 62px;
-			}
-		}
-	}
-	.transload-icon {
-		width: 100%;
-		height: 80px;
-		&:after {
-			width: 85px;
-			height: 29px;
-			bottom: 17px;
-			left: 39px;
-			background-size: contain;
-		}
-		.arrow {
-			width: 73px;
-			height: 34px;
-		}
-		.arrow-inside {
-			background-size: 100%;
-			width: 74px;
-			height: 65px;
-			margin-left: -37px;
-		}
-		.truck {
-			width: 106px;
-			height: 32px;
-			background-size: 100%;
-			.truck-inside {
-				width: 106px;
-				height: 32px;
-				background-size: 100%;
-			}
-		}
-		.train {
-			background-size: 100%;
-			width: 79px;
-			height: 30px;
-			.train-inside {
-				background-size: 100%;
-				width: 79px;
-				height: 30px;
-			}
-		}
-		&.totruck:after {
-			background-size: contain;
-			width: 68px;
-			height: 69px;
-			left: 43px;
-			bottom: 16px;
-		}
-	}
-	.transload-process {
-		.transload-image {
-			height: 50px;
-		}
-		p {
-			font-size: .8em;
-		}
-	}
+.d2d-wrapper p.swipe {
+	display: block;
 }
-
-@media screen and (min-width: 1500px) {
-/* TRANSLOAD ADVANTAGE SECTION IMAGE */
-	.transload-advantage .section-image.first {
-		background-position: center center;
-	}
+.d2d-wrapper .transload-wrapper {
+	overflow-x: scroll;
+	-ms-overflow-y: hidden;
+	-ms-overflow-style: none;
+	cursor: ew-resize;
+	cursor : -o-ew-resize; 
+	cursor : -moz-ew-resize; 
+	cursor : -webkit-ew-resize;
+	padding: 0 23px;
 }
-@media screen and (max-width: 1200px) {
-/* TRANSLOAD PROCESS SECTION */
-	.d2d-wrapper p.swipe {
-		display: block;
-	}
-	.d2d-wrapper .transload-wrapper {
-		overflow-x: scroll;
-		-ms-overflow-y: hidden;
-		-ms-overflow-style: none;
-		cursor: ew-resize;
-		cursor : -o-ew-resize; 
-		cursor : -moz-ew-resize; 
-		cursor : -webkit-ew-resize;
-		padding: 0 23px;
-	}
-}
-@media screen and (max-width:900px) {
-/* EQUIPMENT SECTION */
-	.equipment-section {
-		padding-bottom: 140px;
-	}
-}
-@media screen and (max-width: 800px) {
-/*TRANSLOAD PROCESS SECTION */	
-	p.swipe {
-		display: block;
-		margin-bottom: 70px;
-	}
-	.transload-process {
-		margin-bottom: 0;
-	}
-	.transload-wrapper {
-		overflow-x: scroll;
-		-ms-overflow-y: hidden;
-		-ms-overflow-style: none; 
-		cursor: ew-resize;
-		cursor : -o-ew-resize; 
-		cursor : -moz-ew-resize; 
-		cursor : -webkit-ew-resize;
-		padding: 0 23px;
-	}
-}
-@media screen and (max-width:600px) {
+@media screen and (min-width:460px) {
 /* EQUIPMENT SECTION */
 	.equipment-section {
 		padding-bottom: 90px;
 	}
 }
-@media screen and (max-width:460px) {
+@media screen and (min-width:600px) {
 /* EQUIPMENT SECTION */
 	.equipment-section {
-		padding-bottom: 60px;
+		padding-bottom: 140px;
+	}
+}
+@media screen and (min-width:800px) {
+	p.swipe {
+		display: none;
+	}
+	p.d2d_swipe {
+		display: block;
+	}
+	.transload-wrapper {
+		margin-bottom: 60px;
+	}
+}
+@media screen and (min-width:900px) {
+/* EQUIPMENT SECTION */
+	.equipment-section {
+		padding-bottom: 180px;
+	}
+}
+@media screen and (min-width:1200px) {
+	p.d2d_swipe {
+		display: none;
+	}
+}
+@media screen and (min-width:1400px) {
+	.transload-process {
+		width: 930px;		
+		&.d2d {
+			width: 1400px;
+		}
+		.transload-image {
+			height: 75px;
+		}
+		p {
+			font-size: 1em;
+		}
+	}
+	.transload-icon {
+		height: 75px;
+		width: 213px;
+		&:after {
+			width: 96px;
+			height: 33px;
+			bottom: 7px;
+			left: 39px;	
+		}
+		.arrow {
+			width: 93px;
+			height: 42px;
+		}
+		.arrow-inside {
+			margin-left: -47px;
+			width: 94px;
+			height: 85px;
+		}
+		.truck {
+			width: 123px;
+			height: 38px;;
+			.truck-inside {
+				width: 123px;
+				height: 38px;
+			}
+		}
+		.train {
+			width: 93px;
+			height: 38px;
+			.train-inside {
+				width: 93px;
+				height: 38px;
+			}
+		}
+		&.totruck:after {
+			width: 73px;
+			height: 75px;
+			left: 50px;
+			bottom: 4px;
+		}
+	}
+}
+@media screen and (min-width: 1500px) {
+/* TRANSLOAD ADVANTAGE SECTION IMAGE */
+	.transload-advantage .section-image.first {
+		background-position: center center;
 	}
 }
