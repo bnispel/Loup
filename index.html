@@ -382,7 +382,7 @@ goal, we’re here to help you achieve it.</p>
 					</div>
 				</div>
 			</div>
-			<div class="endpage_cta_wrapper" style="background-image:url(images/home_footercta.jpg);">
+			<div class="endpage_cta_wrapper js_mobileimg" data-mobileimg="images/home_footercta-mobile.jpg" style="background-image:url(images/home_footercta.jpg);">
 				<div class="endpage_cta">
 					<h2>EFFECTIVE. EFFICIENT. ECONOMICAL.</h2>
 					<h3>CUSTOMIZED FOR YOU.</h3>
@@ -445,10 +445,16 @@ goal, we’re here to help you achieve it.</p>
 	<script src="js/main.js"></script>
 	<script src="js/parallax.js"></script>
 	<script>
-		var bgColorArray = ['images/home_hero.jpg','images/home_hero2.jpg','images/home_hero3.jpg','images/home_hero4.jpg'],
-		selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
-
-		$('#rotatebgimg').css('background-image', 'url(' + selectBG + ')')
+		var windowwidth = $( window ).width();
+		if ( windowwidth < 500 ) {
+			var bgColorArray = ['images/home_hero-mobile.jpg','images/home_hero2-mobile.jpg','images/home_hero3-mobile.jpg','images/home_hero4-mobile.jpg'],
+			selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+			$('#rotatebgimg').css('background-image', 'url(' + selectBG + ')')
+		} else {
+			var bgColorArray = ['images/home_hero.jpg','images/home_hero2.jpg','images/home_hero3.jpg','images/home_hero4.jpg'],
+			selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+			$('#rotatebgimg').css('background-image', 'url(' + selectBG + ')')
+		}
 	</script>
 </body>
 </html>

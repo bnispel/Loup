@@ -69,9 +69,18 @@ function removenbsp() {
 		});
 	}
 }
-	
+/* ::::::::::::: FLIP OUT IMAGES FOR THEIR MOBILE VERSIONS */
+function mobileimg() {
+	if (windowwidth < 500) {
+		$( ".js_mobileimg" ).each(function( index ) {
+			var mobileurl = $(this).attr('data-mobileimg');
+			$(this).css('background-image', 'url("' + mobileurl + '")');
+		});
+	}
+}
+
 $(document).ready(function() {
-	
+	mobileimg();
     toggleElment();
     removenbsp();
     
@@ -261,6 +270,7 @@ $(window).scroll(function(){
 });
 
 $(window).resize(function(){
+	mobileimg();
 	removenbsp();
 	var mainnav_height = $('.mainnav').outerHeight();
 	/* Section navigation functionality */
